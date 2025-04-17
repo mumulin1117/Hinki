@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBNElauioeinrLogin" customModule="DiBngHink" customModuleProvider="target">
+            <connections>
+                <outlet property="boeinmgPick" destination="VBI-10-T2s" id="Cv7-Ef-VoG"/>
+                <outlet property="lootBoxMechanics" destination="uRs-DD-jYq" id="aYz-yN-IX2"/>
+                <outlet property="overfittin" destination="e4f-dL-UQ6" id="c9C-48-Stw"/>
+                <outlet property="view" destination="Aeq-co-tPh" id="NQ6-oP-n7h"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Aeq-co-tPh">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koinbah" translatesAutoresizingMaskIntoConstraints="NO" id="2Jn-LF-XfZ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29225127550000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ELUA For Hinki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-ay-RX9">
+                    <rect key="frame" x="124.33333333333333" y="119" width="144.33333333333337" height="23"/>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSC-hl-Gyr">
+                    <rect key="frame" x="12" y="161" width="369" height="512"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <mutableString key="text">End-User License Agreement (EULA) v2.1
+Last Updated: 2025-04-01
+Contact: hinki@gmail.com
+
+Section 7. Violation Tier System
+7.1 Three-Tier Violation Classification
+
+Minor Violations:
+Exploitative AI usage (e.g., generating derivative copyrighted works)
+Non-malicious spamming in collaborative sessions
+Temporary physics engine manipulation affecting &lt;10 user sessions
+Major Violations:
+Distribution of unauthorized mod clients
+Persistent real-time chat harassment using generated 3D content
+Exploitation of rendering pipeline vulnerabilities
+Severe Violations:
+Dissemination of prohibited content through building system loopholes
+DDOS attacks disguised as mass collaborative sessions
+Commercialization of AI-generated blueprints without authorization
+7.2 Progressive Enforcement Matrix
+
+Tier	First Offense	Repeat Offense
+Minor	72hr BuildMate AI suspension	30-day UGC upload ban
+Major	14-day social feature lockdown	90-day virtual economy freeze
+Severe	Permanent account deplatforming	Hardware ID blacklisting
+Section 8. Digital Evidence Protocol
+8.1 Automated forensic collection triggers when detecting:
+
+Anomalous build patterns (&gt;200 undo/redo cycles per minute)
+Physics constant tampering (gravity deviation &gt;±15%)
+AI-generated content flooding (&gt;75 similar structures/hour)
+8.2 Forensic package includes:
+
+3D construction timeline replay data
+Differential records of real-time collaboration
+Device sensor telemetry during violations (gyroscope/accelerometer)
+Neural network inference logs for AI-generated content
+Section 9. Safe Harbor Provisions
+9.1 Users agree to preservation of forensic evidence for:
+
+30 days for minor violations
+180 days for major violations
+Indefinitely for severe violations (per regulatory requirements)
+9.2 Conditional amnesty available for:
+
+Self-reported violations within 24 hours
+Whitehat vulnerability disclosures
+Educational/research usage with prior written consent
+Section 10. Appeal Process
+10.1 Submit appeals via hinki@gmail.com with:
+
+Blockchain-verified timestamp of disputed action
+Alternative client-side session recordings
+Third-party validator signatures (for contested AI outputs)
+10.2 Binding arbitration using:
+
+AI-mediated dispute resolution (for technical violations)
+Community jury system (for content moderation cases)
+Legal jurisdiction of Singapore (for financial disputes)
+Section 11. Transparency Reports
+11.1 Quarterly publication of:
+
+Violation case distribution across tiers
+Average resolution time per appeal type
+AI moderation accuracy rates
+Forensic data access requests by authorities
+This enhanced version:
+
+Aligns with FTC's "Notice and Choice" requirements
+Incorporates GDPR-compliant data retention policies
+Supports Apple App Store Guideline 5.1.1 (iii) for virtual economies
+Includes DMCA-style takedown procedures for 3D content</mutableString>
+                    <color key="textColor" white="1" alpha="0.64320259353741494" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4f-dL-UQ6">
+                    <rect key="frame" x="12" y="708" width="369" height="52"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="ZMR-GX-HJ5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="I  agree"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRs-DD-jYq">
+                    <rect key="frame" x="22" y="59" width="35" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="NY9-zG-ZZt"/>
+                        <constraint firstAttribute="width" constant="35" id="e3V-sm-5Eo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="funcbaui"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBI-10-T2s">
+                    <rect key="frame" x="146" y="765" width="101" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="101" id="3jq-Sg-zoK"/>
+                        <constraint firstAttribute="height" constant="35" id="N3G-Va-XFU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Disagree">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.57039221938775508" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="iconnew_un"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0f-7O-C0O">
+                    <rect key="frame" x="280" y="783" width="101" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="2rP-pG-Q6N"/>
+                        <constraint firstAttribute="width" constant="101" id="Qfp-A8-isB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="&lt;Privacy Policy&gt;">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.57039221939999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="iconnew_un"/>
+                    <connections>
+                        <action selector="socialFeed:" destination="-1" eventType="touchUpInside" id="68j-EF-gD9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-04-w24">
+                    <rect key="frame" x="12" y="783" width="101" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="101" id="3Y3-j7-jRF"/>
+                        <constraint firstAttribute="height" constant="35" id="FBG-YX-vqZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="&lt;Terms of Use&gt;l">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.57039221939999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="iconnew_un"/>
+                    <connections>
+                        <action selector="userDynamicVoList:" destination="-1" eventType="touchUpInside" id="oMY-iM-Q56"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="sZw-d0-oFb"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="m0f-7O-C0O" firstAttribute="trailing" secondItem="e4f-dL-UQ6" secondAttribute="trailing" id="0JZ-rf-S3r"/>
+                <constraint firstItem="PpE-04-w24" firstAttribute="leading" secondItem="e4f-dL-UQ6" secondAttribute="leading" id="0hi-7l-fEN"/>
+                <constraint firstItem="uRs-DD-jYq" firstAttribute="top" secondItem="sZw-d0-oFb" secondAttribute="top" id="0uZ-WR-sjs"/>
+                <constraint firstItem="lSC-hl-Gyr" firstAttribute="leading" secondItem="sZw-d0-oFb" secondAttribute="leading" constant="12" id="3zM-em-ip1"/>
+                <constraint firstItem="2Jn-LF-XfZ" firstAttribute="top" secondItem="Aeq-co-tPh" secondAttribute="top" id="4HX-Ju-LJU"/>
+                <constraint firstItem="PpE-04-w24" firstAttribute="bottom" secondItem="sZw-d0-oFb" secondAttribute="bottom" id="4xc-yf-gDc"/>
+                <constraint firstItem="sZw-d0-oFb" firstAttribute="trailing" secondItem="e4f-dL-UQ6" secondAttribute="trailing" constant="12" id="8rX-Qa-Rf7"/>
+                <constraint firstItem="e4f-dL-UQ6" firstAttribute="top" secondItem="lSC-hl-Gyr" secondAttribute="bottom" constant="35" id="95J-fc-iTd"/>
+                <constraint firstItem="sZw-d0-oFb" firstAttribute="bottom" secondItem="VBI-10-T2s" secondAttribute="bottom" constant="18" id="B6T-7I-r1h"/>
+                <constraint firstItem="VBI-10-T2s" firstAttribute="centerX" secondItem="Aeq-co-tPh" secondAttribute="centerX" id="Ldb-Pb-uVP"/>
+                <constraint firstItem="VBI-10-T2s" firstAttribute="top" secondItem="e4f-dL-UQ6" secondAttribute="bottom" constant="5" id="Vvm-FR-Urp"/>
+                <constraint firstAttribute="trailing" secondItem="2Jn-LF-XfZ" secondAttribute="trailing" id="Xck-X3-Uhv"/>
+                <constraint firstItem="m0f-7O-C0O" firstAttribute="centerY" secondItem="PpE-04-w24" secondAttribute="centerY" id="eLO-2g-1NU"/>
+                <constraint firstItem="2Jn-LF-XfZ" firstAttribute="leading" secondItem="Aeq-co-tPh" secondAttribute="leading" id="hgb-iJ-YHm"/>
+                <constraint firstItem="3dR-ay-RX9" firstAttribute="top" secondItem="sZw-d0-oFb" secondAttribute="top" constant="60" id="m2D-nI-QBq"/>
+                <constraint firstItem="sZw-d0-oFb" firstAttribute="trailing" secondItem="lSC-hl-Gyr" secondAttribute="trailing" constant="12" id="m3N-oi-pHi"/>
+                <constraint firstItem="lSC-hl-Gyr" firstAttribute="top" secondItem="3dR-ay-RX9" secondAttribute="bottom" constant="19" id="nje-ar-6fg"/>
+                <constraint firstAttribute="bottom" secondItem="2Jn-LF-XfZ" secondAttribute="bottom" id="qhp-Fd-AI2"/>
+                <constraint firstItem="e4f-dL-UQ6" firstAttribute="leading" secondItem="sZw-d0-oFb" secondAttribute="leading" constant="12" id="sSr-mj-AjZ"/>
+                <constraint firstItem="uRs-DD-jYq" firstAttribute="leading" secondItem="sZw-d0-oFb" secondAttribute="leading" constant="22" id="wJc-E9-UN6"/>
+                <constraint firstItem="3dR-ay-RX9" firstAttribute="centerX" secondItem="Aeq-co-tPh" secondAttribute="centerX" id="yZG-3m-xpb"/>
+            </constraints>
+            <point key="canvasLocation" x="93.89312977099236" y="-17.605633802816904"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="funcbaui" width="36" height="36"/>
+        <image name="iconnew_un" width="22" height="22"/>
+        <image name="koinbah" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

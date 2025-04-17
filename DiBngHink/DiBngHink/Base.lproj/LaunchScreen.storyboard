@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koinbah" translatesAutoresizingMaskIntoConstraints="NO" id="baP-jd-wcs">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loshangego" translatesAutoresizingMaskIntoConstraints="NO" id="aUO-VV-KSo">
+                                <rect key="frame" x="146.66666666666666" y="266" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="60o-jr-9C6"/>
+                                    <constraint firstAttribute="width" constant="100" id="Saa-WU-K4x"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hinki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwT-UV-qpX">
+                                <rect key="frame" x="172" y="396" width="49" height="23"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="baP-jd-wcs" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="4JH-uQ-BEW"/>
+                            <constraint firstItem="aUO-VV-KSo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5i0-AV-CLR"/>
+                            <constraint firstAttribute="trailing" secondItem="baP-jd-wcs" secondAttribute="trailing" id="95I-WV-sbS"/>
+                            <constraint firstItem="baP-jd-wcs" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Iaq-wS-laB"/>
+                            <constraint firstItem="aUO-VV-KSo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="207" id="In0-2q-TY5"/>
+                            <constraint firstAttribute="bottom" secondItem="baP-jd-wcs" secondAttribute="bottom" id="Qw7-hB-sZb"/>
+                            <constraint firstItem="pwT-UV-qpX" firstAttribute="top" secondItem="aUO-VV-KSo" secondAttribute="bottom" constant="30" id="TLG-ji-pEG"/>
+                            <constraint firstItem="pwT-UV-qpX" firstAttribute="centerX" secondItem="aUO-VV-KSo" secondAttribute="centerX" id="oPp-GK-YZ0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="koinbah" width="375" height="812"/>
+        <image name="loshangego" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

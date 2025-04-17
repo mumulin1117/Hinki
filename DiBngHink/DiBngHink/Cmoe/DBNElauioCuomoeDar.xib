@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBNElauioCuomoeDar" customModule="DiBngHink" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xhiebei" translatesAutoresizingMaskIntoConstraints="NO" id="WBt-2B-D6Q">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConUBBZBBnect" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-Ln-NOf">
+                    <rect key="frame" x="12" y="59" width="182" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="182" id="6iz-TL-EBi"/>
+                        <constraint firstAttribute="height" constant="34" id="oRD-83-yNb"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuaiwc" translatesAutoresizingMaskIntoConstraints="NO" id="4dz-mH-xU0">
+                    <rect key="frame" x="12" y="114" width="100" height="142"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="My1-rJ-NwZ"/>
+                        <constraint firstAttribute="height" constant="142" id="TtH-Am-xQK"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0lQ-CI-8zl">
+                    <rect key="frame" x="122" y="114" width="259" height="142"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfd-wa-kvc">
+                            <rect key="frame" x="0.0" y="0.0" width="259" height="67"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="BrickTalk AIHUaid"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGC-j0-4UL">
+                            <rect key="frame" x="0.0" y="77" width="259" height="65"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="brickAI-ok"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uqy-YP-XfK">
+                    <rect key="frame" x="12" y="280" width="369" height="572"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0lQ-CI-8zl" secondAttribute="trailing" constant="12" id="5XO-lb-prN"/>
+                <constraint firstItem="gJL-Ln-NOf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6n6-0J-aip"/>
+                <constraint firstItem="gJL-Ln-NOf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="9g9-Te-gsw"/>
+                <constraint firstItem="WBt-2B-D6Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BF5-Ua-CTZ"/>
+                <constraint firstItem="4dz-mH-xU0" firstAttribute="top" secondItem="gJL-Ln-NOf" secondAttribute="bottom" constant="21" id="Bce-ka-DVR"/>
+                <constraint firstItem="WBt-2B-D6Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BlC-wo-Rqm"/>
+                <constraint firstAttribute="bottom" secondItem="WBt-2B-D6Q" secondAttribute="bottom" id="HOO-za-KTk"/>
+                <constraint firstItem="4dz-mH-xU0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="MPC-aa-1ft"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uqy-YP-XfK" secondAttribute="trailing" constant="12" id="Y6E-4U-WIX"/>
+                <constraint firstItem="0lQ-CI-8zl" firstAttribute="bottom" secondItem="4dz-mH-xU0" secondAttribute="bottom" id="Ypk-sY-clD"/>
+                <constraint firstItem="uqy-YP-XfK" firstAttribute="top" secondItem="4dz-mH-xU0" secondAttribute="bottom" constant="24" id="gWn-oc-hsf"/>
+                <constraint firstItem="WBt-2B-D6Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kCj-rr-YAK"/>
+                <constraint firstItem="0lQ-CI-8zl" firstAttribute="top" secondItem="4dz-mH-xU0" secondAttribute="top" id="l6G-xq-CpO"/>
+                <constraint firstItem="uqy-YP-XfK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="tob-CY-E8m"/>
+                <constraint firstItem="0lQ-CI-8zl" firstAttribute="leading" secondItem="4dz-mH-xU0" secondAttribute="trailing" constant="10" id="vLB-Se-1Iq"/>
+                <constraint firstAttribute="bottom" secondItem="uqy-YP-XfK" secondAttribute="bottom" id="yXb-65-Pam"/>
+            </constraints>
+            <point key="canvasLocation" x="26.717557251908396" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BrickTalk AIHUaid" width="241" height="65"/>
+        <image name="ConUBBZBBnect" width="179.66667175292969" height="24"/>
+        <image name="brickAI-ok" width="241" height="65"/>
+        <image name="tuaiwc" width="100" height="142"/>
+        <image name="xhiebei" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

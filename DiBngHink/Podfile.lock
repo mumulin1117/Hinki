@@ -1,24 +1,34 @@
 PODS:
   - Alamofire (5.10.2)
+  - PKHUD (5.3.0)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
   - SnapKit (5.7.1)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
   - Alamofire
+  - PKHUD
+  - SDWebImage
   - SnapKit
   - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - PKHUD
+    - SDWebImage
     - SnapKit
     - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 9c0c086a0fb31fc1c0383cfae34225c35cb26524
+PODFILE CHECKSUM: b3f6e8d8c07bc2fa76667742306f1c1e3e19d867
 
 COCOAPODS: 1.16.2

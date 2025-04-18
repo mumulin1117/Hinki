@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBNElauioAmoeDar" customModule="DiBngHink" customModuleProvider="target">
             <connections>
+                <outlet property="onliEwusersView" destination="BGv-HW-olp" id="C79-wp-GGd"/>
+                <outlet property="senconDymView" destination="PZI-KM-Mkp" id="uzj-ER-rfL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BrickBoard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxi-It-arG">
-                    <rect key="frame" x="14" y="260" width="112" height="25"/>
+                    <rect key="frame" x="14" y="270" width="112" height="25"/>
                     <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -45,10 +47,10 @@
                     </constraints>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-HW-olp">
-                    <rect key="frame" x="14" y="128" width="379" height="110"/>
+                    <rect key="frame" x="14" y="128" width="379" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="110" id="Nt6-hd-9gw"/>
+                        <constraint firstAttribute="height" constant="120" id="Nt6-hd-9gw"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wyO-nY-RXM">
                         <size key="itemSize" width="128" height="128"/>
@@ -58,7 +60,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PZI-KM-Mkp">
-                    <rect key="frame" x="14" y="295" width="379" height="557"/>
+                    <rect key="frame" x="14" y="311" width="379" height="491"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ozN-aI-pRg">
                         <size key="itemSize" width="128" height="128"/>
@@ -79,14 +81,14 @@
                 <constraint firstItem="zt2-6m-0a5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ibd-00-ZbH"/>
                 <constraint firstItem="dxi-It-arG" firstAttribute="top" secondItem="BGv-HW-olp" secondAttribute="bottom" constant="22" id="K9D-wm-IOs"/>
                 <constraint firstItem="BGv-HW-olp" firstAttribute="top" secondItem="IPK-Us-vwi" secondAttribute="bottom" constant="34" id="KfY-1y-xzd"/>
-                <constraint firstItem="PZI-KM-Mkp" firstAttribute="top" secondItem="dxi-It-arG" secondAttribute="bottom" constant="10" id="MyH-kI-v6i"/>
+                <constraint firstItem="PZI-KM-Mkp" firstAttribute="top" secondItem="dxi-It-arG" secondAttribute="bottom" constant="16" id="MyH-kI-v6i"/>
                 <constraint firstItem="zt2-6m-0a5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NSI-sS-Noj"/>
                 <constraint firstItem="bIv-d7-jSc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OjG-g2-Sxp"/>
                 <constraint firstItem="IPK-Us-vwi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="Sq7-Sz-4wW"/>
                 <constraint firstAttribute="bottom" secondItem="zt2-6m-0a5" secondAttribute="bottom" id="TUa-We-Lm5"/>
                 <constraint firstItem="IPK-Us-vwi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WQp-TX-nQu"/>
-                <constraint firstAttribute="bottom" secondItem="PZI-KM-Mkp" secondAttribute="bottom" id="cNO-A0-fk8"/>
                 <constraint firstItem="BGv-HW-olp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qRQ-jg-ouQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PZI-KM-Mkp" secondAttribute="bottom" constant="16" id="rlz-Ku-C9w"/>
                 <constraint firstItem="zt2-6m-0a5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uhT-Ie-itC"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>

@@ -11,7 +11,23 @@ import UIKit
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+//当前登陆账户
+    static var loguserMofdal:User?{
+        
+        get{
+            if let usedloging = UserDefaults.standard.object(forKey: "loginUserDBN") as? [String:String] {
+                return User.init(dic: usedloging)
+            }
+            return nil
+        }set{
+            if let newvakf = newValue {
+                
+                UserDefaults.standard.set(newvakf.modoalTRansforDic(), forKey: "loginUserDBN")
+            }
+            
+        }
+        
+    }
     var window: UIWindow?
     
 
@@ -19,16 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        let usedloging = UserDefaults.standard.object(forKey: "loginUserDBN") as? [String:String]
         
-//        if usedloging != nil {
+        
+        if AppDelegate.loguserMofdal != nil {
             window?.rootViewController = DBNAsFore.init()
-//        }else{
-//            let clioke = UINavigationController.init(rootViewController: DBNAsFoeinrLogin.init())
-//            clioke.navigationBar.isHidden = true
-//            
-//            window?.rootViewController = clioke
-//        }
+        }else{
+            let clioke = UINavigationController.init(rootViewController: DBNAsFoeinrLogin.init())
+            clioke.navigationBar.isHidden = true
+            
+            window?.rootViewController = clioke
+        }
        
         
         

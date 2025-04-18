@@ -42,7 +42,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hinki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zt-DH-NOQ">
-                        <rect key="frame" x="50" y="88" width="35" height="16"/>
+                        <rect key="frame" x="50" y="90" width="35" height="16"/>
                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -61,11 +61,15 @@
                 <constraint firstItem="jqn-8X-EMF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="TDI-Rb-c75"/>
                 <constraint firstItem="NSc-3S-zi8" firstAttribute="centerY" secondItem="1Rr-LF-Qqz" secondAttribute="centerY" id="Z0d-t1-MRT"/>
                 <constraint firstItem="1Rr-LF-Qqz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="26" id="cXy-gP-jaf"/>
-                <constraint firstItem="9zt-DH-NOQ" firstAttribute="top" secondItem="1Rr-LF-Qqz" secondAttribute="bottom" constant="2" id="jab-Bb-Ehg"/>
+                <constraint firstItem="9zt-DH-NOQ" firstAttribute="top" secondItem="1Rr-LF-Qqz" secondAttribute="bottom" constant="4" id="jab-Bb-Ehg"/>
                 <constraint firstItem="NSc-3S-zi8" firstAttribute="centerX" secondItem="1Rr-LF-Qqz" secondAttribute="centerX" id="yl5-Wa-J2W"/>
                 <constraint firstAttribute="bottom" secondItem="jqn-8X-EMF" secondAttribute="bottom" id="zKc-DU-8TI"/>
             </constraints>
             <size key="customSize" width="135" height="114"/>
+            <connections>
+                <outlet property="DBNEAvator" destination="1Rr-LF-Qqz" id="zdS-Fz-FX3"/>
+                <outlet property="DBNEIanme" destination="9zt-DH-NOQ" id="esI-T0-bpg"/>
+            </connections>
             <point key="canvasLocation" x="129.00763358778624" y="42.95774647887324"/>
         </collectionViewCell>
     </objects>

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBNElauioBomoeDar" customModule="DiBngHink" customModuleProvider="target">
             <connections>
+                <outlet property="senconDymView" destination="5XF-nU-4en" id="4Bl-z7-600"/>
                 <outlet property="view" destination="evU-l0-cyd" id="hNF-Lb-E5F"/>
             </connections>
         </placeholder>
@@ -23,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5XF-nU-4en">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GlY-Pc-3sB">
                         <size key="itemSize" width="128" height="128"/>
@@ -48,13 +49,13 @@
                 <constraint firstItem="Vj8-RU-B0u" firstAttribute="top" secondItem="evU-l0-cyd" secondAttribute="top" id="1pD-7N-WRf"/>
                 <constraint firstAttribute="bottom" secondItem="Vj8-RU-B0u" secondAttribute="bottom" id="30Q-pt-6h2"/>
                 <constraint firstItem="wQl-dw-zie" firstAttribute="top" secondItem="crb-S8-OcP" secondAttribute="top" id="6XO-D8-Ja1"/>
-                <constraint firstAttribute="bottom" secondItem="5XF-nU-4en" secondAttribute="bottom" id="8jK-6W-iKn"/>
                 <constraint firstItem="5XF-nU-4en" firstAttribute="leading" secondItem="evU-l0-cyd" secondAttribute="leading" id="Cz9-QY-AuR"/>
                 <constraint firstItem="5XF-nU-4en" firstAttribute="top" secondItem="evU-l0-cyd" secondAttribute="top" id="MxM-9D-XdF"/>
                 <constraint firstItem="5XF-nU-4en" firstAttribute="trailing" secondItem="crb-S8-OcP" secondAttribute="trailing" id="VLS-k4-3Ex"/>
                 <constraint firstItem="crb-S8-OcP" firstAttribute="trailing" secondItem="wQl-dw-zie" secondAttribute="trailing" id="bY7-mw-qQB"/>
                 <constraint firstItem="Vj8-RU-B0u" firstAttribute="leading" secondItem="crb-S8-OcP" secondAttribute="leading" id="sHb-0K-2hf"/>
                 <constraint firstItem="Vj8-RU-B0u" firstAttribute="trailing" secondItem="crb-S8-OcP" secondAttribute="trailing" id="u4F-TK-PuX"/>
+                <constraint firstItem="crb-S8-OcP" firstAttribute="bottom" secondItem="5XF-nU-4en" secondAttribute="bottom" id="uku-J5-XVV"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>

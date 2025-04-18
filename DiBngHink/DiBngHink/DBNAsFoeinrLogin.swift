@@ -7,6 +7,8 @@
 
 import UIKit
 import SwiftyStoreKit
+import Alamofire
+import PKHUD
 class DBNAsFoeinrLogin: UIViewController {
     @IBOutlet weak var lootBoxMechanics: UIButton!
     
@@ -86,6 +88,10 @@ class DBNAsFoeinrLogin: UIViewController {
     }
     
     
+    func volumetricRendering()  {
+       
+    }
+    
    
     @objc func skinnedMeshes(gahu:UIButton)  {
         
@@ -96,6 +102,51 @@ class DBNAsFoeinrLogin: UIViewController {
         
         if gahu == overfittin {// log
             
+            guard let poiu = self.contactDBN.text,poiu.count > 0 else {
+                HUD.flash(.labeledError(title: "Please enter email!", subtitle: nil), delay: 2)
+                return
+            }
+            
+            guard let pasiod = self.MappingDBN.text,pasiod.count >= 6 else {
+                HUD.flash(.labeledError(title: "Please enter a password with at least six digits!", subtitle: nil), delay: 2)
+                return
+            }
+            
+            
+            self.MappingDBN.resignFirstResponder()
+            contactDBN.resignFirstResponder()
+            // 1. 创建请求参数
+            let parameters: Parameters = [
+                "echoCancellation": FrealNetworking.shared.appId,
+                "spinningCube": poiu,
+                "latencyCompensation": poiu
+            ]
+
+            // 2. 显示加载指示器
+            HUD.show(.progress)
+            FrealNetworking.shared.request(
+                "/gliqjqosvikyz/yrdkpbchsbvy",
+                method: .post,
+                parameters: parameters,
+                isLogin: true) { data in
+                    HUD.hide()
+                    guard let response = data as? Dictionary<String,Any> ,
+                          let code = response["code"] as? Int,code == 200000,
+                          let user = response["data"] as? Dictionary<String,Any>
+                            
+                    else {
+                        HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+                        return
+                    }
+                    AppDelegate.loguserMofdal = User(dic: user)
+                    ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = DBNAsFore.init()
+                    HUD.flash(.labeledSuccess(title: "Log in successful!", subtitle: nil), delay: 2)
+                    
+                } failure: { AFError in
+                    HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
+                }
+
+           
         }
        
     }
@@ -105,6 +156,10 @@ class DBNAsFoeinrLogin: UIViewController {
         UserDefaults.standard.set(result, forKey: "haiagerren")
     }
     
+    
+    
+    
+    //MARK: - 支付完成回调
     class func skillBadges(){
         SwiftyStoreKit.completeTransactions(atomically: true) { guCSB in
            
@@ -128,3 +183,6 @@ class DBNAsFoeinrLogin: UIViewController {
         }
     }
 }
+
+
+

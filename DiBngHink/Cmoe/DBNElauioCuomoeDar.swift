@@ -81,16 +81,16 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     
     func backgroundNoiseCancellation() {
         //查询消息列表
-        let parameters: Parameters = [
-            "endToEndEncryption": DBNSeddingTrkop.Judbei.app_qiucklyId,
-            "rateLimiting":AppDelegate.loguserMofdal?.poseEstimation ?? ""
-            
-        ]
+     
         HUD.show(.progress)
         DBNSeddingTrkop.Judbei.soluteTogeeting(
             "/qxawynltzgfojz/pzgzwfpk",
             yun_methui: .post,
-            adting: parameters,
+            adting: [
+                "endToEndEncryption": DBNSeddingTrkop.Judbei.app_qiucklyId,
+                "rateLimiting":AppDelegate.loguserMofdal?.poseEstimation ?? ""
+                
+            ],
             ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,

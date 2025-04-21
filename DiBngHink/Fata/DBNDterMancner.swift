@@ -9,62 +9,71 @@ import UIKit
 import Alamofire
 
 // MARK: - Dictionary 扩展（JSON 美化输出）
-extension Dictionary {
-    var jsonPrettyStringEncoded: String? {
-        guard JSONSerialization.isValidJSONObject(self) else { return nil }
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
-            return String(data: jsonData, encoding: .utf8)
-        } catch {
-            return nil
-        }
-    }
-}
+//extension Dictionary {
+//    var jsonPrettyStringEncoded: String? {
+//        guard JSONSerialization.isValidJSONObject(self) else { return nil }
+//        do {
+//            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+//            return String(data: jsonData, encoding: .utf8)
+//        } catch {
+//            return nil
+//        }
+//    }
+//}
 
 
 
 
 // MARK: - 网络请求工具类
-final class FrealNetworking {
-    static let shared = FrealNetworking()
-    private let sessionManager: Session
+final class DBNSeddingTrkop {
+    static let Judbei = DBNSeddingTrkop()
+    private let netDBNManager: Session
     private init() {
-           let configuration = URLSessionConfiguration.af.default
-           configuration.timeoutIntervalForRequest = 30
-           sessionManager = Session(configuration: configuration)
+           let configertDBN = URLSessionConfiguration.af.default
+           configertDBN.timeoutIntervalForRequest = 30
+           netDBNManager = Session(configuration: configertDBN)
        }
     
   
-     var appId: String {
-        return "95959480"
-    }
+    let app_qiucklyId: String = "95959480"
     
-     var appBaseUrl: String {
+     
+    var appDBN_BaseUrl: String {
         return self.asFg(evng:"hptutspn:a/e/lwiwpwd.prnavignabeobwc4w5n6q7k.dxnyhzv/dbhabcekoocnie")
     }
     
-    var appBaseUrlAVoutWEB: String {
+    var appBase_DBNUrlAVoutWEB: String {
        return self.asFg(evng:"hcthtfph:v/m/jwqwmww.vraaoifnlbloswa4t5f6q7j.txmyfzo/j#")
    }
     
     
     // MARK: 核心请求方法
-    func request(
+    func soluteTogeeting(
            _ path: String,
-           method: HTTPMethod = .post,
-           parameters: Parameters? = nil,
-           headers: HTTPHeaders? = nil,
-           isLogin: Bool = false,
-           success: ((Any?) -> Void)? = nil,
+           yun_methui: HTTPMethod = .post,
+           adting: Parameters? = nil,
+           tijsul: HTTPHeaders? = nil,
+           ikolLoodergin: Bool = false,
+           succ_DBNess: ((Any?) -> Void)? = nil,
                   
-           failure: ((AFError) -> Void)? = nil
+           fai_DBNlure: ((AFError) -> Void)? = nil
     ) -> DataRequest {
-           let url =  appBaseUrl + path
-           let finalHeaders = processHeaders(headers, isLogin: isLogin)
-           return sessionManager.request(
+           let url =  appDBN_BaseUrl + path
+        
+        var finalHeaders = tijsul ?? HTTPHeaders()
+        finalHeaders.add(name: self.asFg(evng:"Cgognctqetnftt-jTiyvpfe"), value: self.asFg(evng:"arpfptlliycnahtiiwohnv/ajbsconn"))
+        
+        if ikolLoodergin {
+            finalHeaders.add(name: self.asFg(evng:"kkehy"), value: app_qiucklyId)
+            finalHeaders.add(name: self.asFg(evng:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
+        }
+        
+        
+//           let finalHeaders = processHeaders(tijsul, isLogin: ikolLoodergin)
+           return netDBNManager.request(
             url,        
-            method: method,
-            parameters: parameters,
+            method: yun_methui,
+            parameters: adting,
             encoding: JSONEncoding.default,
             headers: finalHeaders
         )
@@ -72,29 +81,28 @@ final class FrealNetworking {
         .responseJSON { response in
             switch response.result {
             case .success(let value):
-               
-              
-                
-                success?(value)
+                succ_DBNess?(value)
             case .failure(let error):
-                failure?(error)
+                fai_DBNlure?(error)
             }
             
         }
 
        }
        
-       private func processHeaders(_ headers: HTTPHeaders?, isLogin: Bool) -> HTTPHeaders {
-           var finalHeaders = headers ?? HTTPHeaders()
-           finalHeaders.add(name: self.asFg(evng:"Cgognctqetnftt-jTiyvpfe"), value: self.asFg(evng:"arpfptlliycnahtiiwohnv/ajbsconn"))
-           
-           if isLogin {
-               finalHeaders.add(name: self.asFg(evng:"kkehy"), value: appId)
-               finalHeaders.add(name: self.asFg(evng:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
-           }
-           
-           return finalHeaders
-       }
+       
+//    private func processHeaders(_ headers: HTTPHeaders?, isLogin: Bool) -> HTTPHeaders {
+//        var finalHeaders = headers ?? HTTPHeaders()
+//        finalHeaders.add(name: self.asFg(evng:"Cgognctqetnftt-jTiyvpfe"), value: self.asFg(evng:"arpfptlliycnahtiiwohnv/ajbsconn"))
+//        
+//        if isLogin {
+//            finalHeaders.add(name: self.asFg(evng:"kkehy"), value: app_qiucklyId)
+//            finalHeaders.add(name: self.asFg(evng:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
+//        }
+//        
+//        return finalHeaders
+//    }
+    
     func asFg(evng: String)->String  {
         return String(evng.enumerated().filter { $0.0 % 2 == 0 }.map { $0.1 })
     }

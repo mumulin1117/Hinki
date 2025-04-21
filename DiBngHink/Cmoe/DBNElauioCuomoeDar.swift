@@ -58,9 +58,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
 //        let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
         
         
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"ppaigqewsf/tslccryeiexnxprlvabyd/einnrdteyxc/w?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"ppaigqewsf/tslccryeiexnxprlvabyd/einnrdteyxc/w?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -70,9 +70,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     @IBAction func vricaTalkAij(_ sender: Any) {
        
        
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"ptawgjetse/rCtrpepartoerRpohlted/yinnldxehxj/t?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"ptawgjetse/rCtrpepartoerRpohlted/yinnldxehxj/t?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -82,16 +82,16 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     func backgroundNoiseCancellation() {
         //查询消息列表
         let parameters: Parameters = [
-            "endToEndEncryption": FrealNetworking.shared.appId,
+            "endToEndEncryption": DBNSeddingTrkop.Judbei.app_qiucklyId,
             "rateLimiting":AppDelegate.loguserMofdal?.poseEstimation ?? ""
             
         ]
         HUD.show(.progress)
-        FrealNetworking.shared.request(
+        DBNSeddingTrkop.Judbei.soluteTogeeting(
             "/qxawynltzgfojz/pzgzwfpk",
-            method: .post,
-            parameters: parameters,
-            isLogin: true) { data in
+            yun_methui: .post,
+            adting: parameters,
+            ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
                       let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
@@ -110,7 +110,7 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
                 self.updatrspecularSettings(isdataYou:self.measgList?.count ?? 0 > 0)
                
 
-            } failure: { AFError in
+            } fai_DBNlure: { AFError in
                 HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
             }
     }

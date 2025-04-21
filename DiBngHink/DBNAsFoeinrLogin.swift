@@ -33,6 +33,8 @@ class DBNAsFoeinrLogin: UIViewController {
         boeinmgPick.isSelected = UserDefaults.standard.bool(forKey: "haiagerren")
     }
     
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         Comabingeyew()
@@ -88,10 +90,7 @@ class DBNAsFoeinrLogin: UIViewController {
     }
     
     
-    func volumetricRendering()  {
-       
-    }
-    
+ 
    
     @objc func skinnedMeshes(gahu:UIButton)  {
         
@@ -117,18 +116,18 @@ class DBNAsFoeinrLogin: UIViewController {
             contactDBN.resignFirstResponder()
             // 1. 创建请求参数
             let parameters: Parameters = [
-                "echoCancellation": FrealNetworking.shared.appId,
+                "echoCancellation": DBNSeddingTrkop.Judbei.app_qiucklyId,
                 "spinningCube": poiu,
                 "latencyCompensation": poiu
             ]
 
             // 2. 显示加载指示器
             HUD.show(.progress)
-            FrealNetworking.shared.request(
+            DBNSeddingTrkop.Judbei.soluteTogeeting(
                 "/gliqjqosvikyz/yrdkpbchsbvy",
-                method: .post,
-                parameters: parameters,
-                isLogin: true) { data in
+                yun_methui: .post,
+                adting: parameters,
+                ikolLoodergin: true) { data in
                     HUD.hide()
                     guard let response = data as? Dictionary<String,Any> ,
                           let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
@@ -138,11 +137,11 @@ class DBNAsFoeinrLogin: UIViewController {
                         HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                         return
                     }
-                    AppDelegate.loguserMofdal = User(dic: user)
+                    AppDelegate.loguserMofdal = DBHUs_er(dic: user)
                     ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = DBNAsFore.init()
                     HUD.flash(.labeledSuccess(title: self.asFg(evng:"Liongm kionc fsdudcacdeasoskfpuelg!"), subtitle: nil), delay: 2)
                     
-                } failure: { AFError in
+                } fai_DBNlure: { AFError in
                     HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
                 }
 
@@ -150,6 +149,7 @@ class DBNAsFoeinrLogin: UIViewController {
         }
        
     }
+   
     
     
     private func flockingSimulation(result:Bool) {
@@ -168,11 +168,14 @@ class DBNAsFoeinrLogin: UIViewController {
               
                 
                 if (astatus ==  .purchased || astatus ==  .restored) {
-                    let downloads = purchase.transaction.downloads
-                    if !downloads.isEmpty {
-                        SwiftyStoreKit.start(downloads)
-                       
-                    } else if purchase.needsFinishTransaction {
+//                    let downloads = purchase.transaction.downloads
+//                    if !downloads.isEmpty {
+//                        SwiftyStoreKit.start(downloads)
+//                       
+//                    }
+                    self.volumetricRendering(purchase:purchase)
+                    
+                    if purchase.needsFinishTransaction {
                         SwiftyStoreKit.finishTransaction(purchase.transaction)
                     }
                 }
@@ -180,6 +183,14 @@ class DBNAsFoeinrLogin: UIViewController {
             }
             
             
+        }
+    }
+    
+    
+    class func volumetricRendering(purchase:Purchase)  {
+        let downloads = purchase.transaction.downloads
+        if !downloads.isEmpty {
+            SwiftyStoreKit.start(downloads)
         }
     }
 }

@@ -32,9 +32,9 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     @IBOutlet weak var Estimation: UILabel!//friend
     
     @IBAction func userReputation(_ sender: UIButton) {//site
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"poawgpeusb/nSiertstmitnjgh/piansdkemxy?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"poawgpeusb/nSiertstmitnjgh/piansdkemxy?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -43,9 +43,9 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     
     
     @IBAction func ambient(_ sender: UIButton) {//edit
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pqakgiecst/vEwdxihtqDsabtyao/liinsdfexxj?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pqakgiecst/vEwdxihtqDsabtyao/liinsdfexxj?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -53,36 +53,36 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     
     @IBAction func userLiastForbuy(_ sender: UIButton) {
         if sender.tag == 10 {
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pqahgveusv/daztytneknatlieoonq/niqnqdwenxo?ityywpgea=a1")
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pqahgveusv/daztytneknatlieoonq/niqnqdwenxo?ityywpgea=a1")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if sender.tag == 20 {
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x3")
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x3")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if sender.tag == 30 {
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x2")
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x2")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if sender.tag == 40 {//blance
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"poanghemsh/cVpoautcohaedrgCuegnctlebrc/himnidieyxs?")
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"poanghemsh/cVpoautcohaedrgCuegnctlebrc/himnidieyxs?")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -114,11 +114,11 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
             
         ]
         HUD.show(.progress)
-        FrealNetworking.shared.request(
+        DBNSeddingTrkop.Judbei.soluteTogeeting(
             "/rrecskvpz/tfhqqpe",
-            method: .post,
-            parameters: parameters,
-            isLogin: true) { data in
+            yun_methui: .post,
+            adting: parameters,
+            ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
                       let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
@@ -132,9 +132,9 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
                 
                 print(measgs)
                 
-              let mode =  User(dic: measgs)
+              let mode =  DBHUs_er(dic: measgs)
                 self.reinforcementLearning(ad:mode)
-            } failure: { AFError in
+            } fai_DBNlure: { AFError in
                 HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
             }
         
@@ -142,11 +142,11 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
         
         
         
-        FrealNetworking.shared.request(
+        DBNSeddingTrkop.Judbei.soluteTogeeting(
             "/jpezgbuxzsioz/sksuv",
-            method: .post,
-            parameters: parameters,
-            isLogin: true) { data in
+            yun_methui: .post,
+            adting: parameters,
+            ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
                       let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
@@ -162,13 +162,13 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
                 
                
 
-            } failure: { AFError in
+            } fai_DBNlure: { AFError in
                 
             }
     }
 
     
-    func reinforcementLearning(ad:User?)  {
+    func reinforcementLearning(ad:DBHUs_er?)  {
         guard let ad = ad  else{
             return
         }

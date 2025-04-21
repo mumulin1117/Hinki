@@ -13,11 +13,11 @@ import SDWebImage
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 //当前登陆账户
-    static var loguserMofdal:User?{
+    static var loguserMofdal:DBHUs_er?{
         
         get{
             if let usedloging = UserDefaults.standard.object(forKey: "loginUserDBN") as? [String:String] {
-                return User.init(dic: usedloging,isfromLocal: true)
+                return DBHUs_er.init(dic: usedloging,isfromLocal: true)
             }
             return nil
         }set{

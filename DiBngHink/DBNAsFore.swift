@@ -21,6 +21,20 @@ class DBNAsFore: UITabBarController {
     
     
     private func contentModeration() {
+        let jsiu = stopAttentionAnimation()
+        
+        jsiu.stackedLayoutAppearance.selected.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 12, weight: .semibold)
+        ]
+        UITabBar.appearance().standardAppearance = jsiu
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = jsiu
+        }
+    }
+    
+    
+    func stopAttentionAnimation()-> UITabBarAppearance{
         let titlesetingAbount = UITabBarAppearance()
        
         titlesetingAbount.stackedLayoutAppearance.normal.titleTextAttributes = [
@@ -28,28 +42,19 @@ class DBNAsFore: UITabBarController {
             .font: UIFont.systemFont(ofSize: 10, weight: .semibold)
         ]
         titlesetingAbount.backgroundColor = UIColor(red: 0.17, green: 0.05, blue: 0.21, alpha: 1)
-        
-        titlesetingAbount.stackedLayoutAppearance.selected.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
-            .font: UIFont.systemFont(ofSize: 12, weight: .semibold)
-        ]
-        UITabBar.appearance().standardAppearance = titlesetingAbount
-        if #available(iOS 15.0, *) {
-            UITabBar.appearance().scrollEdgeAppearance = titlesetingAbount
-        }
+        return titlesetingAbount
     }
-
     
     func perspectiveSwitching()  {
         var chilesdList:[CSBONabviSweeping] = Array()
         
-        let chiaudj = [("DBN_bar0",DBNElauioAmoeDar.init(),"Home"),
+        let Jad = [("DBN_bar0",DBNElauioAmoeDar.init(),"Home"),
                          
                          ("DBN_bar1",DBNElauioBomoeDar.init(),"Video"),
                          
                          ("DBN_bar2",DBNElauioCuomoeDar.init(),"Message"),
                              ("DBN_bar3",DBNElauioDwuomoeDar.init(),"Mine")] as [(String,DBNNiaufo,String)]
-        for item in chiaudj {
+        for item in Jad {
             let navi = CSBONabviSweeping.init(rootViewController: item.1)
             item.1.tabBarItem.title = item.2
             item.1.tabBarItem.titlePositionAdjustment = .zero
@@ -74,22 +79,3 @@ class DBNNiaufo: UIViewController {
 
 
 
-class CSBONabviSweeping: UINavigationController{
-   
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationBar.isHidden = true
-
-    }
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-   
-
-        if children.count > 0  && !viewController.isMember(of:DBNNiaufo.self) {
-           
-            viewController.hidesBottomBarWhenPushed = true
-        }
-        super.pushViewController(viewController, animated: false)
-    }
-}

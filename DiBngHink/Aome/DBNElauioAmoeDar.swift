@@ -64,9 +64,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
 //       let dynamicIdUser = self.Dyms?[sdui.tag].constraintSolver ?? ""
        
        
-       var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"/iprafgoeesf/bRjehpjozrytt/misnjdoecxo?")
+       var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/iprafgoeesf/bRjehpjozrytt/misnjdoecxo?")
        
-       forinwer = forinwer +  self.asFg(evng:"&ftqopklednj=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&aadpjpwIvDf=") +  (FrealNetworking.shared.appId)
+       forinwer = forinwer +  self.asFg(evng:"&ftqopklednj=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&aadpjpwIvDf=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
        
       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
        self.navigationController?.pushViewController(vc, animated: true)
@@ -79,9 +79,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
             let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
             
             //用户个人中心
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"/spbangoepsi/gHjoamgeaPyabgfel/ripnddweqxc?budsaerrvIcdo=") + userid
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/spbangoepsi/gHjoamgeaPyabgfel/ripnddweqxc?budsaerrvIcdo=") + userid
             
-            forinwer = forinwer +  self.asFg(evng:"&ktrorklebnf=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&jakpopwIeDj=") +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ktrorklebnf=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&jakpopwIeDj=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -89,16 +89,16 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
             let dynamicId = self.Dyms?[indexPath.row].constraintSolver ?? ""
             
             //动态详情
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"/lphaegtezse/wDoylnfazmdilcsDuejtqamitlusi/iionadaefxd?fdtyinhazmfiscrIddh=") + dynamicId
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/lphaegtezse/wDoylnfazmdilcsDuejtqamitlusi/iionadaefxd?fdtyinhazmfiscrIddh=") + dynamicId
             
-            forinwer = forinwer +  self.asFg(evng:"&etuoykiewnc=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&waqpvppIwDs=") +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&etuoykiewnc=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&waqpvppIwDs=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    private var usermodels:Array<User>?
+    private var usermodels:Array<DBHUs_er>?
     var Dyms:Array<HomeDymModal>?
     
     @IBOutlet weak var onliEwusersView: UICollectionView!
@@ -106,9 +106,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet weak var senconDymView: UICollectionView!
     
     @IBAction func pubAdunMkiki(_ sender: Any) {
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pnafgtepsw/tRxeqlqezafsxeeDdyknyaamhivcs/simnidvecxo?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pnafgtepsw/tRxeqlqezafsxeeDdyknyaamhivcs/simnidvecxo?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ftyopkoennv=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&pazphpjIjDc=") +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ftyopkoennv=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&pazphpjIjDc=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -147,16 +147,16 @@ extension DBNElauioAmoeDar{
     func featureExtraction() {
         //查询用户列表
         let parameters: Parameters = [
-            "echoCancellation": FrealNetworking.shared.appId
+            "echoCancellation": DBNSeddingTrkop.Judbei.app_qiucklyId
         ]
         
         
         HUD.show(.progress)
-        FrealNetworking.shared.request(
+        DBNSeddingTrkop.Judbei.soluteTogeeting(
             "/wfwxcqsotz/nkqfxs",
-            method: .post,
-            parameters: parameters,
-            isLogin: true) { data in
+            yun_methui: .post,
+            adting: parameters,
+            ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
                       let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
@@ -168,11 +168,11 @@ extension DBNElauioAmoeDar{
                 }
                 
                 self.usermodels = users.map { dix in
-                    User.init(dic: dix)
+                    DBHUs_er.init(dic: dix)
                 }
                 self.onliEwusersView.reloadData()
 
-            } failure: { AFError in
+            } fai_DBNlure: { AFError in
                 HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
             }
     }
@@ -182,17 +182,17 @@ extension DBNElauioAmoeDar{
     func backgroundNoiseCancellation() {
         //查询动态列表
         let parameters: Parameters = [
-            "echoCancellation": FrealNetworking.shared.appId,
+            "echoCancellation": DBNSeddingTrkop.Judbei.app_qiucklyId,
             "structuralAnalysis":1,
             "lightingOptimization":10,
             
         ]
         
-        FrealNetworking.shared.request(
+        DBNSeddingTrkop.Judbei.soluteTogeeting(
             "/bugugeigajz/hljordzhvihcvpw",
-            method: .post,
-            parameters: parameters,
-            isLogin: true) { data in
+            yun_methui: .post,
+            adting: parameters,
+            ikolLoodergin: true) { data in
                 
                 guard let response = data as? Dictionary<String,Any> ,
                       let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
@@ -211,7 +211,7 @@ extension DBNElauioAmoeDar{
                 })
                 self.senconDymView.reloadData()
 
-            } failure: { AFError in
+            } fai_DBNlure: { AFError in
                 HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
             }
     }

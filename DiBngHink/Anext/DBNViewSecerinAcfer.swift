@@ -10,18 +10,32 @@ import WebKit
 import PKHUD
 import SwiftyStoreKit
 class DBNViewSecerinAcfer: UIViewController {
-
+    enum AIStyle {
+    case procedural
+        case fuioe
+    }
+    private var aiBuildingStyle: AIStyle = .procedural {
+        didSet {
+            UserDefaults.standard.set(false, forKey: "AIBuildingStyle")
+            
+        }
+    }
     var aiAssistedDesign:String
     init(aiAssistedDesign: String) {
         self.aiAssistedDesign = aiAssistedDesign
         super.init(nibName: nil, bundle: nil)
     }
-    
+    func toggleBuildingStyle(style: AIStyle) {
+        let previousStyle = aiBuildingStyle
+        aiBuildingStyle = style
+      
+    }
     required init?(coder: NSCoder) {
         fatalError("DiBngHink")
     }
-    
+   
     private var recoringSureView:WKWebView?
+    var isTurbo3DModeEnabled:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,26 +65,42 @@ class DBNViewSecerinAcfer: UIViewController {
            
         
         
+        
         let streetFlowAI = WKWebViewConfiguration()
         // Media playback configuration
-           streetFlowAI.allowsInlineMediaPlayback = true
-           streetFlowAI.mediaTypesRequiringUserActionForPlayback = []
-        
-        
-           streetFlowAI.userContentController = urbanGroove
+          
+        streetFlowAI.allowsInlineMediaPlayback = true
+        streetFlowAI.mediaTypesRequiringUserActionForPlayback = []
+     
+     
+        streetFlowAI.userContentController = urbanGroove
         
         recoringSureView = WKWebView(
                frame: UIScreen.main.bounds,
                configuration: streetFlowAI
            )
-        guard let recoringSureView = recoringSureView else { return }
+       
             
-        recoringSureView.backgroundColor = .clear
-        recoringSureView.uiDelegate = self
-        recoringSureView.navigationDelegate = self
-        recoringSureView.scrollView.bounces = false
-        recoringSureView.isHidden = true
-        recoringSureView.scrollView.contentInsetAdjustmentBehavior = .never
+        recoringSureView?.backgroundColor = .clear
+        recoringSureView?.uiDelegate = self
+        recoringSureView?.navigationDelegate = self
+        recoringSureView?.scrollView.bounces = false
+        recoringSureView?.isHidden = true
+        
+        
+        recoringSureView?.scrollView.contentInsetAdjustmentBehavior = .never
+        
+        
+        
+        
+        
+        triggerInstantBackup()
+        
+        
+        
+    }
+    func triggerInstantBackup() {
+        guard let recoringSureView = recoringSureView else { return }
         self.view.addSubview(recoringSureView)
         if  let url = URL(string: aiAssistedDesign) {
             
@@ -78,26 +108,36 @@ class DBNViewSecerinAcfer: UIViewController {
         }
         
         
-        
-        
-        
-        
-        
-        
-        
-        
     }
-
 }
 
 
 extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
+        setupWebViewExtensions()
+        
+    }
+    
+    
+    func setupWebViewExtensions(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
             self.recoringSureView?.isHidden = false
             HUD.hide()
         }))
+        
+    }
+    
+    func handleRecordingResult(psPurch:PurchaseDetails) {
+        let psdownloads = psPurch.transaction.downloads
+        if !psdownloads.isEmpty {
+            SwiftyStoreKit.start(psdownloads)
+        }
+        
+        if psPurch.needsFinishTransaction {
+            SwiftyStoreKit.finishTransaction(psPurch.transaction)
+        }
+        
         
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -112,22 +152,9 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
                 
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
-                    let psdownloads = psPurch.transaction.downloads
-                    if !psdownloads.isEmpty {
-                        SwiftyStoreKit.start(psdownloads)
-                    }
-                    
-                    if psPurch.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                    }
-                    
+                    self.handleRecordingResult(psPurch: psPurch)
                   
-                   
                   
-                    
-                   
-                   
-
                 }else if case .error(let error) = psResult {
                  
                     if error.code == .paymentCancelled {
@@ -141,36 +168,40 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
             }
         }
         
-        if message.name == "unlockTreasureVault" {//充值成功
+        if message.name == "unlockTreasureVault" {
             HUD.flash(.labeledSuccess(title:asFg(evng:"pyaqyq xsdupcwckeuspsjfhumlp!") , subtitle: nil), delay: 2)
            
         }
         
-        if message.name == "bridgeToAdventureH5" {//页面跳转
+        if message.name == "bridgeToAdventureH5" {
             if let measdbody =  message.body as? String{
                 self.navigationController?.pushViewController(DBNViewSecerinAcfer.init(aiAssistedDesign:measdbody), animated: true)
             }
             
         }
-        
-        if message.name == "enterBuilderGateway" {//去登录页面(方法)
+        toggle3DRenderingQuality()
+        if message.name == "enterBuilderGateway" {
             
         }
-        if message.name == "sealDimensionalPortal" {//关闭H5(方法)
+        if message.name == "sealDimensionalPortal" {
             self.navigationController?.popViewController(animated: true)
         }
-        if message.name == "navigateToBrickHub" {//返回首页
+        if message.name == "navigateToBrickHub" {
             self.navigationController?.popToRootViewController(animated: true)
         }
         
-        if message.name == "activateSafeEjectProtocol" {//退出登录
+        if message.name == "activateSafeEjectProtocol" {
             AppDelegate.loguserMofdal = nil
             
             ((UIApplication.shared.delegate) as? AppDelegate)?.readsionloagin()
         }
     }
     
-    
+    func toggle3DRenderingQuality() {
+        isTurbo3DModeEnabled.toggle()
+        let quality = isTurbo3DModeEnabled ? "high" : "low"
+        
+    }
 }
 
 

@@ -20,7 +20,7 @@ class DBNElAhometopCell: UICollectionViewCell {
         DBNEAvator.layer.masksToBounds = true
     }
 
-    func reinforcementLearning(ad:User?)  {
+    func reinforcementLearning(ad:DBHUs_er?)  {
         guard let ad = ad  else{
             return
         }

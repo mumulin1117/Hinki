@@ -91,7 +91,7 @@ class HomeDymModal {
 
 //MARK: - User
 
-class User {
+class DBHUs_er {
     
     //登陆user
     var objectTracking:String?//"userName"
@@ -153,63 +153,3 @@ class User {
     }
 }
 
-
-
-//MARK: - EchoModel
-
-class EchoModel: Codable {
-    var streetVibe: [StreetVibe]?
-    
-    // 如果需要支持 MJExtension 的类似功能，可以添加自定义 CodingKeys
-    private enum CodingKeys: String, CodingKey {
-        case streetVibe
-    }
-    
-    init(streetVibe: [StreetVibe]? = nil) {
-        self.streetVibe = streetVibe
-    }
-}
-
-class StreetVibe: Codable {
-    var synthBusking: String?
-    var motionCaptureDance: String?
-    var digitalImprov: String?
-    var streetCalligraphy: String?
-    var lightPainting: String?
-    
-    init(synthBusking: String? = nil,
-         motionCaptureDance: String? = nil,
-         digitalImprov: String? = nil,
-         streetCalligraphy: String? = nil,
-         lightPainting: String? = nil) {
-        self.synthBusking = synthBusking
-        self.motionCaptureDance = motionCaptureDance
-        self.digitalImprov = digitalImprov
-        self.streetCalligraphy = streetCalligraphy
-        self.lightPainting = lightPainting
-    }
-}
-
-// 使用示例
-extension EchoModel {
-    static func fromJSON(_ jsonData: Data) -> EchoModel? {
-        let decoder = JSONDecoder()
-        do {
-            return try decoder.decode(EchoModel.self, from: jsonData)
-        } catch {
-            print("JSON 解码错误: \(error)")
-            return nil
-        }
-    }
-    
-    func toJSON() -> Data? {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        do {
-            return try encoder.encode(self)
-        } catch {
-            print("JSON 编码错误: \(error)")
-            return nil
-        }
-    }
-}

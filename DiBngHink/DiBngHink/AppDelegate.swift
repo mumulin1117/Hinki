@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 @main
 
 
@@ -16,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         get{
             if let usedloging = UserDefaults.standard.object(forKey: "loginUserDBN") as? [String:String] {
-                return User.init(dic: usedloging)
+                return User.init(dic: usedloging,isfromLocal: true)
             }
             return nil
         }set{
             if let newvakf = newValue {
                 
                 UserDefaults.standard.set(newvakf.modoalTRansforDic(), forKey: "loginUserDBN")
+            }else{
+                UserDefaults.standard.set(nil, forKey: "loginUserDBN")
             }
             
         }
@@ -35,18 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        
-        
-        if AppDelegate.loguserMofdal != nil {
-            window?.rootViewController = DBNAsFore.init()
-        }else{
-            let clioke = UINavigationController.init(rootViewController: DBNAsFoeinrLogin.init())
-            clioke.navigationBar.isHidden = true
-            
-            window?.rootViewController = clioke
-        }
+        // 全局配置（秒）
+        SDImageCache.shared.config.maxDiskAge = 60 * 60 * 24 * 7 // 7天
+     
        
-        
+       
+        readsionloagin()
         
         
         
@@ -56,5 +53,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    func readsionloagin()  {
+        if AppDelegate.loguserMofdal != nil {
+            window?.rootViewController = DBNAsFore.init()
+        }else{
+            let clioke = UINavigationController.init(rootViewController: DBNAsFoeinrLogin.init())
+            clioke.navigationBar.isHidden = true
+            
+            window?.rootViewController = clioke
+        }
+       
+    }
 }
 

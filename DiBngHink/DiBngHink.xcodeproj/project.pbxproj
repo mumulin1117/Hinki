@@ -221,6 +221,7 @@
 				INFOPLIST_FILE = DiBngHink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Hinki ";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Hinki need access to your camera to capture photos/videos for sharing creative builds, enabling video calls with community members, and creating dynamic content posts.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Hinki needs access to your location to use iCloud's location feature.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required for voice communication during audio calls and video chats with other community members. Your audio will only be transmitted during active calls.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is required to upload images and videos for your posts and to update your profile picture. Your media will only be used for sharing within the app community.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -259,6 +260,7 @@
 				INFOPLIST_FILE = DiBngHink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Hinki ";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Hinki need access to your camera to capture photos/videos for sharing creative builds, enabling video calls with community members, and creating dynamic content posts.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Hinki needs access to your location to use iCloud's location feature.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required for voice communication during audio calls and video chats with other community members. Your audio will only be transmitted during active calls.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is required to upload images and videos for your posts and to update your profile picture. Your media will only be used for sharing within the app community.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

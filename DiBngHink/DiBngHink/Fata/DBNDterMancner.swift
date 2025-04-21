@@ -42,6 +42,12 @@ final class FrealNetworking {
      var appBaseUrl: String {
         return "http://www.rainbow4567.xyz/backone"
     }
+    
+    var appBaseUrlAVoutWEB: String {
+       return "http://www.rainbow4567.xyz/#"
+   }
+    
+    
     // MARK: 核心请求方法
     func request(
            _ path: String,

@@ -15,6 +15,14 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    @IBAction func areNsjiu(_ sender: Any) {
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/releaseVideos/index?"
+        
+        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         0
@@ -32,12 +40,37 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         let hinki = collectionView.dequeueReusableCell(withReuseIdentifier: "DBNElCheiViweoopCell", for: indexPath) as!
         DBNElCheiViweoopCell
         hinki.reinforcementLearning(ad: self.Dyms?[indexPath.row])
-       
+        hinki.tousercebterPage.tag = indexPath.row
+        hinki.tousercebterPage.addTarget(self, action: #selector(LikaingnJusba(sdui:)), for: .touchUpInside)
+        
+        
+        
+        hinki.nowinJusba.tag = indexPath.row
+        hinki.nowinJusba.addTarget(self, action: #selector(LikaingnJusba(sdui:)), for: .touchUpInside)
+        
+  
         return hinki
     }
-    
+    @objc func LikaingnJusba(sdui:UIButton)  {
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "/pages/Report/index?"
+        
+        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
+        let dynamicId = self.Dyms?[indexPath.row].constraintSolver ?? ""
+        
+        //动态详情
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/VideoDetails/index?dynamicId=" + dynamicId
+        
+        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     var Dyms:Array<HomeDymModal>?
@@ -82,8 +115,7 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
                     HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
                     return
                 }
-                
-                print(data)
+          
                 
                 self.Dyms = dyms.map { dix in
                     HomeDymModal.init(dic: dix)

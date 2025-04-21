@@ -18,6 +18,12 @@ class DBNElBoardtopCell: UICollectionViewCell {
     
     @IBOutlet weak var DBNEIcreateime: UILabel!
     
+    @IBOutlet weak var nowinJusba: UIButton!
+    
+    
+    @IBOutlet weak var Selesslike: UIButton!
+    
+    
     func reinforcementLearning(ad:HomeDymModal?)  {
         guard let ad = ad  else{
             return
@@ -27,12 +33,7 @@ class DBNElBoardtopCell: UICollectionViewCell {
         DBNEContenpost.text = ad.animationSequencing
         
         
-        let options: SDWebImageOptions = [
-            .scaleDownLargeImages, // Critical for memory-heavy block textures
-            .retryFailed,
-            .queryMemoryData, // Prioritize RAM cache for real-time rendering
-            .fromLoaderOnly // Force network load for updated blueprints
-        ]
+       
         let transformer = SDImageResizingTransformer(
             size: CGSize(width: 320, height: 320),
             scaleMode: .aspectFill
@@ -41,17 +42,17 @@ class DBNElBoardtopCell: UICollectionViewCell {
         // Apply to image loads
         if let uri = ad.particleEffects {
             DBNEAvator.sd_setImage(with: URL(string:uri ),
-                                   placeholderImage: UIImage(named: "loshangego"),
-                                 options: options,
+                                   placeholderImage: UIImage(named: "avarut-headportrait"),
+                                 options: .continueInBackground,
                                  context: [.imageTransformer: transformer])
         }
         
         
         if let uri = ad.rayTracing?.first {
             DBNDymPic.sd_setImage(with: URL(string:uri ),
-                                   placeholderImage: UIImage(named: "loshangego"),
-                                 options: options,
-                                 context: [.imageTransformer: transformer])
+                                  placeholderImage: nil,
+                                 options: .continueInBackground,
+                                 context: [.imageTransformer: transformer,.storeCacheType : SDImageCacheType.memory.rawValue])
         }
         
         

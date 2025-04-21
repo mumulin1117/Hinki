@@ -55,7 +55,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7m-gZ-7Kx">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7m-gZ-7Kx">
                         <rect key="frame" x="275" y="17" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="F7x-Bv-wWE"/>
@@ -107,6 +107,8 @@
                 <outlet property="DBNEContenpost" destination="J6g-32-c62" id="TE6-1p-uCr"/>
                 <outlet property="DBNEIanme" destination="Y2e-Ig-cY9" id="Fn3-x9-r4C"/>
                 <outlet property="DBNEIcreateime" destination="bPH-Qe-3ED" id="QDg-Wc-USk"/>
+                <outlet property="Selesslike" destination="BlE-tM-b81" id="YHs-eU-KIy"/>
+                <outlet property="nowinJusba" destination="u7m-gZ-7Kx" id="2hB-Uu-YDv"/>
             </connections>
             <point key="canvasLocation" x="263.35877862595419" y="125.35211267605635"/>
         </collectionViewCell>

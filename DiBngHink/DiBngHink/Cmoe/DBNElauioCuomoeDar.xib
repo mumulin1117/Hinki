@@ -46,11 +46,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="259" height="67"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" backgroundImage="BrickTalk AIHUaid"/>
+                            <connections>
+                                <action selector="buildmateAio:" destination="-1" eventType="touchUpInside" id="8lP-5t-gqU"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGC-j0-4UL">
                             <rect key="frame" x="0.0" y="77" width="259" height="65"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" backgroundImage="brickAI-ok"/>
+                            <connections>
+                                <action selector="vricaTalkAij:" destination="-1" eventType="touchUpInside" id="wgA-3N-u72"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

@@ -71,7 +71,7 @@ class HomeDymModal {
     init(dic:Dictionary<String,Any>?) {
         self.shaderCustomization = dic?["shaderCustomization"] as? String
         
-        self.constraintSolver = dic?["constraintSolver"]  as? String
+        self.constraintSolver = "\(dic?["constraintSolver"]  as? Int ?? 0)"
         self.meshDeformation = dic?["meshDeformation"]  as? String
         self.particleEffects = dic?["particleEffects"] as? String
         
@@ -109,21 +109,38 @@ class User {
     
     var subscriptionModel:String?//"userFans"
     var virtualCurrency:String?//"userFriends"
-    var userAttention:String?//"lootBoxMechanics"
+    var lootBoxMechanics:String?//"lootBoxMechanics"
     
     
     
 
-    init(dic:Dictionary<String,Any>?) {
+    init(dic:Dictionary<String,Any>?,isfromLocal:Bool = false) {
         self.machineLearning = dic?["machineLearning"] as? String
+        if isfromLocal {
+            self.poseEstimation =  dic?["poseEstimation"] as? String
+        }else{
+            self.poseEstimation =  "\(dic?["poseEstimation"] as? Int ?? 0)"
+        }
         self.sceneUnderstanding = dic?["sceneUnderstanding"]  as? String
-        self.poseEstimation = dic?["poseEstimation"]  as? String
+        
         self.objectTracking = dic?["objectTracking"] as? String
         
         ///
-        self.brickAssembly = dic?["brickAssembly"]  as? String
+        self.brickAssembly = "\(dic?["brickAssembly"] as? Int ?? 0)"
         self.creativeCollaboration = dic?["creativeCollaboration"]  as? String
         self.modularDesign = dic?["modularDesign"] as? String
+        
+        //
+        
+        self.achievementSystem = "\(dic?["achievementSystem"] as? Int ?? 0)"
+        self.skillBadges = dic?["skillBadges"]  as? String
+        self.leaderboardRanking = dic?["leaderboardRanking"] as? String
+        self.subscriptionModel = "\(dic?["subscriptionModel"] as? Int ?? 0)"
+        self.virtualCurrency = "\(dic?["virtualCurrency"] as? Int ?? 0)"
+        self.lootBoxMechanics = "\(dic?["lootBoxMechanics"] as? Int ?? 0)"
+       
+        
+       
     }
     
     func modoalTRansforDic() -> Dictionary<String,String> {

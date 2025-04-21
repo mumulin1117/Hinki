@@ -25,11 +25,18 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backgroundNoiseCancellation()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backgroundNoiseCancellation()
+       
         
         senconDymView.delegate = self
         senconDymView.dataSource = self
@@ -46,6 +53,30 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     
     private var measgList:Array<CDBMeaslistModal>?
     
+    
+    @IBAction func buildmateAio(_ sender: Any) {
+//        let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
+        
+        
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/screenplay/index/?"
+        
+        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func vricaTalkAij(_ sender: Any) {
+       
+       
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/CreateRole/index/?"
+        
+        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
     func backgroundNoiseCancellation() {
@@ -70,8 +101,7 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
                     HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
                     return
                 }
-                
-                print(data)
+           
                 
                 self.measgList = measgs.map { dix in
                     CDBMeaslistModal.init(dic: dix)

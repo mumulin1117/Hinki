@@ -38,6 +38,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" backgroundImage="postrwipt"/>
+                    <connections>
+                        <action selector="pubAdunMkiki:" destination="-1" eventType="touchUpInside" id="wjG-1w-d8h"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hinkitieuo" translatesAutoresizingMaskIntoConstraints="NO" id="IPK-Us-vwi">
                     <rect key="frame" x="14" y="59" width="112" height="35"/>

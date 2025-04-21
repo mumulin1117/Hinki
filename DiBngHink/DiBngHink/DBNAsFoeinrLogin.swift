@@ -22,13 +22,13 @@ class DBNAsFoeinrLogin: UIViewController {
     
     @IBOutlet weak var fluidDynamics: UILabel!
     
-    var paepmam:UIColor?
+    static var paepmam:UIColor?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if paepmam == nil {
+        if DBNAsFoeinrLogin.paepmam == nil {
             octreeStructure()
-            paepmam = .white
+            DBNAsFoeinrLogin.paepmam = .white
         }
         boeinmgPick.isSelected = UserDefaults.standard.bool(forKey: "haiagerren")
     }

@@ -2,7 +2,7 @@
 //  DBNAsFore.swift
 //  DiBngHink
 //
-//  Created by mumu on 2025/4/17.
+//  Created by DiBngHink on 2025/4/17.
 //
 
 import UIKit
@@ -56,7 +56,7 @@ class DBNAsFore: UITabBarController {
             
             item.1.tabBarItem.image = UIImage.init(named: item.0)?.withRenderingMode(.alwaysOriginal)
             
-            let selimname = item.0 + "_sel"
+            let selimname = item.0 + self.asFg(evng:"_nsyeul")
             
             item.1.tabBarItem.selectedImage = UIImage.init(named:selimname )?.withRenderingMode(.alwaysOriginal)
             chilesdList.append(navi)

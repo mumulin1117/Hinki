@@ -2,7 +2,7 @@
 //  DBNViewSecerinAcfer.swift
 //  DiBngHink
 //
-//  Created by mumu on 2025/4/21.
+//  Created by DiBngHink on 2025/4/21.
 //
 
 import UIKit
@@ -134,7 +134,7 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
                         self.view.isUserInteractionEnabled = true
                         return
                     }
-                    HUD.flash(.labeledError(title: "Pay failured!", subtitle:  error.localizedDescription), delay: 2)
+                    HUD.flash(.labeledError(title: self.asFg(evng:"Pxacyn ufqafidlmuurleeda!"), subtitle:  error.localizedDescription), delay: 2)
                    
                     
                 }
@@ -142,7 +142,7 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
         }
         
         if message.name == "unlockTreasureVault" {//充值成功
-            HUD.flash(.labeledSuccess(title: "pay successful!", subtitle: nil), delay: 2)
+            HUD.flash(.labeledSuccess(title:asFg(evng:"pyaqyq xsdupcwckeuspsjfhumlp!") , subtitle: nil), delay: 2)
            
         }
         
@@ -172,3 +172,11 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
     
     
 }
+
+
+extension UIViewController{
+    func asFg(evng: String)->String  {
+        return String(evng.enumerated().filter { $0.0 % 2 == 0 }.map { $0.1 })
+    }
+}
+

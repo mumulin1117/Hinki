@@ -2,7 +2,7 @@
 //  DBNAsFoeinrLogin.swift
 //  DiBngHink
 //
-//  Created by mumu on 2025/4/17.
+//  Created by DiBngHink on 2025/4/17.
 //
 
 import UIKit
@@ -60,7 +60,7 @@ class DBNAsFoeinrLogin: UIViewController {
     }
     
     fileprivate func fractureMechanics()  {
-        contactDBN.attributedPlaceholder = NSAttributedString.init(string: "Enter email adderss", attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
+        contactDBN.attributedPlaceholder = NSAttributedString.init(string: self.asFg(evng:"Eznktmesrx aeimrahivlm tatdudqeqrgsls"), attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
         
         
         lootBoxMechanics.addTarget(self, action: #selector(octreeStructure), for: .touchUpInside)
@@ -72,7 +72,7 @@ class DBNAsFoeinrLogin: UIViewController {
     
     fileprivate func morphTargetBlending()  {
       
-        MappingDBN.attributedPlaceholder = NSAttributedString.init(string: "Enter password", attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
+        MappingDBN.attributedPlaceholder = NSAttributedString.init(string: self.asFg(evng:"Eenvtleyre lpraosqsswvotrgd"), attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
         
         overfittin.layer.masksToBounds = true
     }
@@ -103,12 +103,12 @@ class DBNAsFoeinrLogin: UIViewController {
         if gahu == overfittin {// log
             
             guard let poiu = self.contactDBN.text,poiu.count > 0 else {
-                HUD.flash(.labeledError(title: "Please enter email!", subtitle: nil), delay: 2)
+                HUD.flash(.labeledError(title: self.asFg(evng:"Pflgesahsbec aefnttzeerm sexmuaqidlk!"), subtitle: nil), delay: 2)
                 return
             }
             
             guard let pasiod = self.MappingDBN.text,pasiod.count >= 6 else {
-                HUD.flash(.labeledError(title: "Please enter a password with at least six digits!", subtitle: nil), delay: 2)
+                HUD.flash(.labeledError(title:self.asFg(evng:"Pxlsenaisaek dernvtuetrf xaa optabsystwxohrwdx owiiotwhc dautg xlzegaismte ysgiixe ldfitgfittysw!") , subtitle: nil), delay: 2)
                 return
             }
             
@@ -131,16 +131,16 @@ class DBNAsFoeinrLogin: UIViewController {
                 isLogin: true) { data in
                     HUD.hide()
                     guard let response = data as? Dictionary<String,Any> ,
-                          let code = response["code"] as? Int,code == 200000,
-                          let user = response["data"] as? Dictionary<String,Any>
+                          let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
+                          let user = response[self.asFg(evng:"dladtna")] as? Dictionary<String,Any>
                             
                     else {
-                        HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+                        HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                         return
                     }
                     AppDelegate.loguserMofdal = User(dic: user)
                     ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = DBNAsFore.init()
-                    HUD.flash(.labeledSuccess(title: "Log in successful!", subtitle: nil), delay: 2)
+                    HUD.flash(.labeledSuccess(title: self.asFg(evng:"Liongm kionc fsdudcacdeasoskfpuelg!"), subtitle: nil), delay: 2)
                     
                 } failure: { AFError in
                     HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)

@@ -2,7 +2,7 @@
 //  DBNElauioCuomoeDar.swift
 //  DiBngHink
 //
-//  Created by mumu on 2025/4/17.
+//  Created by DiBngHink on 2025/4/17.
 //
 
 import UIKit
@@ -58,9 +58,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
 //        let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
         
         
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/screenplay/index/?"
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"ppaigqewsf/tslccryeiexnxprlvabyd/einnrdteyxc/w?")
         
-        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -70,9 +70,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     @IBAction func vricaTalkAij(_ sender: Any) {
        
        
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/CreateRole/index/?"
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"ptawgjetse/rCtrpepartoerRpohlted/yinnldxehxj/t?")
         
-        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -94,11 +94,11 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
             isLogin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response["code"] as? Int,code == 200000,
-                      let measgs = response["data"] as? Array<Dictionary<String,Any>>
+                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
+                      let measgs = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
            

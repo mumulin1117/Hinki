@@ -2,7 +2,7 @@
 //  DBNElauioDwuomoeDar.swift
 //  DiBngHink
 //
-//  Created by mumu on 2025/4/17.
+//  Created by DiBngHink on 2025/4/17.
 //
 
 import UIKit
@@ -32,9 +32,9 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     @IBOutlet weak var Estimation: UILabel!//friend
     
     @IBAction func userReputation(_ sender: UIButton) {//site
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/Setting/index?"
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"poawgpeusb/nSiertstmitnjgh/piansdkemxy?")
         
-        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -43,9 +43,9 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     
     
     @IBAction func ambient(_ sender: UIButton) {//edit
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/EditData/index?"
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pqakgiecst/vEwdxihtqDsabtyao/liinsdfexxj?")
         
-        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -53,36 +53,36 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     
     @IBAction func userLiastForbuy(_ sender: UIButton) {
         if sender.tag == 10 {
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/attention/index?type=1"
+            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pqahgveusv/daztytneknatlieoonq/niqnqdwenxo?ityywpgea=a1")
             
-            forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if sender.tag == 20 {
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/attention/index?type=3"
+            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x3")
             
-            forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if sender.tag == 30 {
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/attention/index?type=2"
+            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x2")
             
-            forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         if sender.tag == 40 {//blance
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/VoucherCenter/index?"
+            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"poanghemsh/cVpoautcohaedrgCuegnctlebrc/himnidieyxs?")
             
-            forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (FrealNetworking.shared.appId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -121,11 +121,11 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
             isLogin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response["code"] as? Int,code == 200000,
-                      let measgs = response["data"] as? Dictionary<String,Any>
+                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
+                      let measgs = response[self.asFg(evng:"dladtna")] as? Dictionary<String,Any>
                         
                 else {
-                    HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
                 
@@ -149,11 +149,11 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
             isLogin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response["code"] as? Int,code == 200000,
-                      let measgs = response["data"] as? Array<Any>
+                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
+                      let measgs = response[self.asFg(evng:"dladtna")] as? Array<Any>
                         
                 else {
-//                    HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+//                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
                 if measgs.count == 0 {
@@ -175,7 +175,7 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
        
      
         
-        DBNEIanme.text = ad.skillBadges ?? "No name"
+        DBNEIanme.text = ad.skillBadges ?? self.asFg(evng:"Nloz cnbavmfe")
         Mechanics.text = ad.subscriptionModel ?? "0"
         aBTesting.text = ad.lootBoxMechanics  ?? "0"
         Estimation.text = ad.virtualCurrency  ?? "0"

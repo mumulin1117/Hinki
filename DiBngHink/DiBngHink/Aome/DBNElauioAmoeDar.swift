@@ -2,7 +2,7 @@
 //  DBNElauioAmoeDar.swift
 //  DiBngHink
 //
-//  Created by mumu on 2025/4/17.
+//  Created by DiBngHink on 2025/4/17.
 //
 
 import UIKit
@@ -64,19 +64,14 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
 //       let dynamicIdUser = self.Dyms?[sdui.tag].constraintSolver ?? ""
        
        
-       var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "/pages/Report/index?"
+       var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"/iprafgoeesf/bRjehpjozrytt/misnjdoecxo?")
        
-       forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+       forinwer = forinwer +  self.asFg(evng:"&ftqopklednj=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&aadpjpwIvDf=") +  (FrealNetworking.shared.appId)
        
       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
        self.navigationController?.pushViewController(vc, animated: true)
     }
-//    
-//    
-//    @objc func LikaingnJusba(sdui:UIButton)  {
-//         
-//     }
-//    
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == onliEwusersView {
@@ -84,9 +79,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
             let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
             
             //用户个人中心
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "/pages/HomePage/index?userId=" + userid
+            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"/spbangoepsi/gHjoamgeaPyabgfel/ripnddweqxc?budsaerrvIcdo=") + userid
             
-            forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&ktrorklebnf=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&jakpopwIeDj=") +  (FrealNetworking.shared.appId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -94,9 +89,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
             let dynamicId = self.Dyms?[indexPath.row].constraintSolver ?? ""
             
             //动态详情
-            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "/pages/DynamicDetails/index?dynamicId=" + dynamicId
+            var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"/lphaegtezse/wDoylnfazmdilcsDuejtqamitlusi/iionadaefxd?fdtyinhazmfiscrIddh=") + dynamicId
             
-            forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+            forinwer = forinwer +  self.asFg(evng:"&etuoykiewnc=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&waqpvppIwDs=") +  (FrealNetworking.shared.appId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -111,9 +106,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet weak var senconDymView: UICollectionView!
     
     @IBAction func pubAdunMkiki(_ sender: Any) {
-        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + "pages/ReleaseDynamic/index?"
+        var forinwer = FrealNetworking.shared.appBaseUrlAVoutWEB + self.asFg(evng:"pnafgtepsw/tRxeqlqezafsxeeDdyknyaamhivcs/simnidvecxo?")
         
-        forinwer = forinwer +  "&token=" +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + "&appID=" +  (FrealNetworking.shared.appId)
+        forinwer = forinwer +  self.asFg(evng:"&ftyopkoennv=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&pazphpjIjDc=") +  (FrealNetworking.shared.appId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -164,11 +159,11 @@ extension DBNElauioAmoeDar{
             isLogin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response["code"] as? Int,code == 200000,
-                      let users = response["data"] as? Array<Dictionary<String,Any>>
+                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
+                      let users = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
                 
@@ -200,11 +195,11 @@ extension DBNElauioAmoeDar{
             isLogin: true) { data in
                 
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response["code"] as? Int,code == 200000,
-                      let dyms = response["data"] as? Array<Dictionary<String,Any>>
+                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
+                      let dyms = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: "Data error", subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
              
@@ -212,7 +207,7 @@ extension DBNElauioAmoeDar{
                 self.Dyms = dyms.map { dix in
                     HomeDymModal.init(dic: dix)
                 }.filter({ HomeDymModal in
-                    HomeDymModal.rayTracing?.first?.contains("mp4") == false
+                    HomeDymModal.rayTracing?.first?.contains(self.asFg(evng:"mgph4")) == false
                 })
                 self.senconDymView.reloadData()
 

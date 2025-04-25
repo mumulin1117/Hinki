@@ -20,17 +20,17 @@ class SpotlighMeasgCellw: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         self.backgroundColor = .clear
-        DBNEAvator.layer.cornerRadius = 20
+        DBNEAvator.layer.cornerRadius = 30
         DBNEAvator.layer.masksToBounds = true
     }
 
-    func reinforcementLearning(ad:HomeDymModal?)  {
+    func reinforcementLearning(ad:CDBMeaslistModal?)  {
         guard let ad = ad  else{
             return
         }
-        DBNEIanme.text = ad.meshDeformation
+        DBNEIanme.text = ad.achievementSystem
         
-        DBNEContenpost.text = ad.animationSequencing
+        DBNEContenpost.text = ad.eventTriggers
         
      
         let transformer = SDImageResizingTransformer(
@@ -39,7 +39,7 @@ class SpotlighMeasgCellw: UITableViewCell {
         )
 
         // Apply to image loads
-        if let uri = ad.particleEffects {
+        if let uri = ad.skillBadges {
             DBNEAvator.sd_setImage(with: URL(string:uri ),
                                    placeholderImage: UIImage(named: "avarut-headportrait"),
                                  options: .continueInBackground,

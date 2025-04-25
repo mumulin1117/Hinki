@@ -21,12 +21,28 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dbn = tableView.dequeueReusableCell(withIdentifier: "SpotlighMeasgCellw", for: indexPath) as! SpotlighMeasgCellw
+        
+        if let flu = measgList?[indexPath.row] {
+            dbn.reinforcementLearning(ad: flu)
+        }
+       
         return dbn
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        let dynamicId = self.measgList?[indexPath.row].userReputation ?? ""
+        
+        //动态详情
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + "pages/privateChat/index?userId=" + dynamicId
+        
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -87,8 +103,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
             "/qxawynltzgfojz/pzgzwfpk",
             yun_methui: .post,
             adting: [
-                "endToEndEncryption": DBNSeddingTrkop.Judbei.app_qiucklyId,
-                "rateLimiting":AppDelegate.loguserMofdal?.poseEstimation ?? ""
+                "endToEndEncryption": DBNSeddingTrkop.Judbei.app_qiucklyId
+//                ,
+//                "rateLimiting":AppDelegate.loguserMofdal?.poseEstimation ?? ""
                 
             ],
             ikolLoodergin: true) { data in
@@ -104,7 +121,13 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
            
                 
                 self.measgList = measgs.map { dix in
-                    CDBMeaslistModal.init(dic: dix)
+                    if let ONearrar = (dix["contentModeration"] as? Array<[String:Any]>)?.first{
+                        
+                        CDBMeaslistModal.init(dic: ONearrar)
+                    }else{
+                         CDBMeaslistModal.init(dic: [:])
+                    }
+                    
                 }
                 self.senconDymView.reloadData()
                 self.updatrspecularSettings(isdataYou:self.measgList?.count ?? 0 > 0)

@@ -11,12 +11,13 @@ import UIKit
 
 class CDBMeaslistModal {
 
-    var heatmapTracking:String? //sendUserImgUrl
+    var achievementSystem:String? //iser name
     
     var aBTesting:String?//sendUserName
         
     var analyticsDashboard:String?//"sendUserId"
-        
+    var userReputation:String? //receiveUserId
+    
         
     var eventTriggers:String?//"content"
         
@@ -25,11 +26,12 @@ class CDBMeaslistModal {
     
     var leaderboardRanking:String?//title
         
+    var skillBadges:String? //img
     
     
 
     init(dic:Dictionary<String,Any>?) {
-        self.heatmapTracking = dic?["heatmapTracking"] as? String
+        self.achievementSystem = dic?["achievementSystem"] as? String
         
         self.aBTesting = dic?["aBTesting"]  as? String
         self.analyticsDashboard = dic?["analyticsDashboard"]  as? String
@@ -39,7 +41,9 @@ class CDBMeaslistModal {
         
         self.leaderboardRanking = dic?["leaderboardRanking"]  as? String
        
+        self.skillBadges = dic?["skillBadges"]  as? String
         
+        self.userReputation = "\(dic?["userReputation"]  as? Int ?? 0)"
     }
     
     

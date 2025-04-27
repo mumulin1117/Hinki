@@ -113,14 +113,17 @@ class DBNAsFoeinrLogin: UIViewController {
         }
         
         if gahu == overfittin {// log
-            
+            if boeinmgPick.isSelected == false {
+                HUD.flash(.labeledError(title:nil , subtitle: self.asFg(evng:"Pmldeeavsoel crgexaqds fainpdf xahghrtenel h foouhrs iTcenrfmwsh i qajsc gfiiqrwsotg!")), delay: 2)
+                return
+            }
             guard let poiu = self.contactDBN.text,poiu.count > 0 else {
-                HUD.flash(.labeledError(title: self.asFg(evng:"Pflgesahsbec aefnttzeerm sexmuaqidlk!"), subtitle: nil), delay: 2)
+                HUD.flash(.labeledError(title:nil , subtitle: self.asFg(evng:"Pflgesahsbec aefnttzeerm sexmuaqidlk!")), delay: 2)
                 return
             }
             
             guard let pasiod = self.MappingDBN.text,pasiod.count >= 6 else {
-                HUD.flash(.labeledError(title:self.asFg(evng:"Pxlsenaisaek dernvtuetrf xaa optabsystwxohrwdx owiiotwhc dautg xlzegaismte ysgiixe ldfitgfittysw!") , subtitle: nil), delay: 2)
+                HUD.flash(.labeledError(title: nil, subtitle: self.asFg(evng:"Pxlsenaisaek dernvtuetrf xaa optabsystwxohrwdx owiiotwhc dautg xlzegaismte ysgiixe ldfitgfittysw!")), delay: 2)
                 return
             }
             
@@ -152,7 +155,7 @@ class DBNAsFoeinrLogin: UIViewController {
                     }
                     AppDelegate.loguserMofdal = DBHUs_er(dic: user)
                     ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = DBNAsFore.init()
-                    HUD.flash(.labeledSuccess(title: self.asFg(evng:"Liongm kionc fsdudcacdeasoskfpuelg!"), subtitle: nil), delay: 2)
+                    HUD.flash(.labeledSuccess(title: nil, subtitle: self.asFg(evng:"Liongm kionc fsdudcacdeasoskfpuelg!")), delay: 2)
                     
                 } fai_DBNlure: { AFError in
                     HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)

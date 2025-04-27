@@ -133,7 +133,7 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
                
 
             } fai_DBNlure: { AFError in
-                HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)
+                HUD.flash(.labeledError(title: nil, subtitle: AFError.errorDescription), delay: 2)
             }
     }
 

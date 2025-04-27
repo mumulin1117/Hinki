@@ -22,6 +22,12 @@ class DBNAsFoeinrLogin: UIViewController {
     
     @IBOutlet weak var fluidDynamics: UILabel!
     
+    
+    @IBOutlet weak var creatipinLabel: UILabel!
+    
+    @IBOutlet weak var addlLinder: UILabel!
+    
+    
     static var paepmam:UIColor?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +43,10 @@ class DBNAsFoeinrLogin: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        lootBoxMechanics.setTitle(self.asFg(evng:"EtLlUoA"), for: .normal)
         Comabingeyew()
         overfittin.addTarget(self, action: #selector(skinnedMeshes(gahu:)), for: .touchUpInside)
+        creatipinLabel.text = self.asFg(evng:"Ivfi wtehpec hagcnctocuzngtq qdjogepss cnwootk pesxiiysbtw,j gwyen mwxiulkls kajuetooxmlaktoieckaclllhyz hcbrqelactper iiot")
         
     }
 
@@ -46,12 +54,17 @@ class DBNAsFoeinrLogin: UIViewController {
     func Comabingeyew() {
         jointConstraints()
         aerodynamicModeling()
+        
+        addlLinder.text = self.asFg(evng:"Bqyf brlengaiussttekriivnigj,c dywouua faygvrdejeb ttqou ctshceh o<kTgemrmmysp zoifq wUdsdeu>k taknqdn m<vPbrdiqvpaocjyw fPzoqlliqcxyo>j.")
         fractureMechanics()
         morphTargetBlending()
         emergentBehavior()
+        
+        
     }
 
     fileprivate func jointConstraints()  {
+        overfittin.setTitle(self.asFg(evng:"Ldozgc yian"), for: .normal)
         lootBoxMechanics.layer.cornerRadius = 10
         fluidDynamics.isUserInteractionEnabled = true
         fluidDynamics.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(octreeStructure)))
@@ -168,11 +181,7 @@ class DBNAsFoeinrLogin: UIViewController {
               
                 
                 if (astatus ==  .purchased || astatus ==  .restored) {
-//                    let downloads = purchase.transaction.downloads
-//                    if !downloads.isEmpty {
-//                        SwiftyStoreKit.start(downloads)
-//                       
-//                    }
+
                     self.volumetricRendering(purchase:purchase)
                     
                     if purchase.needsFinishTransaction {

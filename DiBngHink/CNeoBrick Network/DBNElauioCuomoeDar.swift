@@ -71,8 +71,7 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     
     
     @IBAction func buildmateAio(_ sender: Any) {
-//        let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
-        
+
         
         var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"ppaigqewsf/tslccryeiexnxprlvabyd/einnrdteyxc/w?")
         

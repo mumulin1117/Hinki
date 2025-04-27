@@ -28,14 +28,7 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        Dyms?.count ?? 0
-    }
-    
+   
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let hinki = collectionView.dequeueReusableCell(withReuseIdentifier: "DBNElCheiViweoopCell", for: indexPath) as!
         DBNElCheiViweoopCell
@@ -60,6 +53,13 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        0
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dynamicId = self.Dyms?[indexPath.row].constraintSolver ?? ""
         
@@ -88,7 +88,9 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         senconDymView.isPagingEnabled = true
         
     }
-    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        Dyms?.count ?? 0
+    }
     
     @IBOutlet weak var senconDymView: UICollectionView!
     

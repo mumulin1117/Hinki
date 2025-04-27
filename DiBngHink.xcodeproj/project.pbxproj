@@ -225,7 +225,7 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required for voice communication during audio calls and video chats with other community members. Your audio will only be transmitted during active calls.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is required to upload images and videos for your posts and to update your profile picture. Your media will only be used for sharing within the app community.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -235,7 +235,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mo.DiBngHink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trensding.kinki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -264,7 +264,7 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required for voice communication during audio calls and video chats with other community members. Your audio will only be transmitted during active calls.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is required to upload images and videos for your posts and to update your profile picture. Your media will only be used for sharing within the app community.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -274,7 +274,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mo.DiBngHink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trensding.kinki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

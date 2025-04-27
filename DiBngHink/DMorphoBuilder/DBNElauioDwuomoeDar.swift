@@ -52,41 +52,37 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     }
     
     @IBAction func userLiastForbuy(_ sender: UIButton) {
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB
+        
         if sender.tag == 10 {
-            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pqahgveusv/daztytneknatlieoonq/niqnqdwenxo?ityywpgea=a1")
+             forinwer = forinwer + self.asFg(evng:"pqahgveusv/daztytneknatlieoonq/niqnqdwenxo?ityywpgea=a1")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
-            
-           let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
-            self.navigationController?.pushViewController(vc, animated: true)
+           
         }
         
         if sender.tag == 20 {
-            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x3")
+            forinwer = forinwer +   self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x3")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
-            
-           let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
-            self.navigationController?.pushViewController(vc, animated: true)
+           
         }
         
         if sender.tag == 30 {
-            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x2")
+            forinwer = forinwer + self.asFg(evng:"pvavgselsd/zadtntjesnetoicocnn/niunbdyesxp?ltcydpkeo=x2")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
-            
-           let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
-            self.navigationController?.pushViewController(vc, animated: true)
+           
         }
         
         if sender.tag == 40 {//blance
-            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"poanghemsh/cVpoautcohaedrgCuegnctlebrc/himnidieyxs?")
+            forinwer = forinwer + self.asFg(evng:"poanghemsh/cVpoautcohaedrgCuegnctlebrc/himnidieyxs?")
             
-            forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
-            
-           let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
-            self.navigationController?.pushViewController(vc, animated: true)
+           
         }
+        
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     

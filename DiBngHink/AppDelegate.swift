@@ -12,7 +12,7 @@ import SDWebImage
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-//当前登陆账户
+
     static var loguserMofdal:DBHUs_er?{
         
         get{

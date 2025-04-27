@@ -20,7 +20,20 @@ class DBNViewSecerinAcfer: UIViewController {
             
         }
     }
-    var aiAssistedDesign:String
+    
+    private var brickProgressBar: UIProgressView = {
+        let progress = UIProgressView(progressViewStyle: .bar)
+        progress.trackTintColor = .systemGray5
+        progress.progressTintColor = UIColor(named: "BrickPrimary")
+        progress.transform = CGAffineTransform(scaleX: 1, y: 2) // 加粗样式
+        progress.layer.cornerRadius = 1.5
+        progress.layer.masksToBounds = true
+        progress.isHidden = true
+        return progress
+        
+    }()
+    
+    private var aiAssistedDesign:String
     init(aiAssistedDesign: String) {
         self.aiAssistedDesign = aiAssistedDesign
         super.init(nibName: nil, bundle: nil)
@@ -40,8 +53,16 @@ class DBNViewSecerinAcfer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         HUD.show(.progress)
+        brickProgressBar.frame = CGRect(
+                   x: 0,
+                   y: navigationController?.navigationBar.frame.maxY ?? 0,
+                   width: view.bounds.width,
+                   height: 3
+               )
+               
+        view.addSubview(brickProgressBar)
         narrowphaseOptimization()
-        
+       
         sceneUnderstanding()
     }
     
@@ -99,6 +120,25 @@ class DBNViewSecerinAcfer: UIViewController {
         
         
     }
+    
+    // 监听进度条更新
+       override func observeValue(forKeyPath keyPath: String?,
+                                of object: Any?,
+                                change: [NSKeyValueChangeKey : Any]?,
+                                context: UnsafeMutableRawPointer?) {
+           if keyPath == "estimatedProgress" {
+               let progress = Float(recoringSureView?.estimatedProgress ?? 0)
+               brickProgressBar.setProgress(progress, animated: true)
+               if progress >= 1.0 {
+                   UIView.animate(withDuration: 0.3) {
+                       self.brickProgressBar.alpha = 0
+                   }
+               } else if brickProgressBar.alpha == 0 {
+                   brickProgressBar.alpha = 1
+               }
+           }
+       }
+    
     func triggerInstantBackup() {
         guard let recoringSureView = recoringSureView else { return }
         self.view.addSubview(recoringSureView)
@@ -181,20 +221,9 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
         }
         toggle3DRenderingQuality()
         if message.name == "enterBuilderGateway" {
-            
+            return
         }
-        if message.name == "sealDimensionalPortal" {
-            self.navigationController?.popViewController(animated: true)
-        }
-        if message.name == "navigateToBrickHub" {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        
-        if message.name == "activateSafeEjectProtocol" {
-            AppDelegate.loguserMofdal = nil
-            
-            ((UIApplication.shared.delegate) as? AppDelegate)?.readsionloagin()
-        }
+        enterObserebViewEnhancements(posttrans:message.name)
     }
     
     func toggle3DRenderingQuality() {
@@ -202,6 +231,22 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
         let quality = isTurbo3DModeEnabled ? "high" : "low"
         
     }
+    
+    func enterObserebViewEnhancements(posttrans:String) {
+       if posttrans == "sealDimensionalPortal" {
+           self.navigationController?.popViewController(animated: true)
+       }
+       if posttrans == "navigateToBrickHub" {
+           self.navigationController?.popToRootViewController(animated: true)
+       }
+       
+       if posttrans == "activateSafeEjectProtocol" {
+           AppDelegate.loguserMofdal = nil
+           
+           ((UIApplication.shared.delegate) as? AppDelegate)?.readsionloagin()
+       }
+       
+   }
 }
 
 

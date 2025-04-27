@@ -7,8 +7,9 @@ target 'DiBngHink' do
 
   # Pods for DiBngHink
 pod 'SnapKit'
-pod "SDWebImage"
+pod 'SDWebImage'
 pod "Alamofire"
-pod "SwiftyStoreKit"
+
+pod 'SwiftyStoreKit'
 pod 'PKHUD'
 end

@@ -19,7 +19,7 @@
                 <outlet property="backgroupMe" destination="lE8-AF-CfM" id="tPm-XU-Hlf"/>
                 <outlet property="meassgetFoimg" destination="vNd-Rs-drE" id="zq2-8q-Cz8"/>
                 <outlet property="meassgetTiopFoimg" destination="WXz-p4-W9y" id="QWN-g0-xVi"/>
-                <outlet property="oauthAuthentication" destination="ZiJ-kg-NyX" id="j1s-JR-YtH"/>
+                <outlet property="oauthAuthentication" destination="1un-dx-YIV" id="SP6-UX-3Ei"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -90,6 +90,8 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
     }
     
     
+    
+    
     @IBOutlet weak var oauthAuthentication: UILabel!//blance
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,7 +127,7 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
                       let measgs = response[self.asFg(evng:"dladtna")] as? Dictionary<String,Any>
                         
                 else {
-                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
+//                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
                 
@@ -150,15 +152,13 @@ class DBNElauioDwuomoeDar: DBNNiaufo {
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
                       let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
-                      let measgs = response[self.asFg(evng:"dladtna")] as? Array<Any>
+                      let measgs = response[self.asFg(evng:"dladtna")] as? Int
                         
                 else {
 //                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
-                if measgs.count == 0 {
-                    self.oauthAuthentication.text = "0"
-                }
+                self.oauthAuthentication.text = "\(measgs)"
                 
                
 

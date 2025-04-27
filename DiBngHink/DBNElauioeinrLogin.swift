@@ -20,12 +20,19 @@ class DBNElauioeinrLogin: UIViewController {
     
     
    
-    
+    private var brickStylePicker: UISegmentedControl = {
+            let items = ["Classic", "Steampunk", "Cyberpunk", "Fantasy"]
+            let control = UISegmentedControl(items: items)
+            control.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "preferredStyle")
+            control.backgroundColor = .secondarySystemBackground
+            return control
+       
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         Comabingeyew()
         overfittin.addTarget(self, action: #selector(octreeStructure(Buiaof:)), for: .touchUpInside)
-        
+        setupBrickStyleSelector()
         boeinmgPick.addTarget(self, action: #selector(octreeStructure(Buiaof:)), for: .touchUpInside)
     }
 
@@ -41,7 +48,24 @@ class DBNElauioeinrLogin: UIViewController {
         overfittin.layer.cornerRadius = 12
        
     }
-    
+    func setupBrickStyleSelector() {
+        guard let footerFrame = overfittin?.frame else { return }
+        
+        brickStylePicker.frame = CGRect(
+            x: footerFrame.minX + 20,
+            y: footerFrame.maxY + 15,
+            width: footerFrame.width - 40,
+            height: 32
+        )
+        brickStylePicker.addTarget(self, action: #selector(styleDidChange), for: .valueChanged)
+        view.addSubview(brickStylePicker)
+        
+        // 视觉增强
+        UIView.animate(withDuration: 0.3) {
+            self.brickStylePicker.alpha = 1
+        }
+        
+    }
     fileprivate func aerodynamicModeling()  {
         overfittin.layer.masksToBounds = true
     }
@@ -53,7 +77,20 @@ class DBNElauioeinrLogin: UIViewController {
         overfittin.layer.cornerRadius = 12
         
     }
-    
+    // 建造风格变更回调
+    @objc private func styleDidChange() {
+        let style = BrickStyle.allCases[brickStylePicker.selectedSegmentIndex]
+        UserDefaults.standard.set(style.rawValue, forKey: "preferredStyle")
+        
+        // 触觉反馈
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+        
+        // 动态背景更新
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve) {
+            self.view.backgroundColor = style.themeColor
+        }
+        
+    }
     
     @IBAction func userDynamicVoList(_ sender: Any) {//term
         
@@ -78,7 +115,19 @@ class DBNElauioeinrLogin: UIViewController {
         
     }
     
-    
+    private enum BrickStyle: Int, CaseIterable {
+        case classic, steampunk, cyberpunk, fantasy
+        
+        var themeColor: UIColor {
+            switch self {
+            case .classic: return .systemBrown
+            case .steampunk: return .systemBlue
+            case .cyberpunk: return .systemCyan
+            case .fantasy: return .systemGray
+            }
+        }
+        
+    }
     //agreen   back   cancel
     @objc func octreeStructure(Buiaof:UIButton)  {
         if Buiaof == overfittin {

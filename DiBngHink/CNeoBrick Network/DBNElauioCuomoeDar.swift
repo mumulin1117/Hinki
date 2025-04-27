@@ -36,7 +36,7 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
         let dynamicId = self.measgList?[indexPath.row].userReputation ?? ""
         
         //动态详情
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + "pages/privateChat/index?userId=" + dynamicId
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng: "pialgaeksy/zpyrligvwaztiepCthoawtc/iixnsdpelxl?gurskedrbIjdh=") + dynamicId
         
         forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         

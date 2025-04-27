@@ -8,23 +8,7 @@
 import UIKit
 import Alamofire
 
-// MARK: - Dictionary 扩展（JSON 美化输出）
-//extension Dictionary {
-//    var jsonPrettyStringEncoded: String? {
-//        guard JSONSerialization.isValidJSONObject(self) else { return nil }
-//        do {
-//            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
-//            return String(data: jsonData, encoding: .utf8)
-//        } catch {
-//            return nil
-//        }
-//    }
-//}
 
-
-
-
-// MARK: - 网络请求工具类
 final class DBNSeddingTrkop {
     static let Judbei = DBNSeddingTrkop()
     private let netDBNManager: Session
@@ -67,9 +51,7 @@ final class DBNSeddingTrkop {
             finalHeaders.add(name: self.asFg(evng:"kkehy"), value: app_qiucklyId)
             finalHeaders.add(name: self.asFg(evng:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
         }
-        
-        
-//           let finalHeaders = processHeaders(tijsul, isLogin: ikolLoodergin)
+
            return netDBNManager.request(
             url,        
             method: yun_methui,
@@ -90,19 +72,7 @@ final class DBNSeddingTrkop {
 
        }
        
-       
-//    private func processHeaders(_ headers: HTTPHeaders?, isLogin: Bool) -> HTTPHeaders {
-//        var finalHeaders = headers ?? HTTPHeaders()
-//        finalHeaders.add(name: self.asFg(evng:"Cgognctqetnftt-jTiyvpfe"), value: self.asFg(evng:"arpfptlliycnahtiiwohnv/ajbsconn"))
-//        
-//        if isLogin {
-//            finalHeaders.add(name: self.asFg(evng:"kkehy"), value: app_qiucklyId)
-//            finalHeaders.add(name: self.asFg(evng:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
-//        }
-//        
-//        return finalHeaders
-//    }
-    
+
     func asFg(evng: String)->String  {
         return String(evng.enumerated().filter { $0.0 % 2 == 0 }.map { $0.1 })
     }

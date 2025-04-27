@@ -25,6 +25,8 @@ class DBNElauioeinrLogin: UIViewController {
         super.viewDidLoad()
         Comabingeyew()
         overfittin.addTarget(self, action: #selector(octreeStructure(Buiaof:)), for: .touchUpInside)
+        
+        boeinmgPick.addTarget(self, action: #selector(octreeStructure(Buiaof:)), for: .touchUpInside)
     }
 
     
@@ -55,9 +57,24 @@ class DBNElauioeinrLogin: UIViewController {
     
     @IBAction func userDynamicVoList(_ sender: Any) {//term
         
+        
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pvaugtewse/mAlgkrueuekmcebnjty/vifnpdjetxd?htnyapyep=f1")
+        
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func socialFeed(_ sender: Any) {//pri
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pvaugtewse/mAlgkrueuekmcebnjty/vifnpdjetxd?htnyapyep=f2")
+        
+        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        
+       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

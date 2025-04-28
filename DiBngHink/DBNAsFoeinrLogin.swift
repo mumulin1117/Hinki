@@ -134,7 +134,7 @@ class DBNAsFoeinrLogin: UIViewController {
             let parameters: Parameters = [
                 "echoCancellation": DBNSeddingTrkop.Judbei.app_qiucklyId,
                 "spinningCube": poiu,
-                "latencyCompensation": poiu
+                "latencyCompensation": pasiod
             ]
 
             // 2. 显示加载指示器

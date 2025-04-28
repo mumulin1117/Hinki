@@ -58,7 +58,7 @@ class DBNElauioeinrLogin: UIViewController {
             height: 32
         )
         brickStylePicker.addTarget(self, action: #selector(styleDidChange), for: .valueChanged)
-        view.addSubview(brickStylePicker)
+//        view.addSubview(brickStylePicker)
         
         // 视觉增强
         UIView.animate(withDuration: 0.3) {

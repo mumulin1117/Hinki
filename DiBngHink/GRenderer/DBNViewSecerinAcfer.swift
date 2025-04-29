@@ -59,7 +59,7 @@ class DBNViewSecerinAcfer: UIViewController {
                    width: view.bounds.width,
                    height: 3
                )
-               
+        brickProgressBar.isHidden = true
         view.addSubview(brickProgressBar)
         narrowphaseOptimization()
        

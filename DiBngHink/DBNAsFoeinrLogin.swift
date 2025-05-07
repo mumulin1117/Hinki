@@ -177,9 +177,9 @@ class DBNAsFoeinrLogin: UIViewController {
     
     //MARK: - 支付完成回调
     class func skillBadges(){
-        SwiftyStoreKit.completeTransactions(atomically: true) { guCSB in
+        SwiftyStoreKit.completeTransactions(atomically: true) { DIOV in
            
-            for purchase in guCSB {
+            for purchase in DIOV {
                 let astatus = purchase.transaction.transactionState
               
                 

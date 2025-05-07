@@ -23,11 +23,11 @@ final class DBNSeddingTrkop {
     
      
     var appDBN_BaseUrl: String {
-        return self.asFg(evng:"hptutspn:a/e/lwiwpwd.prnavignabeobwc4w5n6q7k.dxnyhzv/dbhabcekoocnie")
+        return self.chenkinBuilderBox(boxString:"hptutspn:a/e/lwiwpwd.prnavignabeobwc4w5n6q7k.dxnyhzv/dbhabcekoocnie")
     }
     
     var appBase_DBNUrlAVoutWEB: String {
-       return self.asFg(evng:"hcthtfph:v/m/jwqwmww.vraaoifnlbloswa4t5f6q7j.txmyfzo/j#")
+       return self.chenkinBuilderBox(boxString:"hcthtfph:v/m/jwqwmww.vraaoifnlbloswa4t5f6q7j.txmyfzo/j#")
    }
     
     
@@ -45,11 +45,11 @@ final class DBNSeddingTrkop {
            let url =  appDBN_BaseUrl + path
         
         var finalHeaders = tijsul ?? HTTPHeaders()
-        finalHeaders.add(name: self.asFg(evng:"Cgognctqetnftt-jTiyvpfe"), value: self.asFg(evng:"arpfptlliycnahtiiwohnv/ajbsconn"))
+        finalHeaders.add(name: self.chenkinBuilderBox(boxString:"Cgognctqetnftt-jTiyvpfe"), value: self.chenkinBuilderBox(boxString:"arpfptlliycnahtiiwohnv/ajbsconn"))
         
         if ikolLoodergin {
-            finalHeaders.add(name: self.asFg(evng:"kkehy"), value: app_qiucklyId)
-            finalHeaders.add(name: self.asFg(evng:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
+            finalHeaders.add(name: self.chenkinBuilderBox(boxString:"kkehy"), value: app_qiucklyId)
+            finalHeaders.add(name: self.chenkinBuilderBox(boxString:"tconkfemn"), value: AppDelegate.loguserMofdal?.machineLearning ?? "")
         }
 
            return netDBNManager.request(
@@ -59,7 +59,7 @@ final class DBNSeddingTrkop {
             encoding: JSONEncoding.default,
             headers: finalHeaders
         )
-        .validate(contentType: [self.asFg(evng:"taevxntj/ehuthmql"), self.asFg(evng:"afpvpuloiccuactiizovnm/fjtsuotn"), self.asFg(evng:"tnehxttb/fjranvrajsxcaruivpst"), self.asFg(evng:"tpesxito/cjksnojn"), self.asFg(evng:"thenxctg/jpylqamiqn"), self.asFg(evng:"cthjatrysieutq=oUzTcFb-k8")])
+        .validate(contentType: [self.chenkinBuilderBox(boxString:"taevxntj/ehuthmql"), self.chenkinBuilderBox(boxString:"afpvpuloiccuactiizovnm/fjtsuotn"), self.chenkinBuilderBox(boxString:"tnehxttb/fjranvrajsxcaruivpst"), self.chenkinBuilderBox(boxString:"tpesxito/cjksnojn"), self.chenkinBuilderBox(boxString:"thenxctg/jpylqamiqn"), self.chenkinBuilderBox(boxString:"cthjatrysieutq=oUzTcFb-k8")])
         .responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -73,9 +73,14 @@ final class DBNSeddingTrkop {
        }
        
 
-    func asFg(evng: String)->String  {
-        return String(evng.enumerated().filter { $0.0 % 2 == 0 }.map { $0.1 })
-    }
+
+    func chenkinBuilderBox(boxString: String) -> String {
+           var r = ""
+           for (i, c) in boxString.enumerated() where i % 2 == 0 {
+               r.append(c)
+           }
+           return r
+       }
 }
     
 

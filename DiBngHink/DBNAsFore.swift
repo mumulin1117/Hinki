@@ -106,7 +106,7 @@ class DBNAsFore: UITabBarController {
             
             item.1.tabBarItem.image = UIImage.init(named: item.0)?.withRenderingMode(.alwaysOriginal)
             
-            let selimname = item.0 + self.asFg(evng:"_nsyeul")
+            let selimname = item.0 + self.chenkinBuilderBox(boxString:"_nsyeul")
             
             item.1.tabBarItem.selectedImage = UIImage.init(named:selimname )?.withRenderingMode(.alwaysOriginal)
             chilesdList.append(navi)

@@ -43,10 +43,10 @@ class DBNAsFoeinrLogin: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        lootBoxMechanics.setTitle(self.asFg(evng:"EtLlUoA"), for: .normal)
+        lootBoxMechanics.setTitle(self.chenkinBuilderBox(boxString:"EtLlUoA"), for: .normal)
         Comabingeyew()
         overfittin.addTarget(self, action: #selector(skinnedMeshes(gahu:)), for: .touchUpInside)
-        creatipinLabel.text = self.asFg(evng:"Ivfi wtehpec hagcnctocuzngtq qdjogepss cnwootk pesxiiysbtw,j gwyen mwxiulkls kajuetooxmlaktoieckaclllhyz hcbrqelactper iiot")
+        creatipinLabel.text = self.chenkinBuilderBox(boxString:"Ivfi wtehpec hagcnctocuzngtq qdjogepss cnwootk pesxiiysbtw,j gwyen mwxiulkls kajuetooxmlaktoieckaclllhyz hcbrqelactper iiot")
         
     }
 
@@ -55,7 +55,7 @@ class DBNAsFoeinrLogin: UIViewController {
         jointConstraints()
         aerodynamicModeling()
         
-        addlLinder.text = self.asFg(evng:"Bqyf brlengaiussttekriivnigj,c dywouua faygvrdejeb ttqou ctshceh o<kTgemrmmysp zoifq wUdsdeu>k taknqdn m<vPbrdiqvpaocjyw fPzoqlliqcxyo>j.")
+        addlLinder.text = self.chenkinBuilderBox(boxString:"Bqyf brlengaiussttekriivnigj,c dywouua faygvrdejeb ttqou ctshceh o<kTgemrmmysp zoifq wUdsdeu>k taknqdn m<vPbrdiqvpaocjyw fPzoqlliqcxyo>j.")
         fractureMechanics()
         morphTargetBlending()
         emergentBehavior()
@@ -64,7 +64,7 @@ class DBNAsFoeinrLogin: UIViewController {
     }
 
     fileprivate func jointConstraints()  {
-        overfittin.setTitle(self.asFg(evng:"Ldozgc yian"), for: .normal)
+        overfittin.setTitle(self.chenkinBuilderBox(boxString:"Ldozgc yian"), for: .normal)
         lootBoxMechanics.layer.cornerRadius = 10
         fluidDynamics.isUserInteractionEnabled = true
         fluidDynamics.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(octreeStructure)))
@@ -75,7 +75,7 @@ class DBNAsFoeinrLogin: UIViewController {
     }
     
     fileprivate func fractureMechanics()  {
-        contactDBN.attributedPlaceholder = NSAttributedString.init(string: self.asFg(evng:"Eznktmesrx aeimrahivlm tatdudqeqrgsls"), attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
+        contactDBN.attributedPlaceholder = NSAttributedString.init(string: self.chenkinBuilderBox(boxString:"Eznktmesrx aeimrahivlm tatdudqeqrgsls"), attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
         
         
         lootBoxMechanics.addTarget(self, action: #selector(octreeStructure), for: .touchUpInside)
@@ -87,7 +87,7 @@ class DBNAsFoeinrLogin: UIViewController {
     
     fileprivate func morphTargetBlending()  {
       
-        MappingDBN.attributedPlaceholder = NSAttributedString.init(string: self.asFg(evng:"Eenvtleyre lpraosqsswvotrgd"), attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
+        MappingDBN.attributedPlaceholder = NSAttributedString.init(string: self.chenkinBuilderBox(boxString:"Eenvtleyre lpraosqsswvotrgd"), attributes: [.foregroundColor:UIColor.init(white: 1, alpha: 0.8)])
         
         overfittin.layer.masksToBounds = true
     }
@@ -114,16 +114,16 @@ class DBNAsFoeinrLogin: UIViewController {
         
         if gahu == overfittin {// log
             if boeinmgPick.isSelected == false {
-                HUD.flash(.labeledError(title:nil , subtitle: self.asFg(evng:"Pmldeeavsoel crgexaqds fainpdf xahghrtenel h foouhrs iTcenrfmwsh i qajsc gfiiqrwsotg!")), delay: 2)
+                HUD.flash(.labeledError(title:nil , subtitle: self.chenkinBuilderBox(boxString:"Pmldeeavsoel crgexaqds fainpdf xahghrtenel h foouhrs iTcenrfmwsh i qajsc gfiiqrwsotg!")), delay: 2)
                 return
             }
             guard let poiu = self.contactDBN.text,poiu.count > 0 else {
-                HUD.flash(.labeledError(title:nil , subtitle: self.asFg(evng:"Pflgesahsbec aefnttzeerm sexmuaqidlk!")), delay: 2)
+                HUD.flash(.labeledError(title:nil , subtitle: self.chenkinBuilderBox(boxString:"Pflgesahsbec aefnttzeerm sexmuaqidlk!")), delay: 2)
                 return
             }
             
             guard let pasiod = self.MappingDBN.text,pasiod.count >= 6 else {
-                HUD.flash(.labeledError(title: nil, subtitle: self.asFg(evng:"Pxlsenaisaek dernvtuetrf xaa optabsystwxohrwdx owiiotwhc dautg xlzegaismte ysgiixe ldfitgfittysw!")), delay: 2)
+                HUD.flash(.labeledError(title: nil, subtitle: self.chenkinBuilderBox(boxString:"Pxlsenaisaek dernvtuetrf xaa optabsystwxohrwdx owiiotwhc dautg xlzegaismte ysgiixe ldfitgfittysw!")), delay: 2)
                 return
             }
             
@@ -146,16 +146,16 @@ class DBNAsFoeinrLogin: UIViewController {
                 ikolLoodergin: true) { data in
                     HUD.hide()
                     guard let response = data as? Dictionary<String,Any> ,
-                          let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
-                          let user = response[self.asFg(evng:"dladtna")] as? Dictionary<String,Any>
+                          let code = response[self.chenkinBuilderBox(boxString:"ckoxdye")] as? Int,code == 200000,
+                          let user = response[self.chenkinBuilderBox(boxString:"dladtna")] as? Dictionary<String,Any>
                             
                     else {
-                        HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
+                        HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                         return
                     }
                     AppDelegate.loguserMofdal = DBHUs_er(dic: user)
                     ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = DBNAsFore.init()
-                    HUD.flash(.labeledSuccess(title: nil, subtitle: self.asFg(evng:"Liongm kionc fsdudcacdeasoskfpuelg!")), delay: 2)
+                    HUD.flash(.labeledSuccess(title: nil, subtitle: self.chenkinBuilderBox(boxString:"Liongm kionc fsdudcacdeasoskfpuelg!")), delay: 2)
                     
                 } fai_DBNlure: { AFError in
                     HUD.flash(.labeledError(title: AFError.errorDescription, subtitle: nil), delay: 2)

@@ -64,9 +64,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
 //       let dynamicIdUser = self.Dyms?[sdui.tag].constraintSolver ?? ""
        
        
-       var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/iprafgoeesf/bRjehpjozrytt/misnjdoecxo?")
+       var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"/iprafgoeesf/bRjehpjozrytt/misnjdoecxo?")
        
-       forinwer = forinwer +  self.asFg(evng:"&ftqopklednj=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&aadpjpwIvDf=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+       forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ftqopklednj=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&aadpjpwIvDf=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
        
       let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
        self.navigationController?.pushViewController(vc, animated: true)
@@ -79,9 +79,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
             let userid = self.usermodels?[indexPath.row].brickAssembly ?? ""
             
             //用户个人中心
-            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/spbangoepsi/gHjoamgeaPyabgfel/ripnddweqxc?budsaerrvIcdo=") + userid
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"/spbangoepsi/gHjoamgeaPyabgfel/ripnddweqxc?budsaerrvIcdo=") + userid
             
-            forinwer = forinwer +  self.asFg(evng:"&ktrorklebnf=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&jakpopwIeDj=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+            forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ktrorklebnf=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&jakpopwIeDj=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -89,9 +89,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
             let dynamicId = self.Dyms?[indexPath.row].constraintSolver ?? ""
             
             //动态详情
-            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/lphaegtezse/wDoylnfazmdilcsDuejtqamitlusi/iionadaefxd?fdtyinhazmfiscrIddh=") + dynamicId
+            var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"/lphaegtezse/wDoylnfazmdilcsDuejtqamitlusi/iionadaefxd?fdtyinhazmfiscrIddh=") + dynamicId
             
-            forinwer = forinwer +  self.asFg(evng:"&etuoykiewnc=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&waqpvppIwDs=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+            forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&etuoykiewnc=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&waqpvppIwDs=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
             
            let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -106,9 +106,9 @@ class DBNElauioAmoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet weak var senconDymView: UICollectionView!
     
     @IBAction func pubAdunMkiki(_ sender: Any) {
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"pnafgtepsw/tRxeqlqezafsxeeDdyknyaamhivcs/simnidvecxo?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"pnafgtepsw/tRxeqlqezafsxeeDdyknyaamhivcs/simnidvecxo?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ftyopkoennv=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&pazphpjIjDc=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ftyopkoennv=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&pazphpjIjDc=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -159,11 +159,11 @@ extension DBNElauioAmoeDar{
             ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
-                      let users = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
+                      let code = response[self.chenkinBuilderBox(boxString:"ckoxdye")] as? Int,code == 200000,
+                      let users = response[self.chenkinBuilderBox(boxString:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
                 
@@ -195,11 +195,11 @@ extension DBNElauioAmoeDar{
             ikolLoodergin: true) { data in
                 
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
-                      let dyms = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
+                      let code = response[self.chenkinBuilderBox(boxString:"ckoxdye")] as? Int,code == 200000,
+                      let dyms = response[self.chenkinBuilderBox(boxString:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
              
@@ -207,7 +207,7 @@ extension DBNElauioAmoeDar{
                 self.Dyms = dyms.map { dix in
                     HomeDymModal.init(dic: dix)
                 }.filter({ HomeDymModal in
-                    HomeDymModal.rayTracing?.first?.contains(self.asFg(evng:"mgph4")) == false
+                    HomeDymModal.rayTracing?.first?.contains(self.chenkinBuilderBox(boxString:"mgph4")) == false
                 })
                 self.senconDymView.reloadData()
 

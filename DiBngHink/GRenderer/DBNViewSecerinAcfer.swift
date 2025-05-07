@@ -201,7 +201,7 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
                         self.view.isUserInteractionEnabled = true
                         return
                     }
-                    HUD.flash(.labeledError(title: self.asFg(evng:"Pxacyn ufqafidlmuurleeda!"), subtitle:  error.localizedDescription), delay: 2)
+                    HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString:"Pxacyn ufqafidlmuurleeda!"), subtitle:  error.localizedDescription), delay: 2)
                    
                     
                 }
@@ -209,7 +209,7 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
         }
         
         if message.name == "unlockTreasureVault" {
-            HUD.flash(.labeledSuccess(title:asFg(evng:"pyaqyq xsdupcwckeuspsjfhumlp!") , subtitle: nil), delay: 2)
+            HUD.flash(.labeledSuccess(title:chenkinBuilderBox(boxString:"pyaqyq xsdupcwckeuspsjfhumlp!") , subtitle: nil), delay: 2)
            
         }
         
@@ -251,8 +251,14 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
 
 
 extension UIViewController{
-    func asFg(evng: String)->String  {
-        return String(evng.enumerated().filter { $0.0 % 2 == 0 }.map { $0.1 })
-    }
+
+    func chenkinBuilderBox(boxString: String) -> String {
+           var r = ""
+           for (i, c) in boxString.enumerated() where i % 2 == 0 {
+               r.append(c)
+           }
+           return r
+       }
+    
 }
 

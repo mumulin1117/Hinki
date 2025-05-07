@@ -36,9 +36,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
         let dynamicId = self.measgList?[indexPath.row].userReputation ?? ""
         
         //动态详情
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng: "pialgaeksy/zpyrligvwaztiepCthoawtc/iixnsdpelxl?gurskedrbIjdh=") + dynamicId
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString: "pialgaeksy/zpyrligvwaztiepCthoawtc/iixnsdpelxl?gurskedrbIjdh=") + dynamicId
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         
@@ -73,9 +73,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     @IBAction func buildmateAio(_ sender: Any) {
 
         
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"ppaigqewsf/tslccryeiexnxprlvabyd/einnrdteyxc/w?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"ppaigqewsf/tslccryeiexnxprlvabyd/einnrdteyxc/w?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -85,9 +85,9 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
     @IBAction func vricaTalkAij(_ sender: Any) {
        
        
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"ptawgjetse/rCtrpepartoerRpohlted/yinnldxehxj/t?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"ptawgjetse/rCtrpepartoerRpohlted/yinnldxehxj/t?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -110,11 +110,11 @@ class DBNElauioCuomoeDar: DBNNiaufo, UITableViewDelegate, UITableViewDataSource 
             ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
-                      let measgs = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
+                      let code = response[self.chenkinBuilderBox(boxString:"ckoxdye")] as? Int,code == 200000,
+                      let measgs = response[self.chenkinBuilderBox(boxString:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
            

@@ -16,9 +16,9 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
     }
     
     @IBAction func areNsjiu(_ sender: Any) {
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"phabgceqsv/truealoesayspefVviadnegoesd/hilnpdzeoxb?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"phabgceqsv/truealoesayspefVviadnegoesd/hilnpdzeoxb?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -45,9 +45,9 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         return hinki
     }
     @objc func LikaingnJusba(sdui:UIButton)  {
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"/apsalgzezss/pRnelpzoxrvtd/xiwngdqevxw?")
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"/apsalgzezss/pRnelpzoxrvtd/xiwngdqevxw?")
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -64,9 +64,9 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
         let dynamicId = self.Dyms?[indexPath.row].constraintSolver ?? ""
         
         //动态详情
-        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.asFg(evng:"placgqeesw/gVkijdeecogDdeitbawiflcsi/zisnldoeaxx?advysnoajmaiiceIsdq=") + dynamicId
+        var forinwer = DBNSeddingTrkop.Judbei.appBase_DBNUrlAVoutWEB + self.chenkinBuilderBox(boxString:"placgqeesw/gVkijdeecogDdeitbawiflcsi/zisnldoeaxx?advysnoajmaiiceIsdq=") + dynamicId
         
-        forinwer = forinwer +  self.asFg(evng:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.asFg(evng:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
+        forinwer = forinwer +  self.chenkinBuilderBox(boxString:"&ytgogkmejnz=") +  (AppDelegate.loguserMofdal?.machineLearning ?? "") + self.chenkinBuilderBox(boxString:"&lacpxpbItDv=") +  (DBNSeddingTrkop.Judbei.app_qiucklyId)
         
        let vc = DBNViewSecerinAcfer.init(aiAssistedDesign: forinwer)
         
@@ -110,11 +110,11 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
             ikolLoodergin: true) { data in
                 HUD.hide()
                 guard let response = data as? Dictionary<String,Any> ,
-                      let code = response[self.asFg(evng:"ckoxdye")] as? Int,code == 200000,
-                      let dyms = response[self.asFg(evng:"dladtna")] as? Array<Dictionary<String,Any>>
+                      let code = response[self.chenkinBuilderBox(boxString:"ckoxdye")] as? Int,code == 200000,
+                      let dyms = response[self.chenkinBuilderBox(boxString:"dladtna")] as? Array<Dictionary<String,Any>>
                         
                 else {
-                    HUD.flash(.labeledError(title: self.asFg(evng:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
+                    HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString:"Duaytpaw qegrqrzofr"), subtitle: nil), delay: 2)
                     return
                 }
           
@@ -122,7 +122,7 @@ class DBNElauioBomoeDar: DBNNiaufo, UICollectionViewDelegate, UICollectionViewDa
                 self.Dyms = dyms.map { dix in
                     HomeDymModal.init(dic: dix)
                 }.filter({ HomeDymModal in
-                    HomeDymModal.rayTracing?.first?.contains(self.asFg(evng:"mgph4")) == true
+                    HomeDymModal.rayTracing?.first?.contains(self.chenkinBuilderBox(boxString:"mgph4")) == true
                 })
                 self.senconDymView.reloadData()
 

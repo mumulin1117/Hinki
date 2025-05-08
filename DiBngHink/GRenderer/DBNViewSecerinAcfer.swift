@@ -158,7 +158,12 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
         setupWebViewExtensions()
         
     }
-    
+    func unlockTreasureVault(psPurch:PurchaseDetails)  {
+        self.recoringSureView?.evaluateJavaScript("unlockTreasureVault()", completionHandler: nil)
+        if psPurch.needsFinishTransaction {
+            SwiftyStoreKit.finishTransaction(psPurch.transaction)
+        }
+    }
     
     func setupWebViewExtensions(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
@@ -170,16 +175,18 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
     
     func handleRecordingResult(psPurch:PurchaseDetails) {
         let psdownloads = psPurch.transaction.downloads
+        
         if !psdownloads.isEmpty {
             SwiftyStoreKit.start(psdownloads)
         }
         
-        if psPurch.needsFinishTransaction {
-            SwiftyStoreKit.finishTransaction(psPurch.transaction)
-        }
         
         
     }
+    
+    
+    
+   
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "launchBlockFuelCharge" {//充值
             guard let payingID = message.body  as? String else {
@@ -193,8 +200,10 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
                     self.handleRecordingResult(psPurch: psPurch)
-                  
-                  
+                    self.unlockTreasureVault(psPurch:psPurch)
+                    HUD.flash(.labeledSuccess(title: self.chenkinBuilderBox(boxString:"Pfajyc lsxuhcbcxetstsefluelxltyn!"), subtitle:  nil), delay: 2)
+                   
+                   
                 }else if case .error(let error) = psResult {
                  
                     if error.code == .paymentCancelled {

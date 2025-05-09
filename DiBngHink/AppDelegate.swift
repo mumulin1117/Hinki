@@ -4,7 +4,7 @@
 //
 //  Created by DiBngHink on 2025/4/17.
 //
-
+import IQKeyboardManager
 import UIKit
 import SDWebImage
 @main
@@ -64,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = clioke
         }
        
+        IQKeyboardManager.shared().isEnabled = true
     }
 }
 

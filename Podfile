@@ -12,4 +12,5 @@ pod "Alamofire"
 
 pod 'SwiftyStoreKit'
 pod 'PKHUD'
+pod 'IQKeyboardManager'
 end

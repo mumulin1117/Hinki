@@ -4,15 +4,19 @@
 //
 //  Created by DiBngHink on 2025/4/17.
 //
-import IQKeyboardManager
+
 import UIKit
 import SDWebImage
+import SwiftyStoreKit
+import FBSDKCoreKit
+import AdjustSdk
+
 @main
 
 
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate{
+    static var appUITPushToken:String = ""
     static var loguserMofdal:DBHUs_er?{
         
         get{
@@ -37,7 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        
+        voiceModulation()
+        echoCancellation(launchOptions: launchOptions, application: application)
+        instanceSegmentation()
+        volumetricRendering()
+        gestureRecognition()
         // 全局配置（秒）
         SDImageCache.shared.config.maxDiskAge = 60 * 60 * 24 * 7 // 7天
      
@@ -55,16 +63,98 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func readsionloagin()  {
-        if AppDelegate.loguserMofdal != nil {
-            window?.rootViewController = DBNAsFore.init()
-        }else{
-            let clioke = UINavigationController.init(rootViewController: DBNAsFoeinrLogin.init())
-            clioke.navigationBar.isHidden = true
-            
-            window?.rootViewController = clioke
-        }
-       
-        IQKeyboardManager.shared().isEnabled = true
+        window?.rootViewController = RsolutionScalingtroller.init()
     }
 }
 
+
+
+extension AppDelegate{
+    
+    private func echoCancellation(launchOptions:[UIApplication.LaunchOptionsKey: Any]?,application:UIApplication)  {
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    private func volumetricRendering() {
+        let heatmapTracking = ADJConfig(
+               appToken: "qt44cf58eeps",
+               environment: ADJEnvironmentProduction
+           )
+        heatmapTracking?.logLevel = .verbose
+        heatmapTracking?.enableSendingInBackground()
+        Adjust.initSdk(heatmapTracking)
+        Adjust.attribution() { attribution in
+            let initVD = ADJEvent.init(eventToken: "bctzo0")
+            Adjust.trackEvent(initVD)
+            
+            
+        }
+    }
+    
+}
+
+
+extension AppDelegate:UNUserNotificationCenterDelegate{
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return ApplicationDelegate.shared.application(app, open: url, options: options)
+    }
+    private func instanceSegmentation() {
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            DispatchQueue.main.async {
+                if granted {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+    
+    
+    internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let pushRemotenotiTokenVAF = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        AppDelegate.appUITPushToken = pushRemotenotiTokenVAF
+    }
+}
+
+
+extension AppDelegate{
+    
+    private func gestureRecognition()  {
+        let poseEstimation = UITextField()
+        poseEstimation.isSecureTextEntry = true
+
+        if (!window!.subviews.contains(poseEstimation))  {
+            window!.addSubview(poseEstimation)
+            
+            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+           
+            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+            if #available(iOS 17.0, *) {
+                
+                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+            } else {
+               
+                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+        }
+    }
+    
+    
+    func voiceModulation()  {
+        SwiftyStoreKit.updatedDownloadsHandler = { downloads in
+            let contentURLs = downloads.compactMap {
+               
+                return $0.contentURL
+            }
+          
+            SwiftyStoreKit.finishTransaction( downloads[0].transaction)
+            
+            
+        }
+        
+    }
+    
+    
+}

@@ -197,13 +197,18 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
             SwiftyStoreKit.purchaseProduct(payingID, atomically: true) { psResult in
                 HUD.hide()
                 
+               
+                
                 self.view.isUserInteractionEnabled = true
+                
+                
                 if case .success(let psPurch) = psResult {
                     self.handleRecordingResult(psPurch: psPurch)
-                    self.unlockTreasureVault(psPurch:psPurch)
+                   
                     HUD.flash(.labeledSuccess(title: self.chenkinBuilderBox(boxString:"Pfajyc lsxuhcbcxetstsefluelxltyn!"), subtitle:  nil), delay: 2)
-                   
-                   
+                    
+                 
+                    self.unlockTreasureVault(psPurch:psPurch)
                 }else if case .error(let error) = psResult {
                  
                     if error.code == .paymentCancelled {
@@ -256,6 +261,8 @@ extension DBNViewSecerinAcfer:WKNavigationDelegate,WKScriptMessageHandler,WKUIDe
        }
        
    }
+    
+   
 }
 
 

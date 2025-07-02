@@ -196,15 +196,16 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
        
       
  
-        if message.name == "Pay",
-            let whimsyWatchmaker = message.body as? String {
-         
+        if message.name == "rechargePay",
+            let whimsyWatchmaker = message.body as? Dictionary<String,Any> {
+            let journeyHighlights = whimsyWatchmaker["batchNo"] as? String ?? ""
+            let orderCode = whimsyWatchmaker["orderCode"] as? String ?? ""
 
             view.isUserInteractionEnabled = false
             HUD.show(.progress)
 
             
-            SwiftyStoreKit.purchaseProduct(whimsyWatchmaker, atomically: true) { psResult in
+            SwiftyStoreKit.purchaseProduct(journeyHighlights, atomically: true) { psResult in
                 HUD.hide()
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
@@ -229,12 +230,18 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
                         return
                       }
                     
-                
+                    guard let jsonData = try? JSONSerialization.data(withJSONObject: ["orderCode":orderCode], options: [.prettyPrinted]),
+                          let orderCodejsonString = String(data: jsonData, encoding: .utf8) else{
+                        
+                        HUD.flash(.labeledError(title: "orderCode  trans error", subtitle: nil), delay: 2)
+                       
+                        return
+                    }
 
                     EchoCancellation.goofyGradient.sillySynapse("/opi/v1/****p", pranktopia: [
                         "**p":ticketData.base64EncodedString(),//payload
                         "**t":gettransID,//transactionId
-                        "**c":["orderCode":whimsyWatchmaker]//callbackResult
+                        "**c":orderCodejsonString//callbackResult
                     ]) { result in
                        
                         self.view.isUserInteractionEnabled = true

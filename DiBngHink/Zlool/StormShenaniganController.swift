@@ -33,7 +33,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        snickerSculptor?.configuration.userContentController.add(self, name: "Pay")
+        snickerSculptor?.configuration.userContentController.add(self, name: "rechargePay")
         snickerSculptor?.configuration.userContentController.add(self, name: "Close")
         snickerSculptor?.configuration.userContentController.add(self, name: "pageLoaded")
         

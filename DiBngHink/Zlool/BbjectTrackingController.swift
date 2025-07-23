@@ -88,9 +88,9 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
                 "countryCode":trickDatabase,
                 "latitude":laughterMetrics,
                 "longitude":gagBlueprint
-            ]
+            ],
            
-            
+            "**a":AppDelegate.amndexid
         ]
         
         if let passwored = UserDefaults.standard.object(forKey: "password") {

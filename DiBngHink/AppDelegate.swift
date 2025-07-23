@@ -10,13 +10,14 @@ import SDWebImage
 import SwiftyStoreKit
 import FBSDKCoreKit
 import AdjustSdk
-
+import AppTrackingTransparency
 @main
 
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
     static var appUITPushToken:String = ""
+    static var amndexid:String = ""
     static var loguserMofdal:DBHUs_er?{
         
         get{
@@ -156,5 +157,32 @@ extension AppDelegate{
         
     }
     
-    
+    func significant() {
+        
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .authorized:
+                   
+                    Adjust.adid { adId in
+                        DispatchQueue.main.async {
+                            if let updates = adId {
+                                AppDelegate.amndexid = updates
+                            }
+                        }
+                    }
+                default:
+                   break
+                }
+            }
+        } else {
+            Adjust.adid { adId in
+                DispatchQueue.main.async {
+                    if let location = adId {
+                        AppDelegate.amndexid = location
+                    }
+                }
+            }
+        }
+    }
 }

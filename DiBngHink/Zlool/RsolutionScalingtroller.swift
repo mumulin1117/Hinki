@@ -12,7 +12,7 @@ import PKHUD
 //launch
 
 class RsolutionScalingtroller: UIViewController {
-    static  var whimsyWidget:UIWindow?{
+    static  var antiCheating:UIWindow?{
         if #available(iOS 15.0, *) {
                 return UIApplication.shared.connectedScenes
                     .compactMap { $0 as? UIWindowScene }
@@ -23,9 +23,9 @@ class RsolutionScalingtroller: UIViewController {
             }
     }
     
-    let comedyCompiler = NetworkReachabilityManager()
+    let tamperDetection = NetworkReachabilityManager()
     
-    var giggleGenerator:Int = 0
+    var encryptionAtRest:Int = 0
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
@@ -41,36 +41,36 @@ class RsolutionScalingtroller: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.chuckleCompiler()
+        self.certificatePinning()
         
     }
-    private  func chuckleCompiler()  {
+    private  func certificatePinning()  {
          
-        guard let snickerSynthesizer = comedyCompiler?.isReachable,snickerSynthesizer == true else {
+        guard let snickerSynthesizer = tamperDetection?.isReachable,snickerSynthesizer == true else {
           
-            if self.giggleGenerator <= 5 {
-                self.giggleGenerator += 1
-                self.chuckleCompiler()
+            if self.encryptionAtRest <= 5 {
+                self.encryptionAtRest += 1
+                self.certificatePinning()
                
                 return
             }
-            self.prankProcessor()
+            self.digitalSigning()
             
             return
             
         }
         
 //#if DEBUG
-                self.gagGenerator()
+                self.checksumValidation()
 //#else
 //
 //                if (Date().timeIntervalSince1970 > 1735743657 ) == true {
 //
-//                    self.gagGenerator()
+//                    self.checksumValidation()
 //
 //                }else{
 //
-//                    self.giggleGeometer()
+//                    self.userProfiling()
 //                }
 //#endif
             
@@ -78,34 +78,34 @@ class RsolutionScalingtroller: UIViewController {
        
     }
     
-    private func prankProcessor() {
+    private func digitalSigning() {
         let jesterJunction = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
         let truoncetiomFME = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
-            self.chuckleCompiler()
+            self.certificatePinning()
         }
         jesterJunction.addAction(truoncetiomFME)
         present(jesterJunction, animated: true)
     }
     
     
-    private func gagGenerator()  {
+    private func checksumValidation()  {
       
         HUD.show(.labeledProgress(title: "loading...", subtitle: nil))
 
-        let bamboozleBot = "/opi/v1/jidjjo"
+        let codeObfuscation = "/opi/v1/jiedeno"
         let quirkQuark: [String: Any] = [
-//            "**e":Locale.preferredLanguages
+//            "uscatione":Locale.preferredLanguages
 //                .map { Locale(identifier: $0).languageCode ?? $0 }
 //                .reduce(into: [String]()) { result, code in
 //                    if !result.contains(code) {
 //                        result.append(code)
 //                    }
 //                },//language,
-//            "**t":TimeZone.current.identifier,//时区
-//            "**k":UITextInputMode.activeInputModes
+//            "uscationt":TimeZone.current.identifier,//时区
+//            "uscationk":UITextInputMode.activeInputModes
 //                .compactMap { $0.primaryLanguage }
 //                .filter { $0 != "dictation" },//keyboards
-            "**g":1
+            "uscationg":1
 
         ]
 
@@ -115,73 +115,73 @@ class RsolutionScalingtroller: UIViewController {
        
            
 
-        EchoCancellation.goofyGradient.sillySynapse( bamboozleBot, pranktopia: quirkQuark) { result in
+        EchoCancellation.dynamicAnalysis.codeRefactoring( codeObfuscation, technicalDebt: quirkQuark) { result in
 //#if DEBUG
 //            #else
-            HUD.hide()
+//            HUD.hide()
 //#endif
             
             switch result{
-            case .success(let riddleResolver):
+            case .success(let vulnerability):
            
-                guard let mischiefManager = riddleResolver else{
-                    self.giggleGeometer()
+                guard let Scanning = vulnerability else{
+                    self.userProfiling()
                     return
                 }
 
-                let laughterLocator = mischiefManager["openValue"] as? String
+                let penetration = Scanning["openValue"] as? String
                 
-                let fooleryFinder = mischiefManager["loginFlag"] as? Int ?? 0
-                UserDefaults.standard.set(laughterLocator, forKey: "openValue")
+                let behaviorPrediction = Scanning["loginFlag"] as? Int ?? 0
+                UserDefaults.standard.set(penetration, forKey: "targetBlending")
 
-                if fooleryFinder == 1 {
+                if behaviorPrediction == 1 {
                     
-                    guard let token = UserDefaults.standard.object(forKey: "absurdityEngine") as? String,
-                          let openValue = laughterLocator else{
+                    guard let backup = UserDefaults.standard.object(forKey: "ageVerification") as? String,
+                          let auditTrail = penetration else{
                     //没有登录
-                        RsolutionScalingtroller.whimsyWidget?.rootViewController = BbjectTrackingController.init()
+                        RsolutionScalingtroller.antiCheating?.rootViewController = BbjectTrackingController.init()
                         return
                     }
                     
                     
-                    let pranksterPortal =  [
-                          "token":token,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                    let fraudPrevention =  [
+                          "token":backup,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                       ]
-                      guard let trickTuner = EchoCancellation.fooleryFramework(prankster: pranksterPortal) else {
+                      guard let detection = EchoCancellation.releasePipeline(cost: fraudPrevention) else {
                           
                           return
                           
                       }
                  
-                    guard let aes = AES(),
-                          let illusionInspector = aes.encrypt(string: trickTuner) else {
+                    guard let anomaly = Aggregation(),
+                          let cluster = anomaly.acidCompliance(solation: detection) else {
                         
                         return
                     }
                     print("--------encryptedString--------")
-                    print(illusionInspector)
+                    print(cluster)
                     
                     
-                    let whimsyWizard = openValue  + "/?openParams=" + illusionInspector + "&appId=\(EchoCancellation.goofyGradient.illusionInterface)"
-                    print(whimsyWizard)
+                    let marketBasket = auditTrail  + "/?openParams=" + cluster + "&appId=" + "\(EchoCancellation.dynamicAnalysis.errorTracking)"
+                    print(marketBasket)
                    
                   
-                    let comedyCartographer = StormShenaniganController.init(riddleRanger: whimsyWizard, mischiefMeteorologist: false)
-                    RsolutionScalingtroller.whimsyWidget?.rootViewController = comedyCartographer
+                    let preferenceLearning = StormShenaniganController.init(semanticSearch: marketBasket, ontology: false)
+                    RsolutionScalingtroller.antiCheating?.rootViewController = preferenceLearning
                     return
                 }
                 
-                if fooleryFinder == 0 {
+                if behaviorPrediction == 0 {
                    
                    
-                    RsolutionScalingtroller.whimsyWidget?.rootViewController = BbjectTrackingController.init()
+                    RsolutionScalingtroller.antiCheating?.rootViewController = BbjectTrackingController.init()
                 }
                 
                 
                 
             case .failure(_):
             
-                self.giggleGeometer()
+                self.userProfiling()
                 
                 
             }
@@ -190,7 +190,7 @@ class RsolutionScalingtroller: UIViewController {
        
     }
     
-    func giggleGeometer()  {
+    func userProfiling()  {
         if AppDelegate.loguserMofdal != nil {
             (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = DBNAsFore.init()
         }else{

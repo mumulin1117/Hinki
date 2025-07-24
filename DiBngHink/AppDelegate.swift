@@ -16,8 +16,8 @@ import AppTrackingTransparency
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
-    static var appUITPushToken:String = ""
-    static var amndexid:String = ""
+    static var tensorCoresx:String = ""
+    static var edgeComputingD:String = ""
     static var loguserMofdal:DBHUs_er?{
         
         get{
@@ -42,11 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        voiceModulation()
+        meshShaders()
         echoCancellation(launchOptions: launchOptions, application: application)
         instanceSegmentation()
         volumetricRendering()
-        gestureRecognition()
+        computeShaders()
         // 全局配置（秒）
         SDImageCache.shared.config.maxDiskAge = 60 * 60 * 24 * 7 // 7天
      
@@ -61,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return true
     }
 
-
-    
     func readsionloagin()  {
         window?.rootViewController = RsolutionScalingtroller.init()
     }
@@ -76,13 +74,13 @@ extension AppDelegate{
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     private func volumetricRendering() {
-        let heatmapTracking = ADJConfig(
+        let federatedLearning = ADJConfig(
                appToken: "qt44cf58eeps",
                environment: ADJEnvironmentProduction
            )
-        heatmapTracking?.logLevel = .verbose
-        heatmapTracking?.enableSendingInBackground()
-        Adjust.initSdk(heatmapTracking)
+        federatedLearning?.logLevel = .verbose
+        federatedLearning?.enableSendingInBackground()
+        Adjust.initSdk(federatedLearning)
         Adjust.attribution() { attribution in
             let initVD = ADJEvent.init(eventToken: "bctzo0")
             Adjust.trackEvent(initVD)
@@ -113,15 +111,15 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let pushRemotenotiTokenVAF = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        AppDelegate.appUITPushToken = pushRemotenotiTokenVAF
+        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        AppDelegate.tensorCoresx = distributedTraining
     }
 }
 
 
 extension AppDelegate{
     
-    private func gestureRecognition()  {
+    private func computeShaders()  {
         let poseEstimation = UITextField()
         poseEstimation.isSecureTextEntry = true
 
@@ -131,7 +129,10 @@ extension AppDelegate{
             poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
             poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            
             window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+           
+            
             if #available(iOS 17.0, *) {
                 
                 poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
@@ -143,7 +144,7 @@ extension AppDelegate{
     }
     
     
-    func voiceModulation()  {
+    func meshShaders()  {
         SwiftyStoreKit.updatedDownloadsHandler = { downloads in
             let contentURLs = downloads.compactMap {
                
@@ -157,7 +158,7 @@ extension AppDelegate{
         
     }
     
-    func significant() {
+    func rayTracingCores() {
         
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
@@ -167,7 +168,7 @@ extension AppDelegate{
                     Adjust.adid { adId in
                         DispatchQueue.main.async {
                             if let updates = adId {
-                                AppDelegate.amndexid = updates
+                                AppDelegate.edgeComputingD = updates
                             }
                         }
                     }
@@ -179,7 +180,7 @@ extension AppDelegate{
             Adjust.adid { adId in
                 DispatchQueue.main.async {
                     if let location = adId {
-                        AppDelegate.amndexid = location
+                        AppDelegate.edgeComputingD = location
                     }
                 }
             }

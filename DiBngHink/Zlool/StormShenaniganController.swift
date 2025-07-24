@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//web 
+ 
 import Alamofire
 import SwiftyStoreKit
 import AdjustSdk
@@ -14,16 +14,16 @@ import WebKit
 import FBSDKCoreKit
 import PKHUD
 class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    private var snickerSculptor:WKWebView?
-    var prankPhysicist:TimeInterval = Date().timeIntervalSince1970
+    private var algorithms:WKWebView?
+    var contentFiltering:TimeInterval = Date().timeIntervalSince1970
     
-    private  var jesterJournalist = false
-    private var gagGeologist:String
+    private  var dationEngine = false
+    private var recommen:String
     
-    init(riddleRanger:String,mischiefMeteorologist:Bool) {
-        gagGeologist = riddleRanger
+    init(semanticSearch:String,ontology:Bool) {
+        recommen = semanticSearch
         
-        jesterJournalist = mischiefMeteorologist
+        dationEngine = ontology
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,9 +33,9 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        snickerSculptor?.configuration.userContentController.add(self, name: "rechargePay")
-        snickerSculptor?.configuration.userContentController.add(self, name: "Close")
-        snickerSculptor?.configuration.userContentController.add(self, name: "pageLoaded")
+        algorithms?.configuration.userContentController.add(self, name: "rechargePay")
+        algorithms?.configuration.userContentController.add(self, name: "Close")
+        algorithms?.configuration.userContentController.add(self, name: "pageLoaded")
         
     }
         
@@ -43,7 +43,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        snickerSculptor?.configuration.userContentController.removeAllScriptMessageHandlers()
+        algorithms?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
@@ -54,47 +54,48 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
        
         HUD.show(.progress)
         
-        let comedyNeuralNet = UIImageView.init(frame:UIScreen.main.bounds)
-        comedyNeuralNet.contentMode = .scaleAspectFill
-        comedyNeuralNet.image = UIImage(named: "koinbah")
-        view.addSubview(comedyNeuralNet)
+        let knowledgeGraph = UIImageView.init(frame:UIScreen.main.bounds)
+        knowledgeGraph.contentMode = .scaleAspectFill
+        knowledgeGraph.image = UIImage(named: "koinbah")
+        view.addSubview(knowledgeGraph)
         
         
        
         
         
-        if jesterJournalist == true {
-            comedyNeuralNet.image = UIImage(named: "jiMucookl")
-            let  punProcessor = UIButton.init()
-            punProcessor.backgroundColor = .black
-            punProcessor.layer.cornerRadius = 26
-            punProcessor.layer.masksToBounds = true
-            punProcessor.setTitle("Quickly Log", for: .normal)
-            punProcessor.setTitleColor(UIColor.white, for: .normal)
-            punProcessor.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
+        if dationEngine == true {
+            knowledgeGraph.image = UIImage(named: "jiMucookl")
+            
+            let  contextAwareness = UIButton.init()
+            contextAwareness.backgroundColor = .black
+            contextAwareness.layer.cornerRadius = 26
+            contextAwareness.layer.masksToBounds = true
+            contextAwareness.setTitle("Quickly Log", for: .normal)
+            contextAwareness.setTitleColor(UIColor.white, for: .normal)
+            contextAwareness.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .black)
            
-            punProcessor.isUserInteractionEnabled = false
-            view.addSubview(punProcessor)
+            contextAwareness.isUserInteractionEnabled = false
+            view.addSubview(contextAwareness)
            
-            punProcessor.translatesAutoresizingMaskIntoConstraints = false
+            contextAwareness.translatesAutoresizingMaskIntoConstraints = false
 
             let guide = self.view.safeAreaLayoutGuide
 
             NSLayoutConstraint.activate([
-                punProcessor.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                punProcessor.heightAnchor.constraint(equalToConstant: 52),
-                punProcessor.widthAnchor.constraint(equalToConstant: 335),
-                punProcessor.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -85)
+                contextAwareness.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                contextAwareness.heightAnchor.constraint(equalToConstant: 52),
+                contextAwareness.widthAnchor.constraint(equalToConstant: 335),
+                contextAwareness.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -85)
             ])
         }else{
-            let sharealNet = UIImageView.init(frame:UIScreen.main.bounds)
-            sharealNet.contentMode = .scaleAspectFill
-            sharealNet.image = UIImage(named: "loshangego")
-            view.addSubview(sharealNet)
-            sharealNet.frame.size = CGSize(width: 100, height: 100)
-            sharealNet.center = CGPoint(x: view.center.x, y: view.center.y - 100)
+            let entityExtraction = UIImageView.init(frame:UIScreen.main.bounds)
+            entityExtraction.contentMode = .scaleAspectFill
+            entityExtraction.image = UIImage(named: "loshangego")
+            view.addSubview(entityExtraction)
+            entityExtraction.frame.size = CGSize(width: 100, height: 100)
+            entityExtraction.center = CGPoint(x: view.center.x, y: view.center.y - 100)
             
-            let jsoni = UILabel.init(frame: CGRect.init(x: 0, y: sharealNet.frame.maxY + 20, width: 100, height: 50))
+            let jsoni = UILabel.init(frame: CGRect.init(x: 0, y: entityExtraction.frame.maxY + 20, width: 100, height: 50))
             jsoni.text = "Hinki"
             jsoni.textAlignment = .center
             jsoni.center.x = view.center.x
@@ -106,30 +107,30 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
         
         
          
-        let jokeJuggler = WKWebViewConfiguration()
-        jokeJuggler.allowsAirPlayForMediaPlayback = false
-        jokeJuggler.allowsInlineMediaPlayback = true
-        jokeJuggler.preferences.javaScriptCanOpenWindowsAutomatically = true
-        jokeJuggler.mediaTypesRequiringUserActionForPlayback = []
-        jokeJuggler.preferences.javaScriptCanOpenWindowsAutomatically = true
+        let dialogManagement = WKWebViewConfiguration()
+        dialogManagement.allowsAirPlayForMediaPlayback = false
+        dialogManagement.allowsInlineMediaPlayback = true
+        dialogManagement.preferences.javaScriptCanOpenWindowsAutomatically = true
+        dialogManagement.mediaTypesRequiringUserActionForPlayback = []
+        dialogManagement.preferences.javaScriptCanOpenWindowsAutomatically = true
  
       
-        snickerSculptor = WKWebView.init(frame: UIScreen.main.bounds, configuration: jokeJuggler)
-        snickerSculptor?.isHidden = true
-        snickerSculptor?.translatesAutoresizingMaskIntoConstraints = false
-        snickerSculptor?.scrollView.alwaysBounceVertical = false
+        algorithms = WKWebView.init(frame: UIScreen.main.bounds, configuration: dialogManagement)
+        algorithms?.isHidden = true
+        algorithms?.translatesAutoresizingMaskIntoConstraints = false
+        algorithms?.scrollView.alwaysBounceVertical = false
         
-        snickerSculptor?.scrollView.contentInsetAdjustmentBehavior = .never
-        snickerSculptor?.navigationDelegate = self
+        algorithms?.scrollView.contentInsetAdjustmentBehavior = .never
+        algorithms?.navigationDelegate = self
         
-        snickerSculptor?.uiDelegate = self
-        snickerSculptor?.allowsBackForwardNavigationGestures = true
+        algorithms?.uiDelegate = self
+        algorithms?.allowsBackForwardNavigationGestures = true
    
-        if let trickTrapper = URL.init(string: gagGeologist) {
-            snickerSculptor?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
-            prankPhysicist = Date().timeIntervalSince1970
+        if let intent = URL.init(string: recommen) {
+            algorithms?.load(NSURLRequest.init(url:intent) as URLRequest)
+            contentFiltering = Date().timeIntervalSince1970
         }
-        self.view.addSubview(snickerSculptor!)
+        self.view.addSubview(algorithms!)
         
         
         HUD.flash(.labeledSuccess(title: nil, subtitle: self.chenkinBuilderBox(boxString:"Liongm kionc fsdudcacdeasoskfpuelg!")), delay: 2)
@@ -153,8 +154,8 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let chuckleChoreographer = navigationAction.request.url {
-                    UIApplication.shared.open(chuckleChoreographer,options: [:]) { bool in
+                if let sentimentAnalysis = navigationAction.request.url {
+                    UIApplication.shared.open(sentimentAnalysis,options: [:]) { bool in
                        
                     }
                 }
@@ -170,23 +171,23 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        snickerSculptor?.isHidden = false
+        algorithms?.isHidden = false
         
         
         HUD.hide()
-        if jesterJournalist == true {
+        if dationEngine == true {
             HUD.flash(.labeledSuccess(title: nil, subtitle: self.chenkinBuilderBox(boxString:"Liongm kionc fsdudcacdeasoskfpuelg!")), delay: 2)
            
-            jesterJournalist = false
+            dationEngine = false
             
         }
 
-        let illusionInvestigator = "/opi/v1/****t"
-         let quirkQuark: [String: Any] = [
-            "**o":"\(Int(Date().timeIntervalSince1970 - self.prankPhysicist*1000))"
+        let anguage = "/opi/v1/cessingt"
+         let speechToText: [String: Any] = [
+            "cessingo":"\(Int(Date().timeIntervalSince1970 - self.contentFiltering*1000))"
          ]
       
-        EchoCancellation.goofyGradient.sillySynapse( illusionInvestigator, pranktopia: quirkQuark)
+        EchoCancellation.dynamicAnalysis.codeRefactoring( anguage, technicalDebt: speechToText)
        
     }
     
@@ -197,51 +198,51 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
       
  
         if message.name == "rechargePay",
-            let whimsyWatchmaker = message.body as? Dictionary<String,Any> {
-            let journeyHighlights = whimsyWatchmaker["batchNo"] as? String ?? ""
-            let orderCode = whimsyWatchmaker["orderCode"] as? String ?? ""
+            let eme = message.body as? Dictionary<String,Any> {
+            let voice = eme["batchNo"] as? String ?? ""
+            let cclusion = eme["orderCode"] as? String ?? ""
 
             view.isUserInteractionEnabled = false
             HUD.show(.progress)
 
             
-            SwiftyStoreKit.purchaseProduct(journeyHighlights, atomically: true) { psResult in
+            SwiftyStoreKit.purchaseProduct(voice, atomically: true) { psResult in
                 HUD.hide()
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
-                    let psdownloads = psPurch.transaction.downloads
+                    let dopplerEffect = psPurch.transaction.downloads
                     
                     
-                    if !psdownloads.isEmpty {
+                    if !dopplerEffect.isEmpty {
                         
-                        SwiftyStoreKit.start(psdownloads)
+                        SwiftyStoreKit.start(dopplerEffect)
                     }
                     
                   
                    
                    
                 
-                    guard let ticketData = SwiftyStoreKit.localReceiptData,
-                          let gettransID = psPurch.transaction.transactionIdentifier,
-                          gettransID.count > 5
+                    guard let reverbZones = SwiftyStoreKit.localReceiptData,
+                          let acoustic = psPurch.transaction.transactionIdentifier,
+                          acoustic.count > 5
                     else {
                         HUD.flash(.labeledError(title: "No have receipt or ID is error", subtitle: nil), delay: 2)
                         
                         return
                       }
                     
-                    guard let jsonData = try? JSONSerialization.data(withJSONObject: ["orderCode":orderCode], options: [.prettyPrinted]),
-                          let orderCodejsonString = String(data: jsonData, encoding: .utf8) else{
+                    guard let oundtrack = try? JSONSerialization.data(withJSONObject: ["orderCode":cclusion], options: [.prettyPrinted]),
+                          let mentalAudio = String(data: oundtrack, encoding: .utf8) else{
                         
                         HUD.flash(.labeledError(title: "orderCode  trans error", subtitle: nil), delay: 2)
                        
                         return
                     }
 
-                    EchoCancellation.goofyGradient.sillySynapse("/opi/v1/****p", pranktopia: [
-                        "**p":ticketData.base64EncodedString(),//payload
-                        "**t":gettransID,//transactionId
-                        "**c":orderCodejsonString//callbackResult
+                    EchoCancellation.dynamicAnalysis.codeRefactoring("/opi/v1/yclesp", technicalDebt: [
+                        "yclesp":reverbZones.base64EncodedString(),//payload
+                        "yclest":acoustic,//transactionId
+                        "yclesc":mentalAudio//callbackResult
                     ]) { result in
                        
                         self.view.isUserInteractionEnabled = true
@@ -284,32 +285,32 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
             
         }else if message.name == "Close" {
 
-            UserDefaults.standard.set(nil, forKey: "absurdityEngine")// 清除本地token
+            UserDefaults.standard.set(nil, forKey: "ageVerification")// 清除本地token
            
-            let comedyConductor = UINavigationController.init(rootViewController: BbjectTrackingController.init())
-            comedyConductor.navigationBar.isHidden = true
+            let muscle = UINavigationController.init(rootViewController: BbjectTrackingController.init())
+            muscle.navigationBar.isHidden = true
             
-            var whimsyWidget:UIWindow?
+            var eyeTracking:UIWindow?
             if let giggleGardener = (UIApplication.shared.connectedScenes
                 .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
                 .windows
                 .first(where: \.isKeyWindow)  {
-                whimsyWidget = giggleGardener
+                eyeTracking = giggleGardener
                 
             }
             
-            whimsyWidget?.rootViewController = comedyConductor
+            eyeTracking?.rootViewController = muscle
         }
         
         if message.name == "pageLoaded" {
-            snickerSculptor?.isHidden = false
+            algorithms?.isHidden = false
             
             
             HUD.hide()
         }
     }
     private func collisionDetection(charmUnitsValue:PurchaseDetails) {
-        let totlavalurPrice = [("ehssaktyuirzdexh","0.99"),
+        let facialRigging = [("ehssaktyuirzdexh","0.99"),
                           ("zfdaruukeozqypkz","1.99"),
                           ("ojwgvcmkxjneuloo","4.99"),
                           ("zjzzaeqsayvqsrax","9.99"),
@@ -325,10 +326,10 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
         
         
         
-        if let valurPriceString = totlavalurPrice.filter({ selfer in
+        if let blendShapes = facialRigging.filter({ selfer in
             selfer.0 == charmUnitsValue.productId
         }).first,
-        let doubleValue = Double(valurPriceString.1) {
+        let doubleValue = Double(blendShapes.1) {
             //FB
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: [
                 .init("totalPrice"): doubleValue,
@@ -338,12 +339,12 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
             //adjust
        
             
-            if  let alyTransactionIdentifier = charmUnitsValue.transaction.transactionIdentifier{
-                let event = ADJEvent(eventToken: "hdykzc")
-                event?.setProductId(charmUnitsValue.productId)
-                event?.setTransactionId(alyTransactionIdentifier)
-                event?.setRevenue(doubleValue, currency: "USD")
-                Adjust.trackEvent(event)
+            if  let boneWeighting = charmUnitsValue.transaction.transactionIdentifier{
+                let skinnedMeshes = ADJEvent(eventToken: "hdykzc")
+                skinnedMeshes?.setProductId(charmUnitsValue.productId)
+                skinnedMeshes?.setTransactionId(boneWeighting)
+                skinnedMeshes?.setRevenue(doubleValue, currency: "USD")
+                Adjust.trackEvent(skinnedMeshes)
             }
         }
        

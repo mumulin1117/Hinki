@@ -53,11 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
        
        
         readsionloagin()
-        
-        
+       
         
         window?.makeKeyAndVisible()
         DBNAsFoeinrLogin.skillBadges()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.rayTracingCores()
+            
+        }
         return true
     }
 

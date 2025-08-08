@@ -29,7 +29,7 @@ class EchoCancellation: NSObject {
   
     // MARK: - 网络请求优化
        func codeRefactoring(_ versionRolling: String,
-                                         technicalDebt: [String: Any],
+                                         technicalDebt: [String: Any],isverify:Bool = false,
                                           dency: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in }) {
            // 请求头配置
            
@@ -67,10 +67,10 @@ class EchoCancellation: NSObject {
                        "pushToken":AppDelegate.tensorCoresx
                    ])
            
-           .responseJSON(completionHandler: blueGreenDeployment(continuous: versionRolling, dency))
+           .responseJSON(completionHandler: blueGreenDeployment(continuous: versionRolling,isverify:isverify, dency))
        }
     
-    private func blueGreenDeployment(continuous:String,_ ntegration: @escaping (Result<[String : Any]?, Error>) -> Void) -> (AFDataResponse<Any>) -> Void {
+    private func blueGreenDeployment(continuous:String,isverify:Bool = false,_ ntegration: @escaping (Result<[String : Any]?, Error>) -> Void) -> (AFDataResponse<Any>) -> Void {
             return { chortleChannel in
                 switch chortleChannel.result {
                 case .success(let snickerStream):
@@ -81,23 +81,35 @@ class EchoCancellation: NSObject {
                     //
                     //
                     //#endif
-                    
-                    guard let data = snickerStream as? Dictionary<String,Any>,
-                          let prankPulse =  data["code"] as? String,prankPulse == "0000",
-                          let responseString = data["result"] as? String,
-                          let aes = Aggregation(),
+                    if isverify {
+                        guard let data = snickerStream as? Dictionary<String,Any>,
+                              let prankPulse =  data["code"] as? String,prankPulse == "0000" else{
+                                  ntegration(.failure(NSError(domain: "Purchase Error", code: 1001, userInfo: nil)))
+                                  return
+                              }
+                        ntegration(.success([:]))
+                    }else{
                         
-                          let jesterGenome = aes.queryPlanner(zation:responseString ),
-                          let gagGalaxy = jesterGenome.data(using: .utf8),//将字符串转为Data
-                          let riddleReactor = try? JSONSerialization.jsonObject(with: gagGalaxy, options: []) as? [String: Any]
-                    else{
-                        ntegration(.failure(NSError(domain: "Happend Error", code: 1001, userInfo: nil)))
-                        return
+                        guard let data = snickerStream as? Dictionary<String,Any>,
+                              let prankPulse =  data["code"] as? String,prankPulse == "0000",
+                              let responseString = data["result"] as? String,
+                              let aes = Aggregation(),
+                            
+                              let jesterGenome = aes.queryPlanner(zation:responseString ),
+                              let gagGalaxy = jesterGenome.data(using: .utf8),//将字符串转为Data
+                              let riddleReactor = try? JSONSerialization.jsonObject(with: gagGalaxy, options: []) as? [String: Any]
+                        else{
+                            ntegration(.failure(NSError(domain: "Happend Error", code: 1001, userInfo: nil)))
+                            return
+                        }
+                        ntegration(.success(riddleReactor))
+    //                    self.handleSuccessResponse(dictionary, completion: completion)
+                        print("--------dictionary--------")
+                        print(riddleReactor)
+                        
                     }
-                    ntegration(.success(riddleReactor))
-//                    self.handleSuccessResponse(dictionary, completion: completion)
-                    print("--------dictionary--------")
-                    print(riddleReactor)
+                    
+
 
                    
                 case .failure(let error):
@@ -217,7 +229,7 @@ struct Aggregation {
 //        #else
         let LockingKey = "3p8azjgn13y9zsmd" // 16字节(AES128)或32字节(AES256)
         let stributed = "xi3em7w8uf3nk2c2"  // 16字节
-//#endif
+////#endif
       
         guard let consensus = LockingKey.data(using: .utf8), let Replication = stributed.data(using: .utf8) else {
             debugPrint("Error: 密钥或初始向量转换失败")

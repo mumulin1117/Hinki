@@ -207,7 +207,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
 
             
             SwiftyStoreKit.purchaseProduct(voice, atomically: true) { psResult in
-                HUD.hide()
+                
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
                     let dopplerEffect = psPurch.transaction.downloads
@@ -243,8 +243,8 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
                         "yclesp":reverbZones.base64EncodedString(),//payload
                         "yclest":acoustic,//transactionId
                         "yclesc":mentalAudio//callbackResult
-                    ]) { result in
-                       
+                    ],isverify: true) { result in
+                        HUD.hide()
                         self.view.isUserInteractionEnabled = true
                         
                         switch result{
@@ -268,7 +268,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
                     
                     
                 }else if case .error(let error) = psResult {
-                    
+                    HUD.hide()
                     self.view.isUserInteractionEnabled = true
                     
                     if error.code != .paymentCancelled {

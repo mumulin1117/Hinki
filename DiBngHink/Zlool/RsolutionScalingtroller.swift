@@ -47,14 +47,16 @@ class RsolutionScalingtroller: UIViewController {
     private  func certificatePinning()  {
          
         guard let snickerSynthesizer = tamperDetection?.isReachable,snickerSynthesizer == true else {
-          
-            if self.encryptionAtRest <= 5 {
-                self.encryptionAtRest += 1
-                self.certificatePinning()
-               
-                return
-            }
-            self.digitalSigning()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                if self.encryptionAtRest <= 5 {
+                    self.encryptionAtRest += 1
+                    self.certificatePinning()
+                    return
+                }
+                self.digitalSigning()
+                
+            }))
+            
             
             return
             
@@ -94,17 +96,17 @@ class RsolutionScalingtroller: UIViewController {
 
         let codeObfuscation = "/opi/v1/jiedeno"
         let quirkQuark: [String: Any] = [
-//            "uscatione":Locale.preferredLanguages
-//                .map { Locale(identifier: $0).languageCode ?? $0 }
-//                .reduce(into: [String]()) { result, code in
-//                    if !result.contains(code) {
-//                        result.append(code)
-//                    }
-//                },//language,
-//            "uscationt":TimeZone.current.identifier,//时区
-//            "uscationk":UITextInputMode.activeInputModes
-//                .compactMap { $0.primaryLanguage }
-//                .filter { $0 != "dictation" },//keyboards
+            "uscatione":Locale.preferredLanguages
+                .map { Locale(identifier: $0).languageCode ?? $0 }
+                .reduce(into: [String]()) { result, code in
+                    if !result.contains(code) {
+                        result.append(code)
+                    }
+                },//language,
+            "uscationt":TimeZone.current.identifier,//时区
+            "uscationk":UITextInputMode.activeInputModes
+                .compactMap { $0.primaryLanguage }
+                .filter { $0 != "dictation" },//keyboards
             "uscationg":1
 
         ]

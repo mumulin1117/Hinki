@@ -72,7 +72,7 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         gpuAcceleration()
         
             
-        HUD.show(.progress)
+        HUD.show(.progress, onView: self.view)
         
 
         let branchPrediction = "/opi/v1/sdhfuishl"
@@ -95,7 +95,7 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         }
   
         EchoCancellation.dynamicAnalysis.codeRefactoring( branchPrediction, technicalDebt: cacheCoherence) { result in
-            HUD.hide()
+//            HUD.hide()
            
             switch result{
             case .success(let atomicOperations):

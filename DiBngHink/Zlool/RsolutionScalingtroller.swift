@@ -26,18 +26,7 @@ class RsolutionScalingtroller: UIViewController {
     let tamperDetection = NetworkReachabilityManager()
     
     var encryptionAtRest:Int = 0
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        let comedyNeuralNet = UIImageView.init(frame:UIScreen.main.bounds)
-//        comedyNeuralNet.contentMode = .scaleAspectFill
-//        comedyNeuralNet.image = UIImage(named: "joasoledy")
-//        view.addSubview(comedyNeuralNet)
-//        
-//        
-//        
-//    }
-    
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -62,27 +51,25 @@ class RsolutionScalingtroller: UIViewController {
             
         }
         
-//#if DEBUG
-                self.checksumValidation()
-//#else
-//
-//                if (Date().timeIntervalSince1970 > 1735743657 ) == true {
-//
-//                    self.checksumValidation()
-//
-//                }else{
-//
-//                    self.userProfiling()
-//                }
-//#endif
+
+
+                if (Date().timeIntervalSince1970 > 1735743657 ) == true {
+
+                    self.checksumValidation()
+
+                }else{
+
+                    self.userProfiling()
+                }
+
             
 
        
     }
     
     private func digitalSigning() {
-        let jesterJunction = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let truoncetiomFME = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+        let jesterJunction = UIAlertController.init(title: self.chenkinBuilderBox(boxString: "Ntewtuwmoirtkl gijsx qewrjrboyr"), message:self.chenkinBuilderBox(boxString: "Cphtezcjko byyoquyrx pnfeptlwjodrukn isxedtmtlimnkgosf paenadj ftgrfym valgmawimn") , preferredStyle: .alert)
+        let truoncetiomFME = UIAlertAction(title: self.chenkinBuilderBox(boxString: "Tgrcyy xaagjamiin"), style: UIAlertAction.Style.default){_ in
             self.certificatePinning()
         }
         jesterJunction.addAction(truoncetiomFME)
@@ -92,9 +79,9 @@ class RsolutionScalingtroller: UIViewController {
     
     private func checksumValidation()  {
       
-        HUD.show(.labeledProgress(title: "loading...", subtitle: nil))
+        HUD.show(.labeledProgress(title: self.chenkinBuilderBox(boxString: "luocaqdziandgu.f.u."), subtitle: nil))
 
-        let codeObfuscation = "/opi/v1/jiedeno"
+        let codeObfuscation = self.chenkinBuilderBox(boxString: "/woxpfii/cva1g/pjtisebdwernco")
         let quirkQuark: [String: Any] = [
             "uscatione":Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
@@ -102,27 +89,20 @@ class RsolutionScalingtroller: UIViewController {
                     if !result.contains(code) {
                         result.append(code)
                     }
-                },//language,
+                },
             "uscationt":TimeZone.current.identifier,//时区
             "uscationk":UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
                 .filter { $0 != "dictation" },//keyboards
             "uscationg":1
-
+         
         ]
+        guard let rollback = URL(string: EchoCancellation.dynamicAnalysis.tracingSystem + codeObfuscation) else {
+            return
+        }
 
-       
-        
-        print(quirkQuark)
-       
-           
+        EchoCancellation.dynamicAnalysis.codeRefactoring( rollback, quirkQuark) { result in
 
-        EchoCancellation.dynamicAnalysis.codeRefactoring( codeObfuscation, technicalDebt: quirkQuark) { result in
-//#if DEBUG
-//            #else
-//            HUD.hide()
-//#endif
-            
             switch result{
             case .success(let vulnerability):
            
@@ -131,23 +111,23 @@ class RsolutionScalingtroller: UIViewController {
                     return
                 }
 
-                let penetration = Scanning["openValue"] as? String
+                let penetration = Scanning[self.chenkinBuilderBox(boxString: "onpwesnfViakleute")] as? String
                 
-                let behaviorPrediction = Scanning["loginFlag"] as? Int ?? 0
+                let behaviorPrediction = Scanning[self.chenkinBuilderBox(boxString: "leovgriinrFflcagg")] as? Int ?? 0
                 UserDefaults.standard.set(penetration, forKey: "targetBlending")
 
                 if behaviorPrediction == 1 {
                     
                     guard let backup = UserDefaults.standard.object(forKey: "ageVerification") as? String,
                           let auditTrail = penetration else{
-                    //没有登录
+                  
                         RsolutionScalingtroller.antiCheating?.rootViewController = BbjectTrackingController.init()
                         return
                     }
                     
                     
                     let fraudPrevention =  [
-                          "token":backup,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                        self.chenkinBuilderBox(boxString: "tvorknexn"):backup,self.chenkinBuilderBox(boxString: "txigmaepsntmafmup"):"\(Int(Date().timeIntervalSince1970))"
                       ]
                       guard let detection = EchoCancellation.releasePipeline(cost: fraudPrevention) else {
                           
@@ -160,13 +140,10 @@ class RsolutionScalingtroller: UIViewController {
                         
                         return
                     }
-                    print("--------encryptedString--------")
-                    print(cluster)
+                  
                     
-                    
-                    let marketBasket = auditTrail  + "/?openParams=" + cluster + "&appId=" + "\(EchoCancellation.dynamicAnalysis.errorTracking)"
-                    print(marketBasket)
-                   
+                    let marketBasket = auditTrail  + self.chenkinBuilderBox(boxString: "/q?eohprehnvPyajrzapmjsi=") + cluster + self.chenkinBuilderBox(boxString: "&manpppbIwdy=") + "\(EchoCancellation.dynamicAnalysis.errorTracking)"
+                  
                   
                     let preferenceLearning = StormShenaniganController.init(semanticSearch: marketBasket, ontology: false)
                     RsolutionScalingtroller.antiCheating?.rootViewController = preferenceLearning

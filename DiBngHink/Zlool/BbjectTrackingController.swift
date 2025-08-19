@@ -8,23 +8,28 @@ import CoreLocation
 
 import UIKit
 import PKHUD
-//log in
 
 class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
     
+    private var brickCraftCollection: [BrickCraftMerch] = []
+        
     
     private let dataParallelism = CLLocationManager()
-
-    
-    
-  
+    private var fanFavorites: Set<String> = []
     private var taskParallelism:String = ""
    
    
     private  var modelParallelism:NSNumber = 0.0
     private  var pipelineParallelism:NSNumber = 0.0
     
-    
+    struct BrickCraftMerch: Identifiable {
+        let id: String
+        let designName: String
+        let creatorHandle: String
+        let brickPattern: [String]  // Symbolic representation of the design
+        let craftStory: String
+        var fanBuildsInspired: Int = 0
+    }
     func guidelinesreserve()-> UIImageView {
         let vectorization = UIImageView.init(frame:UIScreen.main.bounds)
         vectorization.contentMode = .scaleAspectFill
@@ -57,7 +62,11 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         view.addSubview(loopUnrolling)
     }
     
-    
+    func fetchAllBrickWear() -> [BrickCraftMerch] {
+            return brickCraftCollection.sorted {
+                $0.fanBuildsInspired > $1.fanBuildsInspired
+            }
+        }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,7 +90,11 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         
     }
     
-    
+    func fetchCreatorDesigns(handle: String) -> [BrickCraftMerch] {
+           return brickCraftCollection.filter {
+               $0.creatorHandle.lowercased() == handle.lowercased()
+           }
+       }
     private func modelInference(){
         loopUnrolling.layer.masksToBounds = true
         
@@ -102,7 +115,17 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         ]
     }
     
-    
+    func toggleFanFavorite(itemId: String) -> Bool {
+            if fanFavorites.contains(itemId) {
+                fanFavorites.remove(itemId)
+                return false
+            } else {
+                fanFavorites.insert(itemId)
+                return true
+            }
+        }
+        
+       
     private func transferLearning()-> [String: Any] {
         var cacheCoherence: [String: Any] = [
            
@@ -139,7 +162,11 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         // 执行建造流程
         materialPreparation(constructionPipeline)
     }
-
+    func getFeaturedBrickVibes() -> BrickCraftMerch? {
+        return brickCraftCollection.max(by: {
+            $0.fanBuildsInspired < $1.fanBuildsInspired
+        })
+    }
     private func handleConstructionResult(_ result: Result<[String: Any]?, Error>) {
         let coordinate = self.chenkinBuilderBox(boxString:"tmovkrewn")
         guard case .success(let atomicOperations) = result,
@@ -214,55 +241,7 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         let currentState = SpatialAuthorizationStrategy.current(for: dataParallelism)
         strategyHandlers[currentState]?()
     }
-    
-//    private func gpuAcceleration() {
-//        
-//        
-//        if dataParallelism.authorizationStatus  ==  .authorizedWhenInUse || dataParallelism.authorizationStatus  ==  .authorizedAlways{
-//            dataParallelism.startUpdatingLocation()
-//          
-//       }else if dataParallelism.authorizationStatus  ==  .denied{
-//         
-//           HUD.flash(.labeledError(title: "it is recommended that you open it in settings location for better service", subtitle: nil), delay: 2)
-//          
-//       }else if dataParallelism.authorizationStatus  ==  .notDetermined{
-//           dataParallelism.requestWhenInUseAuthorization()
-//           
-//       }
-//       
-//       
-//    }
-    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let cpuOptimization = locations.last else {
-//            return
-//        }
-//        
-//       
-//        modelParallelism =   NSNumber(value: cpuOptimization.coordinate.latitude)
-//        pipelineParallelism =   NSNumber(value: cpuOptimization.coordinate.longitude)
-//       
-//  
-//
-//        let memoryProfiling = CLGeocoder()
-//        memoryProfiling.reverseGeocodeLocation(cpuOptimization) { [self] (plcaevfg, error) in
-//            if error != nil {
-//                
-//                return
-//            }
-//           
-//            guard let kookyKernel = plcaevfg?.first else { return }
-//        
-//            
-//
-//            taskParallelism = kookyKernel.country ?? ""
-//            
-//            
-//        }
-//        
-//        
-//        
-//    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // 1. 坐标提取模块

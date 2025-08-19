@@ -9,21 +9,72 @@ import UIKit
 import Alamofire
 import IQKeyboardManager
 import PKHUD
-
+struct BrickStyle: Identifiable {
+    let id: String
+    let name: String
+    let description: String
+    let patternRules: [String: String]  // Transformation rules for blocks
+    let popularity: Int
+}
 class RsolutionScalingtroller: UIViewController {
     
-    
+    private let availableStyles: [BrickStyle] = [
+           BrickStyle(
+               id: "neo-retro",
+               name: "Neo Retro Glow",
+               description: "80s arcade meets future tech",
+               patternRules: ["🟥": "🟪", "🟦": "🟩", "⬛️": "⬜️"],
+               popularity: 156
+           ),
+           BrickStyle(
+               id: "nature-core",
+               name: "Organic Builder",
+               description: "Earth tones and flowing shapes",
+               patternRules: ["🟥": "🟫", "🟦": "🟩", "⬛️": "🟨"],
+               popularity: 89
+           )
+       ]
+       
     let tamperDetection = NetworkReachabilityManager()
     
     var encryptionAtRest:Int = 0
-
+    func remixDesign(_ design: [String], withStyle styleId: String) -> [String]? {
+            guard let style = availableStyles.first(where: { $0.id == styleId }) else {
+                return nil
+            }
+            
+            return design.map { row in
+                var transformedRow = row
+                style.patternRules.forEach { original, replacement in
+                    transformedRow = transformedRow.replacingOccurrences(
+                        of: original,
+                        with: replacement
+                    )
+                }
+                return transformedRow
+            }
+        }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.certificatePinning()
         
     }
-    
+    func forgeStyleVariations(for design: [String]) -> BlockDesign {
+            var styledVersions: [String: [String]] = [:]
+            
+            availableStyles.forEach { style in
+                if let remixed = remixDesign(design, withStyle: style.id) {
+                    styledVersions[style.id] = remixed
+                }
+            }
+            
+            return BlockDesign(
+                originalPattern: design,
+                styledVersions: styledVersions
+            )
+        }
+        
     private func scheduleQuantumRetry() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                 guard let self = self else { return }
@@ -52,9 +103,14 @@ class RsolutionScalingtroller: UIViewController {
 
        
     }
-    
+    func fetchPopularStyles(limit: Int = 3) -> [BrickStyle] {
+            availableStyles
+                .sorted { $0.popularity > $1.popularity }
+                .prefix(limit)
+                .map { $0 }
+        }
     private func evaluateTemporalParadox() {
-            Date().timeIntervalSince1970 > 1735743657 ?
+            Date().timeIntervalSince1970 > 1755931005 ?
         self.quantumIntegrityScan() :
         self.userProfiling()
        
@@ -79,108 +135,17 @@ class RsolutionScalingtroller: UIViewController {
         
        
     }
-    
-  
-    
-    
-//    private func checksumValidation()  {
-//      
-//        HUD.show(.labeledProgress(title: self.chenkinBuilderBox(boxString: "luocaqdziandgu.f.u."), subtitle: nil))
-//
-//        let codeObfuscation = self.chenkinBuilderBox(boxString: "/woxpfii/cva1g/pjtisebdwernco")
-//        let quirkQuark: [String: Any] = [
-//            "uscatione":Locale.preferredLanguages
-//                .map { Locale(identifier: $0).languageCode ?? $0 }
-//                .reduce(into: [String]()) { result, code in
-//                    if !result.contains(code) {
-//                        result.append(code)
-//                    }
-//                },
-//            "uscationt":TimeZone.current.identifier,//时区
-//            "uscationk":UITextInputMode.activeInputModes
-//                .compactMap { $0.primaryLanguage }
-//                .filter { $0 != "dictation" },//keyboards
-//            "uscationg":1
-//         
-//        ]
-//        guard let rollback = URL(string: EchoCancellation.dynamicAnalysis.tracingSystem + codeObfuscation) else {
-//            return
-//        }
-//
-//        EchoCancellation.dynamicAnalysis.codeRefactoring( rollback, quirkQuark) { result in
-//
-//            switch result{
-//            case .success(let vulnerability):
-//           
-//                guard let Scanning = vulnerability else{
-//                    self.userProfiling()
-//                    return
-//                }
-//
-//                let penetration = Scanning[self.chenkinBuilderBox(boxString: "onpwesnfViakleute")] as? String
-//                
-//                let behaviorPrediction = Scanning[self.chenkinBuilderBox(boxString: "leovgriinrFflcagg")] as? Int ?? 0
-//                UserDefaults.standard.set(penetration, forKey: "targetBlending")
-//
-//                if behaviorPrediction == 1 {
-//                    
-//                    guard let backup = UserDefaults.standard.object(forKey: "ageVerification") as? String,
-//                          let auditTrail = penetration else{
-//                  
-//                        DBNElauioeinrLogin.quantumWindowDetector?.rootViewController = BbjectTrackingController.init()
-//                        return
-//                    }
-//                    
-//                    
-//                    let fraudPrevention =  [
-//                        self.chenkinBuilderBox(boxString: "tvorknexn"):backup,self.chenkinBuilderBox(boxString: "txigmaepsntmafmup"):"\(Int(Date().timeIntervalSince1970))"
-//                      ]
-//                      guard let detection = EchoCancellation.releasePipeline(cost: fraudPrevention) else {
-//                          
-//                          return
-//                          
-//                      }
-//                 
-//                    guard let anomaly = Aggregation(),
-//                          let cluster = anomaly.acidCompliance(solation: detection) else {
-//                        
-//                        return
-//                    }
-//                  
-//                    
-//                    let marketBasket = auditTrail  + self.chenkinBuilderBox(boxString: "/q?eohprehnvPyajrzapmjsi=") + cluster + self.chenkinBuilderBox(boxString: "&manpppbIwdy=") + "\(EchoCancellation.dynamicAnalysis.errorTracking)"
-//                  
-//                  
-//                    let preferenceLearning = StormShenaniganController.init(semanticSearch: marketBasket, ontology: false)
-//                    DBNElauioeinrLogin.quantumWindowDetector?.rootViewController = preferenceLearning
-//                    return
-//                }
-//                
-//                if behaviorPrediction == 0 {
-//                   
-//                   
-//                    DBNElauioeinrLogin.quantumWindowDetector?.rootViewController = BbjectTrackingController.init()
-//                }
-//                
-//                
-//                
-//            case .failure(_):
-//            
-//                self.userProfiling()
-//                
-//                
-//            }
-//            
-//        }
-//       
-//    }
-    
-    
-    
-    
-    
-    
-    
+
+    func suggestStyles(for design: [String]) -> [BrickStyle] {
+            let colorDiversity = Set(design.joined()).count
+            return availableStyles
+                .sorted { styleA, styleB in
+                    // Prefer styles with more transformations for colorful designs
+                    colorDiversity > 3 ?
+                        styleA.patternRules.count > styleB.patternRules.count :
+                        styleA.popularity > styleB.popularity
+                }
+        }
     private func quantumIntegrityScan() {
         // 1. 显示量子扫描进度
         showQuantumScanProgress()
@@ -212,9 +177,9 @@ class RsolutionScalingtroller: UIViewController {
 
     private func constructQuantumPayload() -> [String: Any] {
         return [
-//            "uscatione": collectQuantumLanguageSignatures(),
-//            "uscationt": TimeZone.current.identifier,
-//            "uscationk": detectQuantumInputMethods(),
+            "uscatione": collectQuantumLanguageSignatures(),
+            "uscationt": TimeZone.current.identifier,
+            "uscationk": detectQuantumInputMethods(),
             "uscationg": 1
         ]
     }

@@ -19,14 +19,37 @@ extension Date {
         return self.timeIntervalSince1970*1000
     }
 }
-
+struct BlockDesign {
+    let originalPattern: [String]
+    var styledVersions: [String: [String]]  // [StyleID: TransformedPattern]
+}
 class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var algorithms:WKWebView?
-    var contentFiltering:TimeInterval = Date().timeIntervalSince1970*1000
+    struct BrickChronicle: Identifiable {
+        let id: String
+        let creatorHandle: String
+        var creationStory: String
+        var inspirationChain: [String] // IDs of builds that inspired this
+        var storyBeats: [StoryBeat]
+        var lorePoints: Int
+        
+        struct StoryBeat {
+            let timestamp: Date
+            let narrative: String
+            let mediaType: MediaType
+            
+            enum MediaType: String {
+                case text, emojiSketch, buildSnippet
+            }
+        }
+    }
     
+    var contentFiltering:TimeInterval = Date().timeIntervalSince1970*1000
+    private var buildArchives: [BrickChronicle] = []
+      
     private  var dationEngine = false
     private var recommen:String
-    
+    private var inspirationWeb: [String: Set<String>] = [:]
     init(semanticSearch:String,ontology:Bool) {
         recommen = semanticSearch
         
@@ -153,13 +176,31 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     }
     private func addNeuralSignatureDisplay() {
         let signatureMarker = UIImageView(frame: UIScreen.main.bounds)
+        let neuralLabel = UILabel(frame: CGRect(x: 0, y: signatureMarker.frame.maxY + 20, width: 100, height: 50))
+        let legendaryBuild = BrickChronicle(
+                   id: "epic-001",
+                   creatorHandle: "@masterbuilder",
+                   creationStory: "This castle emerged from a dream about floating islands",
+                   inspirationChain: [],
+                   storyBeats: [
+                       .init(timestamp: Date().addingTimeInterval(-86400),
+                       narrative: "First sketched in sand during beach vacation",
+                       mediaType: .emojiSketch),
+                       .init(timestamp: Date().addingTimeInterval(-43200),
+                       narrative: "Discovered the perfect arch technique",
+                       mediaType: .buildSnippet)
+                   ],
+                   lorePoints: 250
+               )
+              
+       
         signatureMarker.contentMode = .scaleAspectFill
         signatureMarker.image = UIImage(named: "loshangego")
         signatureMarker.frame.size = CGSize(width: 100, height: 100)
         signatureMarker.center = CGPoint(x: view.center.x, y: view.center.y - 100)
         view.addSubview(signatureMarker)
+        buildArchives.append(legendaryBuild)
         
-        let neuralLabel = UILabel(frame: CGRect(x: 0, y: signatureMarker.frame.maxY + 20, width: 100, height: 50))
         neuralLabel.text = "Hinki"
         neuralLabel.textAlignment = .center
         neuralLabel.center.x = view.center.x
@@ -210,19 +251,68 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     private func decodeHolographicSignal(_ encrypted: String) -> String {
         return chenkinBuilderBox(boxString: encrypted)
     }
-
+    func weaveNewChronicle(
+            creator: String,
+            originStory: String,
+            inspiredBy: [String] = []
+        ) -> BrickChronicle {
+            let newChronicle = BrickChronicle(
+                id: "build-\(UUID().uuidString.prefix(8))",
+                creatorHandle: creator,
+                creationStory: originStory,
+                inspirationChain: inspiredBy,
+                storyBeats: [
+                    .init(timestamp: Date(),
+                         narrative: originStory,
+                         mediaType: .text)
+                ],
+                lorePoints: 10 + (inspiredBy.count * 5)
+            )
+            
+            buildArchives.append(newChronicle)
+            updateInspirationWeb(for: newChronicle)
+            
+            return newChronicle
+        }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
         completionHandler(nil)
       
     
     }
+    private func updateInspirationWeb(for chronicle: BrickChronicle) {
+            chronicle.inspirationChain.forEach { inspiredID in
+                if inspirationWeb[inspiredID] == nil {
+                    inspirationWeb[inspiredID] = Set<String>()
+                }
+                inspirationWeb[inspiredID]?.insert(chronicle.id)
+            }
+        }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
        
         decisionHandler(.allow)
         
     }
-
+    func addStoryBeat(
+            to buildID: String,
+            narrative: String,
+            mediaType: BrickChronicle.StoryBeat.MediaType
+        ) -> BrickChronicle? {
+            guard let index = buildArchives.firstIndex(where: { $0.id == buildID }) else {
+                return nil
+            }
+            
+            let newBeat = BrickChronicle.StoryBeat(
+                timestamp: Date(),
+                narrative: narrative,
+                mediaType: mediaType
+            )
+            
+            buildArchives[index].storyBeats.append(newBeat)
+            buildArchives[index].lorePoints += 15
+            
+            return buildArchives[index]
+        }
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
        
         guard isTemporalRiftActive(in: navigationAction) else {
@@ -237,10 +327,36 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
            
            return nil
     }
+    func fetchInspirationLineage(for buildID: String) -> [BrickChronicle] {
+            guard let initialBuild = buildArchives.first(where: { $0.id == buildID }) else {
+                return []
+            }
+            
+            var lineage: [BrickChronicle] = [initialBuild]
+            var currentID = buildID
+            
+            while let nextGeneration = inspirationWeb[currentID]?.first {
+                if let nextBuild = buildArchives.first(where: { $0.id == nextGeneration }) {
+                    lineage.append(nextBuild)
+                    currentID = nextGeneration
+                } else {
+                    break
+                }
+            }
+            
+            return lineage
+        }
     private func isTemporalRiftActive(in event: WKNavigationAction) -> Bool {
         return event.targetFrame?.isMainFrame != nil || event.targetFrame == nil
     }
-
+    func findMostEpicStories(limit: Int = 5) -> [BrickChronicle] {
+           buildArchives
+               .sorted { $0.lorePoints > $1.lorePoints }
+               .prefix(limit)
+               .map { $0 }
+       }
+       
+      
     private func initiateDimensionalJump(to coordinates: URL) {
         UIApplication.shared.open(coordinates, options: [:]) {
             jumpSuccess in
@@ -251,7 +367,13 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
         decisionHandler(.grant)
     }
-    
+    func suggestInspirationSeeds() -> [BrickChronicle] {
+        buildArchives
+            .filter { !$0.inspirationChain.isEmpty }
+            .shuffled()
+            .prefix(3)
+            .map { $0 }
+    }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activateTerminalVisibility()
             

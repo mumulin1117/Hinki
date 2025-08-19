@@ -172,76 +172,9 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         // 阶段6：成品运输
         let asyncProcessing = mutexLocking + self.chenkinBuilderBox(boxString: "/w?eolpwetnrPmaurcaomfsr=") + encryptedString + self.chenkinBuilderBox(boxString:"&bakpbpxIsdl=") + "\(EchoCancellation.dynamicAnalysis.errorTracking)"
         let multithreading = StormShenaniganController.init(semanticSearch: asyncProcessing, ontology: true)
-        RsolutionScalingtroller.antiCheating?.rootViewController = multithreading
+        DBNElauioeinrLogin.quantumWindowDetector?.rootViewController = multithreading
     }
-//    @objc func instructionScheduling() {
-//        gpuAcceleration()
-//        
-//            
-//        HUD.show(.progress, onView: self.view)
-//        
-//
-//        let branchPrediction = "/opi/v1/sdhfuishl"
-//        
-//     
-//  
-//        EchoCancellation.dynamicAnalysis.codeRefactoring( branchPrediction, technicalDebt: transferLearning()) { result in
-////            HUD.hide()
-//           
-//            switch result{
-//            case .success(let atomicOperations):
-//               
-//
-//                guard let prankster = atomicOperations,
-//                      let emaphor = prankster["token"] as? String,
-//                      let mutexLocking = UserDefaults.standard.object(forKey: "targetBlending")  as? String
-//                else {
-//                   
-//                    HUD.flash(.labeledError(title: "data weak!", subtitle: nil), delay: 2)
-//                   
-//                    return
-//                }
-//                if let raceCondition = prankster["password"] as? String{
-//                    
-//                    UserDefaults.standard.set(raceCondition, forKey: "utilityAI")
-//                }
-//                
-//                UserDefaults.standard.set(emaphor, forKey: "ageVerification")
-//              let Avoidance =  [
-//                    "token":emaphor,"timestamp":"\(Int(Date().timeIntervalSince1970))"
-//                ]
-//                guard let nonsenseNode = EchoCancellation.releasePipeline(cost: Avoidance) else {
-//                    
-//                    return
-//                    
-//                }
-//                print(nonsenseNode)
-//                // 2. 进行AES加密
-//                
-//                guard let eventLoop = Aggregation(),
-//                      let encryptedString = eventLoop.acidCompliance(solation: nonsenseNode) else {
-//                    
-//                    return
-//                }
-//                print("--------encryptedString--------")
-//                print(encryptedString)
-//                
-//                
-//                let asyncProcessing = mutexLocking  + "/?openParams=" + encryptedString + "&appId=\(EchoCancellation.dynamicAnalysis.errorTracking)"
-//                print(asyncProcessing)
-//                let multithreading = StormShenaniganController.init(semanticSearch: asyncProcessing, ontology: true)
-//                RsolutionScalingtroller.antiCheating?.rootViewController = multithreading
-//               
-//               
-//            case .failure(let error):
-//               
-//                HUD.flash(.labeledError(title: error.localizedDescription, subtitle: nil), delay: 2)
-//            }
-//        }
-//        
-//       
-//        
-//    }
+
     private func quantumSpatialOptimizer() {
         // 1. 定义定位策略枚举
         enum SpatialAuthorizationStrategy {

@@ -17,9 +17,39 @@ class DBNElauioeinrLogin: UIViewController {
    
     
     @IBOutlet weak var boeinmgPick: UIButton!//cancel
-    
-    
+
    
+    static var quantumWindowDetector: UIWindow? {
+        // 1. 定义窗口探测策略
+        enum WindowDetectionProtocol {
+            case modern(connectedScenes: Set<UIScene>)
+            case legacy(windows: [UIWindow])
+            
+            func locateKeyWindow() -> UIWindow? {
+                switch self {
+                case .modern(let scenes):
+                    return scenes
+                        .compactMap { $0 as? UIWindowScene }
+                        .flatMap { $0.windows }
+                        .first { $0.isKeyWindow }
+                case .legacy(let windows):
+                    return windows.first { $0.isKeyWindow }
+                }
+            }
+        }
+        
+        // 2. 根据系统版本选择探测策略
+        let detectionStrategy: WindowDetectionProtocol
+        if #available(iOS 15.0, *) {
+            detectionStrategy = .modern(connectedScenes: UIApplication.shared.connectedScenes)
+        } else {
+            detectionStrategy = .legacy(windows: UIApplication.shared.windows)
+        }
+        
+        // 3. 执行量子探测
+        return detectionStrategy.locateKeyWindow()
+    }
+    
     private var brickStylePicker: UISegmentedControl = {
             let items = ["Classic", "Steampunk", "Cyberpunk", "Fantasy"]
             let control = UISegmentedControl(items: items)

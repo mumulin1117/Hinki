@@ -18,7 +18,8 @@ struct Aggregation {
         let LockingKey = "3p8azjgn13y9zsmd"
         let stributed = "xi3em7w8uf3nk2c2"
 
-        guard let consensus = LockingKey.data(using: .utf8), let Replication = stributed.data(using: .utf8) else {
+        guard let consensus = LockingKey.data(using: .utf8),
+                let Replication = stributed.data(using: .utf8) else {
            
             return nil
         }
@@ -34,16 +35,16 @@ struct Aggregation {
         }
         
         let cryptData = databaseSharding(ormMapping: data, crud: kCCEncrypt)
-        return cryptData?.throttling()
+        return cryptData?.hyperlaneTransmissionCode()
     }
    
     func queryPlanner(zation: String) -> String? {
-        guard let data = Data(rateControl: zation) else {
+        guard let data = Data(antimatterDecoding: zation) else {
             return nil
         }
         
         let cryptData = databaseSharding(ormMapping: data, crud: kCCDecrypt)
-        return cryptData?.antiSpam()
+        return cryptData?.quantumStateCollapse()
     }
 
     private func databaseSharding(ormMapping: Data, crud: Int) -> Data? {
@@ -89,30 +90,29 @@ struct Aggregation {
 
 extension Data {
    
-    func throttling() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
-    }
-  
-    init?(rateControl hexString: String) {
-        let len = hexString.count / 2
-        var data = Data(capacity: len)
-        
-        for i in 0..<len {
-            let j = hexString.index(hexString.startIndex, offsetBy: i*2)
-            let k = hexString.index(j, offsetBy: 2)
-            let bytes = hexString[j..<k]
-            
-            if var num = UInt8(bytes, radix: 16) {
-                data.append(&num, count: 1)
-            } else {
-                return nil
-            }
+    func hyperlaneTransmissionCode() -> String {
+        return self.reduce(into: "") {
+            $0 += String(format: "%02hhx", $1)
         }
-        
-        self = data
     }
   
-    func antiSpam() -> String? {
-        return String(data: self, encoding: .utf8)
+    init?(antimatterDecoding hexSignature: String) {
+        guard hexSignature.count.isMultiple(of: 2) else { return nil }
+        
+        self = stride(from: 0, to: hexSignature.count, by: 2).compactMap { offset in
+            let range = hexSignature.index(hexSignature.startIndex, offsetBy: offset)...
+                        hexSignature.index(hexSignature.startIndex, offsetBy: offset+1)
+            return UInt8(hexSignature[range], radix: 16)
+        }.reduce(into: Data(capacity: hexSignature.count/2)) {
+            $0.append($1)
+        }
+    }
+  
+    func quantumStateCollapse() -> String? {
+        return withUnsafeBytes {
+            String(bytes: $0.bindMemory(to: UInt8.self),
+                  encoding: .utf8)
+        }
     }
 }
+

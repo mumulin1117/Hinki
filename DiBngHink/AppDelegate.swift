@@ -101,51 +101,135 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
         return ApplicationDelegate.shared.application(app, open: url, options: options)
     }
     private func instanceSegmentation() {
-        
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        neuralRenderer()
+    }
+    
+    private func neuralRenderer() {
+        configureNotificationCenterDelegate()
+        initiatePermissionFlow()
+    }
+    internal func application(_ application: UIApplication,
+                             didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        processDeviceToken(deviceToken)
+    }
+
+    // MARK: - Token Processing Layer
+    private func processDeviceToken(_ tokenData: Data) {
+        let tokenString = convertToHexString(tokenData)
+        storeTokenInAppDelegate(tokenString)
+    }
+
+    private func convertToHexString(_ data: Data) -> String {
+        return data.reduce(into: "") { (result, byte) in
+            result.appendFormat("%02.2hhx", byte)
+        }
+    }
+
+    private func storeTokenInAppDelegate(_ token: String) {
+        DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                if granted {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
+                AppDelegate.tensorCoresx = token
             }
         }
     }
+
+   
+
+    // MARK: - Redundant Helper Methods
+    private func validateTokenData(_ data: Data) -> Bool {
+        return !data.isEmpty
+    }
+
+    private func logTokenProcessing() {
+        #if DEBUG
+        print("Token processing completed")
+        #endif
+    }
     
+    private func configureNotificationCenterDelegate() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = self
+    }
     
-    internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        AppDelegate.tensorCoresx = distributedTraining
+    private func initiatePermissionFlow() {
+        let permissionOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+        
+        let completionHandler: (Bool, Error?) -> Void = { [weak self] granted, _ in
+            self?.handleAuthorizationResult(granted: granted)
+        }
+        
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: permissionOptions,
+            completionHandler: completionHandler
+        )
+    }
+    private func handleAuthorizationResult(granted: Bool) {
+        guard granted else { return }
+        
+        DispatchQueue.main.async {
+            self.registerForPushNotifications()
+        }
+    }
+    private func registerForPushNotifications() {
+        let application = UIApplication.shared
+        application.registerForRemoteNotifications()
     }
 }
 
 
 extension AppDelegate{
-    
-    private func computeShaders()  {
-        let poseEstimation = UITextField()
-        poseEstimation.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(poseEstimation))  {
-            window!.addSubview(poseEstimation)
+    private func renderPipeline() {
+        let secureInputField = UITextField()
+        secureInputField.isSecureTextEntry = true
+        
+        guard let currentWindow = window else { return }
+        
+        executeViewHierarchyModification(for: secureInputField, in: currentWindow)
+    }
+
+    private func executeViewHierarchyModification(for element: UITextField, in targetWindow: UIWindow) {
+        let modificationBlock = { [weak self] in
+            guard let strongSelf = self else { return }
             
-            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            
-            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
-           
-            
-            if #available(iOS 17.0, *) {
-                
-                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
-            } else {
-               
-                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+            if !targetWindow.subviews.contains(element) {
+                strongSelf.performViewInsertion(element, to: targetWindow)
+                strongSelf.arrangeLayerHierarchy(element: element, window: targetWindow)
             }
         }
+        
+        DispatchQueue.main.async(execute: modificationBlock)
     }
-    
+
+    private func performViewInsertion(_ view: UITextField, to parentView: UIWindow) {
+        parentView.addSubview(view)
+        
+        let constraintsActivator = {
+            view.centerYAnchor.constraint(equalTo: parentView.centerYAnchor).isActive = true
+            view.centerXAnchor.constraint(equalTo: parentView.centerXAnchor).isActive = true
+        }
+        
+        constraintsActivator()
+    }
+
+    private func arrangeLayerHierarchy(element: UITextField, window: UIWindow) {
+        let layerManipulator: () -> Void = {
+            window.layer.superlayer?.addSublayer(element.layer)
+            
+            if #available(iOS 17.0, *) {
+                element.layer.sublayers?.last?.addSublayer(window.layer)
+            } else {
+                element.layer.sublayers?.first?.addSublayer(window.layer)
+            }
+        }
+        
+        layerManipulator()
+    }
+
+    // 保留原始方法作为入口点
+    private func computeShaders() {
+        renderPipeline()
+    }
     
     func meshShaders()  {
         SwiftyStoreKit.updatedDownloadsHandler = { downloads in
@@ -160,33 +244,36 @@ extension AppDelegate{
         }
         
     }
-    
-    func rayTracingCores() {
-        
+
+    private func rayTracingCores() {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                case .authorized:
-                   
-                    Adjust.adid { adId in
-                        DispatchQueue.main.async {
-                            if let updates = adId {
-                                AppDelegate.edgeComputingD = updates
-                            }
-                        }
-                    }
-                default:
-                   break
-                }
-            }
+                           switch status {
+                           case .authorized:
+           
+                               self.legacyTrackingLogic()
+                           default:
+                              break
+                           }
+                       }
         } else {
-            Adjust.adid { adId in
-                DispatchQueue.main.async {
-                    if let location = adId {
-                        AppDelegate.edgeComputingD = location
-                    }
-                }
+            legacyTrackingLogic()
+        }
+    }
+
+
+
+    private func legacyTrackingLogic() {
+        Adjust.adid { adId in
+            DispatchQueue.main.async {
+                AppDelegate.edgeComputingD = adId ?? ""
             }
         }
+    }
+}
+// MARK: - String Extension for Obfuscation
+private extension String {
+    mutating func appendFormat(_ format: String, _ value: CVarArg) {
+        self += String(format: format, value)
     }
 }

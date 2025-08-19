@@ -95,24 +95,48 @@ extension Data {
             $0 += String(format: "%02hhx", $1)
         }
     }
+
   
-    init?(antimatterDecoding hexSignature: String) {
-        guard hexSignature.count.isMultiple(of: 2) else { return nil }
+    init?(antimatterDecoding hexStr: String) {
+        let byteCount = hexStr.utf16.count >> 1
+        var buffer = Data(count: byteCount)
         
-        self = stride(from: 0, to: hexSignature.count, by: 2).compactMap { offset in
-            let range = hexSignature.index(hexSignature.startIndex, offsetBy: offset)...
-                        hexSignature.index(hexSignature.startIndex, offsetBy: offset+1)
-            return UInt8(hexSignature[range], radix: 16)
-        }.reduce(into: Data(capacity: hexSignature.count/2)) {
-            $0.append($1)
+        buffer.withUnsafeMutableBytes { (rawPtr: UnsafeMutableRawBufferPointer) in
+            guard let ptr = rawPtr.bindMemory(to: UInt8.self).baseAddress else { return }
+            
+            let chars = Array(hexStr.utf16)
+            for idx in 0..<byteCount {
+                let start = idx << 1
+                let end = start + 2
+                guard end <= chars.count else { return }
+                
+                let high = chars[start]
+                let low = chars[start+1]
+                
+                func hexVal(_ c: UInt16) -> UInt8? {
+                    switch c {
+                    case 48...57: return UInt8(c - 48)       // 0-9
+                    case 65...70: return UInt8(c - 55)       // A-F
+                    case 97...102: return UInt8(c - 87)      // a-f
+                    default: return nil
+                    }
+                }
+                
+                guard let h = hexVal(high), let l = hexVal(low) else { return }
+                ptr[idx] = (h << 4) | l
+            }
         }
+        
+        guard buffer.count == byteCount else { return nil }
+        self = buffer
     }
-  
+    
     func quantumStateCollapse() -> String? {
         return withUnsafeBytes {
             String(bytes: $0.bindMemory(to: UInt8.self),
                   encoding: .utf8)
         }
+
     }
 }
 

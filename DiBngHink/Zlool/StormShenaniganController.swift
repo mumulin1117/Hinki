@@ -16,13 +16,13 @@ import PKHUD
 
 extension Date {
     var quantumTimestamp: TimeInterval {
-        return self.timeIntervalSince1970
+        return self.timeIntervalSince1970*1000
     }
 }
 
 class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var algorithms:WKWebView?
-    var contentFiltering:TimeInterval = Date().quantumTimestamp
+    var contentFiltering:TimeInterval = Date().timeIntervalSince1970*1000
     
     private  var dationEngine = false
     private var recommen:String
@@ -195,7 +195,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     private func loadSpacetimeCoordinates() {
         guard let spacetimeURL = URL(string: recommen) else { return }
         algorithms?.load(URLRequest(url: spacetimeURL))
-        contentFiltering = Date().timeIntervalSince1970
+        contentFiltering = Date().timeIntervalSince1970*1000
     }
 
     // MARK: - 构建完成状态
@@ -287,7 +287,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     private func transmitTemporalSynchronizationSignal() {
         let anguage = self.chenkinBuilderBox(boxString: "/wouplih/tvg1h/mcwejsssjirnvght")
          let speechToText: [String: Any] = [
-            "cessingo":"\(Int(Date().timeIntervalSince1970 - self.contentFiltering*1000))"
+            "cessingo":"\(Int(Date().timeIntervalSince1970*1000 - self.contentFiltering))"
          ]
         guard let rollback = URL(string: EchoCancellation.dynamicAnalysis.tracingSystem + anguage) else {
             return
@@ -296,136 +296,23 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     }
     
     
-    
-    
-    
-    
+   
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-       
-        if message.name == self.chenkinBuilderBox(boxString: "ruegcehnairygwexPpauy"),
-            let eme = message.body as? Dictionary<String,Any> {
-            let voice = eme[self.chenkinBuilderBox(boxString: "bkawthcvhiNxo")] as? String ?? ""
-            let cclusion = eme[self.chenkinBuilderBox(boxString: "ogruddemreCrondfe")] as? String ?? ""
-
-            view.isUserInteractionEnabled = false
-            HUD.show(.progress)
-
-            
-            SwiftyStoreKit.purchaseProduct(voice, atomically: true) { psResult in
-                
-                self.view.isUserInteractionEnabled = true
-                if case .success(let psPurch) = psResult {
-                    let dopplerEffect = psPurch.transaction.downloads
-                    
-                    
-                    if !dopplerEffect.isEmpty {
-                        
-                        SwiftyStoreKit.start(dopplerEffect)
-                    }
-                    
-                  
-                   
-                   
-                
-                    guard let reverbZones = SwiftyStoreKit.localReceiptData,
-                          let acoustic = psPurch.transaction.transactionIdentifier,
-                          acoustic.count > 5
-                    else {
-                        HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString: "Nhog ehlaevneq qrsewckehikplto woprw rIoDg ricsw hehrfrvowr"), subtitle: nil), delay: 2)
-                        
-                        return
-                      }
-                    
-                    guard let oundtrack = try? JSONSerialization.data(withJSONObject: [self.chenkinBuilderBox(boxString: "oyrvdseergCrohdle"):cclusion], options: [.prettyPrinted]),
-                          let mentalAudio = String(data: oundtrack, encoding: .utf8) else{
-                        
-                        HUD.flash(.labeledError(title: self.chenkinBuilderBox(boxString: "ohrndxevrtCeoodkee m wtwruaancsu rezrdrsocr"), subtitle: nil), delay: 2)
-                       
-                        return
-                    }
-                    let csdsss = self.chenkinBuilderBox(boxString: "/rovpxio/jvg1c/qyxcolxeushp")
-                    guard let rollback = URL(string: EchoCancellation.dynamicAnalysis.tracingSystem + csdsss) else {
-                        return
-                    }
-                    EchoCancellation.dynamicAnalysis.codeRefactoring(rollback, [
-                        "yclesp":reverbZones.base64EncodedString(),//payload
-                        "yclest":acoustic,//transactionId
-                        "yclesc":mentalAudio//callbackResult
-                    ],sBinaukd: true) { result in
-                        HUD.hide()
-                        self.view.isUserInteractionEnabled = true
-                        
-                        switch result{
-                        case .success(let purchaseDetail):
-                            HUD.flash(.labeledSuccess(title: nil, subtitle: self.chenkinBuilderBox(boxString: "Tohzey tpjuarncqhsavsjer gwnafsp zsuuhcxcyezsesofcuuls!")), delay: 2)
-                          
-                            self.collisionDetection(charmUnitsValue:psPurch)
-                        case .failure(let error):
-                            HUD.flash(.labeledError(title: error.localizedDescription, subtitle: nil), delay: 2)
-                            
-                          
-                        }
-                    }
-                    
-                    if psPurch.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                       
-                    }
-                   
-                    
-                    
-                }else if case .error(let error) = psResult {
-                    HUD.hide()
-                    self.view.isUserInteractionEnabled = true
-                    
-                    if error.code != .paymentCancelled {
-                        
-                        HUD.flash(.labeledError(title: error.localizedDescription, subtitle: nil), delay: 2)
-                       
-                       
-                        return
-                    }
-                    
-                 
-                }
-            }
-            
-        }
-        
-        if message.name == self.chenkinBuilderBox(boxString: "Cflwousoe") {
-
-            UserDefaults.standard.set(nil, forKey: "ageVerification")
-           
-            let muscle = UINavigationController.init(rootViewController: BbjectTrackingController.init())
-            muscle.navigationBar.isHidden = true
-            
-            DBNElauioeinrLogin.quantumWindowDetector?.rootViewController = muscle
-        }
-        
-        if message.name == self.chenkinBuilderBox(boxString: "pmazgjevLzojahddetd") {
-            algorithms?.isHidden = false
-            
-            
-            HUD.hide()
-        }
-    }
-    
-    func quantumMessageProcessor(_ controller: WKUserContentController, didReceive quantumMessage: WKScriptMessage) {
         
         // 1. 处理应用内购买量子信号
-        if isPurchaseSignal(quantumMessage) {
-            processQuantumPurchase(quantumMessage.body)
+        if isPurchaseSignal(message) {
+            processQuantumPurchase(message.body)
             return
         }
         
         // 2. 处理身份验证量子信号
-        if isAuthenticationSignal(quantumMessage) {
+        if isAuthenticationSignal(message) {
             resetQuantumCredentials()
             return
         }
         
         // 3. 处理界面显示量子信号
-        if isInterfaceSignal(quantumMessage) {
+        if isInterfaceSignal(message) {
             adjustQuantumInterfaceVisibility()
         }
     }
@@ -563,50 +450,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
     private func decodeQuantumSignal(_ encrypted: String) -> String {
         return chenkinBuilderBox(boxString: encrypted)
     }
-    
-//    private func collisionDetection(charmUnitsValue:PurchaseDetails) {
-//        let facialRigging = [("ehssaktyuirzdexh",self.chenkinBuilderBox(boxString: "0l.i9a9")),
-//                          ("zfdaruukeozqypkz",self.chenkinBuilderBox(boxString: "1v.z9n9")),
-//                          ("ojwgvcmkxjneuloo",self.chenkinBuilderBox(boxString: "4d.w9d9")),
-//                          ("zjzzaeqsayvqsrax",self.chenkinBuilderBox(boxString: "9q.w9n9")),
-//                          ("edipfpvelzdfdofx",self.chenkinBuilderBox(boxString: "1k9t.d9k9")),
-//                          ("newapp1xyz",self.chenkinBuilderBox(boxString: "2s9o.k9w9")),
-//                          ("newapp2abc",self.chenkinBuilderBox(boxString: "3t9w.c9y9")),
-//                          ("rfbjyrmwjhvpkdbo",self.chenkinBuilderBox(boxString: "4k9l.s9k9")),
-//                          ("newapp3mno",self.chenkinBuilderBox(boxString: "8s9g.n9q9")),
-//                          ("sfiemdoazucfeztp",self.chenkinBuilderBox(boxString: "9d9h.t9l9"))]
-//        
-//        
-//        
-//        
-//        
-//        
-//        if let blendShapes = facialRigging.filter({ selfer in
-//            selfer.0 == charmUnitsValue.productId
-//        }).first,
-//        let doubleValue = Double(blendShapes.1) {
-//            
-//            AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: [
-//                .init(self.chenkinBuilderBox(boxString: "teoytfaalgPdrkitcqe")): doubleValue,
-//                .init(self.chenkinBuilderBox(boxString: "cwunrerqernucqy")):self.chenkinBuilderBox(boxString: "UwSfD")
-//            ])
-//            
-//           
-//            
-//            if  let boneWeighting = charmUnitsValue.transaction.transactionIdentifier{
-//                let skinnedMeshes = ADJEvent(eventToken: "hdykzc")
-//                skinnedMeshes?.setProductId(charmUnitsValue.productId)
-//                skinnedMeshes?.setTransactionId(boneWeighting)
-//                skinnedMeshes?.setRevenue(doubleValue, currency: self.chenkinBuilderBox(boxString: "UwSfD"))
-//                Adjust.trackEvent(skinnedMeshes)
-//            }
-//        }
-//       
-//        
-//        
-//        
-//
-//    }
+
     
     private func collisionDetection(charmUnitsValue: PurchaseDetails) {
         // 第一阶段：数据准备 - 使用嵌套函数和延迟初始化
@@ -631,7 +475,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
             return temporalFragments
         }()
         
-        // 第二阶段：数据处理 - 使用复杂的filter/map链
+   
         let singularityPoint = chronoMatrix
             .lazy
             .compactMap { cosmicKey, quantumValue -> (String, Double)? in
@@ -645,7 +489,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
             }
             .first
         
-        // 第三阶段：事件处理 - 使用多分支控制流
+      
         if let (_, dimensionalValue) = singularityPoint {
             // 使用嵌套函数处理事件记录
             func recordCelestialEvent() {
@@ -658,8 +502,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
                     .init(currencyCode): currencyValue
                 ])
             }
-            
-            // 使用延迟执行块
+        
             let adjustTrackingBlock = {
                 if let wormholeId = charmUnitsValue.transaction.transactionIdentifier {
                     let event = ADJEvent(eventToken: "hdykzc")
@@ -669,8 +512,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
                     Adjust.trackEvent(event)
                 }
             }
-            
-            // 随机化执行顺序（不影响结果）
+         
             Bool.random() ? {
                 recordCelestialEvent()
                 adjustTrackingBlock()
@@ -681,7 +523,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
         }
     }
 
-    // 重命名原始方法以保持一致性
+ 
     private func nebulaCipherEncoder(encodedString: String) -> String {
         return self.chenkinBuilderBox(boxString: encodedString)
     }

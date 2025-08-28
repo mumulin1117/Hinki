@@ -457,8 +457,12 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
         guard let quantumData = messageBody as? [String: Any] else { return }
         
         let productID = quantumData[decodeQuantumSignal("bkawthcvhiNxo")] as? String ?? ""
-        let callbackParam = quantumData[decodeQuantumSignal("ogruddemreCrondfe")] as? String ?? ""
-        
+        let callbackParamID = quantumData[decodeQuantumSignal("ogruddemreCrondfe")] as? String ?? ""
+        guard let visualCadence = try? JSONSerialization.data(withJSONObject: [decodeQuantumSignal("ogruddemreCrondfe"):callbackParamID], options: [.prettyPrinted]),
+                      let callbackParam = String(data: visualCadence, encoding: .utf8) else {
+                   
+                    return
+                }
         // 1. 准备量子购买环境
         prepareQuantumPurchaseEnvironment()
         

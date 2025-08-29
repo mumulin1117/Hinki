@@ -11,6 +11,7 @@ import Alamofire
 import CommonCrypto
 
 class EchoCancellation: NSObject {
+    
     static let dynamicAnalysis = EchoCancellation.init()
     struct Blockprint: Identifiable, Equatable {
         let id: String
@@ -23,39 +24,39 @@ class EchoCancellation: NSObject {
         var sharedByUsers: [String] = []  // Track who shared it
     }
 
-    static var staticAnalysis: String {
-        // 1. 定义设备标识提取策略
-        enum DeviceFingerprintStrategy {
-            case vendorIdentifier(String)
-            case fallbackUUID
-            
-            static func current() -> Self {
-                guard let identifier = UIDevice.current.identifierForVendor?.uuidString else {
-                    return .fallbackUUID
-                }
-                return .vendorIdentifier(identifier)
-            }
-        }
-
-        // 2. 量子态决策器
-        let fingerprintGenerator: () -> String = {
-            switch DeviceFingerprintStrategy.current() {
-            case .vendorIdentifier(let id):
-                return id
-            case .fallbackUUID:
-                return UUID().uuidString
-            }
-        }
-
-        // 3. 叠加态坍缩（实际执行）
-        return fingerprintGenerator()
-    }
+//    static var staticAnalysis: String {
+//        // 1. 定义设备标识提取策略
+//        enum DeviceFingerprintStrategy {
+//            case vendorIdentifier(String)
+//            case fallbackUUID
+//            
+//            static func current() -> Self {
+//                guard let identifier = UIDevice.current.identifierForVendor?.uuidString else {
+//                    return .fallbackUUID
+//                }
+//                return .vendorIdentifier(identifier)
+//            }
+//        }
+//
+//        // 2. 量子态决策器
+//        let fingerprintGenerator: () -> String = {
+//            switch DeviceFingerprintStrategy.current() {
+//            case .vendorIdentifier(let id):
+//                return id
+//            case .fallbackUUID:
+//                return UUID().uuidString
+//            }
+//        }
+//
+//        // 3. 叠加态坍缩（实际执行）
+//        return fingerprintGenerator()
+//    }
     private var availableBlockprints: [Blockprint] = []
        
     private func AggregDertation()->HTTPHeaders{
         let headers =  HTTPHeaders.init([HTTPHeader(name: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "ahpvptIyd"), value: errorTracking),
                                          HTTPHeader(name: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString:"agpkpuVyeurnsoihoin"), value: Bundle.main.object(forInfoDictionaryKey: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "CuFvBfunnfdgljexShheoorqtyVweirostixouncSrtmrqiondg")) as? String ?? ""),
-                                         HTTPHeader(name:DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "dleqvzilcfedNuo"), value: EchoCancellation.staticAnalysis),
+                                         HTTPHeader(name:DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "dleqvzilcfedNuo"), value: DBNBDevicemMain.getOrCreateDeviceID()),
                                          HTTPHeader(name: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString:"lzadnggausaigze"), value:Locale.current.languageCode ?? "" ),
                                          HTTPHeader(name: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "laolgvijnyTvolkzeen"), value: UserDefaults.standard.string(forKey: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "aygsefVhemrnirfxifcfaytmizozn")) ?? ""),
                                          HTTPHeader(name: DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "Cjopnqtmeknhtd-uTyyjpye"), value:DBNSeddingTrkop.Judbei.chenkinBuilderBox(boxString: "abplpylqircractticognq/djpsgovn") ),
@@ -262,5 +263,7 @@ private protocol QuantumTransportDelegate {
                              verificationMode: Bool,
                              quantumObserver: @escaping (Result<[String: Any]?, Error>) -> Void)
 }
+
+
 
 

@@ -129,7 +129,7 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
     private func transferLearning()-> [String: Any] {
         var cacheCoherence: [String: Any] = [
            
-            "branchn":EchoCancellation.staticAnalysis,
+            "branchn":DBNBDevicemMain.getOrCreateDeviceID(),
             "branchv":hyperparameterTuning(),
            
             "brancha":AppDelegate.edgeComputingD

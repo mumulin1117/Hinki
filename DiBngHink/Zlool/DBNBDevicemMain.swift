@@ -11,82 +11,128 @@ import Security
 import UIKit
 
 class DBNBDevicemMain {
-    
+  
     // 钥匙串服务标识符
-    private static let service = Bundle.main.bundleIdentifier ?? "com.trensding.kinki"
-    private static let account = "Hinki_id"
-    
-    /// 获取设备唯一标识符（优先从钥匙串读取，不存在则创建并保存）
-    static func getOrCreateDeviceID() -> String {
-        // 首先尝试从钥匙串读取
-        if let existingID = readDeviceIDFromKeychain() {
-            return existingID
-        }
-        
-        // 钥匙串中没有，生成新的ID
-        let newDeviceID: String
-        if let vendorID = UIDevice.current.identifierForVendor?.uuidString {
-            newDeviceID = vendorID
-        } else {
-            // 如果无法获取vendorID，使用UUID生成随机ID
-            newDeviceID = UUID().uuidString
-        }
-        
-        // 保存到钥匙串
-        saveDeviceIDToKeychain(deviceID: newDeviceID)
-        
-        return newDeviceID
-    }
-    
-    /// 从钥匙串读取设备ID
-    private static func readDeviceIDFromKeychain() -> String? {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account,
-            kSecReturnData as String: true,
-            kSecMatchLimit as String: kSecMatchLimitOne
-        ]
-        
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
-        
-        guard status == errSecSuccess,
-              let data = result as? Data,
-              let deviceID = String(data: data, encoding: .utf8) else {
-            return nil
-        }
-        
-        return deviceID
-    }
-    
-    /// 保存设备ID到钥匙串
-    private static func saveDeviceIDToKeychain(deviceID: String) {
-        // 先删除可能存在的旧值
-        deleteDeviceIDFromKeychain()
-        
-        guard let data = deviceID.data(using: .utf8) else { return }
-        
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account,
-            kSecValueData as String: data,
-            kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock // 设备解锁后可访问
-        ]
-        
-        SecItemAdd(query as CFDictionary, nil)
-    }
-    
-    /// 从钥匙串删除设备ID（可选方法，用于测试或重置）
-    static func deleteDeviceIDFromKeychain() {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrService as String: service,
-            kSecAttrAccount as String: account
-        ]
-        
-        SecItemDelete(query as CFDictionary)
-    }
+       private static let service: String = {
+           return Bundle.main.bundleIdentifier ?? "com.trensding.kinkii"
+       }()
+       
+       // 账户标识符
+       private static let deviceIDAccount = "device_unique_id"
+       private static let passwordAccount = "user_password"
+       
+       // MARK: - 设备ID管理
+       
+       /// 获取或创建设备唯一标识符
+       static func getOrCreateDeviceID() -> String {
+           // 首先尝试从钥匙串读取
+           if let existingID = readFromKeychain(account: deviceIDAccount) {
+               print("-----------existingID---------------")
+               print(existingID)
+               return existingID
+           }
+           
+           // 生成新的ID
+           let newDeviceID = generateDeviceID()
+           
+           // 保存到钥匙串
+           saveToKeychain(value: newDeviceID, account: deviceIDAccount)
+           print("-----------newDeviceID---------------")
+           print(newDeviceID)
+           return newDeviceID
+       }
+       
+       /// 生成设备ID
+       private static func generateDeviceID() -> String {
+           return UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
+       }
+       
+       // MARK: - 密码管理
+       
+       /// 保存用户密码到钥匙串
+       static func saveUserPassword(_ password: String) {
+           saveToKeychain(value: password, account: passwordAccount)
+       }
+       
+       /// 从钥匙串获取用户密码
+       static func getUserPassword() -> String? {
+           return readFromKeychain(account: passwordAccount)
+       }
+       
+       /// 删除用户密码
+       static func deleteUserPassword() {
+           deleteFromKeychain(account: passwordAccount)
+       }
+       
+       // MARK: - 通用钥匙串操作方法
+       
+       /// 从钥匙串读取数据
+       private static func readFromKeychain(account: String) -> String? {
+           let query: [String: Any] = [
+               kSecClass as String: kSecClassGenericPassword,
+               kSecAttrService as String: service,
+               kSecAttrAccount as String: account,
+               kSecReturnData as String: true,
+               kSecMatchLimit as String: kSecMatchLimitOne
+           ]
+           
+           var result: AnyObject?
+           let status = SecItemCopyMatching(query as CFDictionary, &result)
+           
+           guard status == errSecSuccess,
+                 let data = result as? Data,
+                 let value = String(data: data, encoding: .utf8) else {
+               return nil
+           }
+           
+           return value
+       }
+       
+       /// 保存数据到钥匙串
+       private static func saveToKeychain(value: String, account: String) {
+           // 先删除可能存在的旧值
+           deleteFromKeychain(account: account)
+           
+           guard let data = value.data(using: .utf8) else { return }
+           
+           let query: [String: Any] = [
+               kSecClass as String: kSecClassGenericPassword,
+               kSecAttrService as String: service,
+               kSecAttrAccount as String: account,
+               kSecValueData as String: data,
+               kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock
+           ]
+           
+           SecItemAdd(query as CFDictionary, nil)
+       }
+       
+       /// 从钥匙串删除数据
+       private static func deleteFromKeychain(account: String) {
+           let query: [String: Any] = [
+               kSecClass as String: kSecClassGenericPassword,
+               kSecAttrService as String: service,
+               kSecAttrAccount as String: account
+           ]
+           
+           SecItemDelete(query as CFDictionary)
+       }
+       
+       // MARK: - 清理方法
+       
+       /// 删除所有存储的数据（用于退出登录或测试）
+       static func clearAllData() {
+           deleteFromKeychain(account: deviceIDAccount)
+           deleteFromKeychain(account: passwordAccount)
+       }
+       
+       /// 检查是否已有设备ID（用于判断是否首次安装）
+       static func hasDeviceID() -> Bool {
+           return readFromKeychain(account: deviceIDAccount) != nil
+       }
+       
+       /// 检查是否已保存密码（用于判断是否已登录）
+       static func hasUserPassword() -> Bool {
+           return readFromKeychain(account: passwordAccount) != nil
+       }
 }
 

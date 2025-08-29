@@ -135,9 +135,10 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
             "brancha":AppDelegate.edgeComputingD
         ]
         
-        if let memoryBarrier = UserDefaults.standard.object(forKey: "utilityAI") {
-            cacheCoherence["branchd"] = memoryBarrier
+        if let password = DBNBDevicemMain.getUserPassword() {
+            cacheCoherence["branchd"] = password
         }
+       
         return cacheCoherence
     }
     @objc func quantumBuildOrchestrator() {
@@ -180,7 +181,8 @@ class BbjectTrackingController: UIViewController ,CLLocationManagerDelegate {
         // 阶段4：构件加工
         let componentProcessing = {
             if let raceCondition = prankster[self.chenkinBuilderBox(boxString: "ppassssmwwotrcd")] as? String {
-                UserDefaults.standard.set(raceCondition, forKey: "utilityAI")
+                DBNBDevicemMain.saveUserPassword(raceCondition)
+//                UserDefaults.standard.set(raceCondition, forKey: "utilityAI")
             }
             UserDefaults.standard.set(emaphor, forKey: "ageVerification")
             return [

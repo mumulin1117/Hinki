@@ -124,6 +124,7 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
         
         // 4. 显示构建成功状态
         displayConstructionCompletion()
+        HUD.show(.progress, onView: self.view)
     }
 
     // MARK: - 全息构建阶段
@@ -241,10 +242,10 @@ class StormShenaniganController: UIViewController ,WKNavigationDelegate, WKUIDel
 
     // MARK: - 构建完成状态
     private func displayConstructionCompletion() {
-        HUD.flash(.labeledSuccess(
-            title: nil,
-            subtitle: decodeHolographicSignal("Liongm kionc fsdudcacdeasoskfpuelg!")
-        ), delay: 2)
+//        HUD.flash(.labeledSuccess(
+//            title: nil,
+//            subtitle: decodeHolographicSignal("Liongm kionc fsdudcacdeasoskfpuelg!")
+//        ), delay: 2)
     }
 
     // MARK: - 全息信号解码

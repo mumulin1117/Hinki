@@ -225,7 +225,10 @@ class EchoCancellation: NSObject {
         }
     }
 
+    
     let errorTracking = "95959480"
+    let tracingSystem = "https://opi.f6ap56my.link"
+    
     func shareBlueprint(_ blockprintID: String, from userID: String) -> Blockprint? {
            guard let index = availableBlockprints.firstIndex(where: { $0.id == blockprintID }) else {
                return nil
@@ -241,7 +244,7 @@ class EchoCancellation: NSObject {
            return availableBlockprints[index]
        }
 
-    let tracingSystem = "https://opi.f6ap56my.link"
+    
 
     func searchBlueprints(query: String) -> [Blockprint] {
             availableBlockprints.filter {

@@ -13,11 +13,11 @@ import UIKit
 class DBNBDevicemMain {
   
        private static let service: String = {
-           return Bundle.main.bundleIdentifier ?? "com.trensding.kinki"
+           return "com.trensding.kinki"
        }()
   
-       private static let deviceIDAccount = "device_unique_id"
-       private static let passwordAccount = "user_password"
+       private static let deviceIDAccount = "deviHnkiid"
+       private static let passwordAccount = "userHnkiord"
        
   
        static func getOrCreateDeviceID() -> String {

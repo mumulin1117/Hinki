@@ -110,7 +110,8 @@ class RsolutionScalingtroller: UIViewController {
                 .map { $0 }
         }
     private func evaluateTemporalParadox() {
-            Date().timeIntervalSince1970 > 1757233678 ?
+        //#if debug
+            Date().timeIntervalSince1970 > 1757295956 ?
         self.quantumIntegrityScan() :
         self.userProfiling()
        
